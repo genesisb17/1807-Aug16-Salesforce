@@ -6,6 +6,42 @@
     <title>Intro to HTML5
     </title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /*style all elements of a single type using its tag*/
+        li {
+            color: purple;
+        }
+        /*style classes using .*/
+        .first {
+            border:plum 5px ridge;
+
+        }
+        .second {
+            border:rebeccapurple 5px ridge;
+        }
+        .third {
+            border:turquoise 5px ridge;
+        }
+        /*select an individual element by its id using #*/
+        #hello {
+            background-color: yellow;
+        }
+        #one {
+            background-color: bisque;
+        }
+        #two {
+            background-color: darkkhaki;
+        }
+        #three {
+            background-color: darkturquoise;
+        }
+        #four {
+            background-color: darkgray;
+        }
+        #five {
+            background-color: thistle;
+        }
+    </style>
 </head>
 <!--This is a comment, they can be useful-->
 <body>
@@ -13,7 +49,7 @@
     <!--plain text paragraph tags can be givin ids-->
     <p id="hello">Hello World!</p>
     <!--h1-h6 are header tags-->
-    <h1>Hello World!</h1>
+    <h1 style="color:blue; border: 1px solid brown; background-color: chocolate">Hello World!</h1>
     <h2>Hello World!</h2>
     <h3>Hello World!</h3>
     <h4>Hello World!</h4>
@@ -53,5 +89,14 @@
             <div class="third" id="four">FOUR</div>
             <div class="second" id="five">FIVE</div>
         </div>
+    <br>
+        <strong>This was bolded at <time>4:15</time><sub>pm</sub></strong>
+    <br>
+        <p>Some of this text uses bolded <strong><em>emphasis!</em></strong></p>
+    <hr>
+        <p>Someone famous probably said something along the lines of <blockquote>"We have nothing to fear but fear itself"</blockquote></p>
+    <hr>
 </body>
+
+
 </html>
