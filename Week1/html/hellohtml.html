@@ -6,16 +6,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="../css/stripes.css">
     <title>Intro to HTML</title>
     <style>
+        /* Select all elements of a particular type.
+        simply write element tag name */
         li {
             color:coral;
         }
 
+        /* Select elements by class, use . */
         .first{
-            border: 5px ridge brown;
+            border: 5px ridge brown !important;
         }
 
+        /* Should only have one element per ID, select with # */
         #five{
             background-color: yellow;
         }
@@ -46,7 +51,7 @@
     <ul>
         <li>eggs
             <ul>
-                <li>organic</li>
+                <li>organic</li><li>organic</li>
             </ul>
         </li>
         <li>milk</li>
