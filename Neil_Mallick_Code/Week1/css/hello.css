@@ -1,0 +1,25 @@
+h1, h2{
+    background-color:burlywood;
+}
+
+:not(div){
+    border: 3px solid rebeccapurple;
+}
+
+o1 li{
+/* Style every li child of o1 */
+    font-style:italic;
+}
+
+h3 + h4{
+
+    /* Select h3 elements placed immediately after h4 elements */
+    align-content: flex-end;
+}
+
+li:first-child{
+  /*Select every <li> that is the first child of its parent*/
+    border: 4px dashed chartreuse;
+
+
+}

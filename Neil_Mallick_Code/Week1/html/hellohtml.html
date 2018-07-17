@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Intro to HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/stripes.css">
+    <style>
+        /* Select all elements of a particular type, simply write element tag name*/
+        li{
+            color:darksalmon;
+        }
+
+        /*Select elements by class, use . */
+        .first{
+            border: 5px ridge brown;
+        }
+        
+        /* SHould only have one element per ID, select with # */
+        #five{
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- This is a comment. It cannot be seen in the rendered view, but anything else in the body tag is-->
+    Hello! This is my first HTML page.
+
+    <p id="hello">
+            Hello! This is my first HTML page.
+    </p>
+    <h1 style="color:blue; border: 1px solid orange; background-color:#9765a1">Hello</h1>
+    <h2>Hello</h2>
+    <h3>Hello</h3>
+    <h4>Hello</h4>
+    <h5>Hello</h5>
+    <h6>Hello</h6>
+
+    <hr>
+    Grocery List:
+    <u1>
+        <li>eggs</li>
+        <u1>
+        <li>milk</li>
+        </u1>
+        <li>steak</li>
+
+    </u1>
+    <hr>
+    <o1>
+        <li>first</li>
+        <li>second</li>
+    </o1>
+
+    <hr>
+    <iframe src="https://www.revature.com" width="500" height="400"></iframe>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="wrapper">
+        <div class="first" id="one">ONE</div>
+        <div class="first" id="two">TWO</div>
+        <div class="second" id="three">THREE</div>
+        <div class="third" id="four">FOUR</div>
+        <div class="second" id="five">FIVE</div>
+    </div>
+</body>
+
+</html>
