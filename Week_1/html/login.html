@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Metadata is info about data or our web page. Tags provide metadata about doc. It will not
+    be displayed on the page, but will be macine paresable. They describe page description, author,
+    etc. Can also be used by web browsers, search engines, or other web servies.-->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2">left</div>
+            <div class="col-sm" style="background-color: aqua">
+                <form action="/someURL" method="POST">
+                    <input type="text" id="username" class="form-control" name="username" placeholder="username" required=true>
+                    <input type="password" class="form-control" name="password" placeholder="password">
+                    <input type="submit" class="btn btn-warning">
+                </form>
+            </div>
+            <div class="col-sm-2">right</div>
+        </div>
+    </div>
+
+    <br>
+    <hr>
+    <br>
+
+    <div class="jumbotron">
+        <h1> More on forms... </h1>
+        <!--Prevent string concatonation-->
+        <form oninput="y.value = a.value; c.value = Number(a.value) + Number(b.value); d.value = a.value * b.value">
+            <input type="range" name="a" min="0" max="500">
+            <output name="y" for="a"></output>
+            <input type="number" name="b" max="100">
+            <p>a + b =</p>
+            <output name="c" for="b"></output>
+            </output>
+            <p>a * b =</p>
+            <output name="d" for="b"></output>
+        </form>
+    </div>
+</body>
+
+</html>
