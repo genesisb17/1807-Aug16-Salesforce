@@ -1,0 +1,24 @@
+h1, h2 {
+    /*multiple element selector*/
+    background-color:chartreuse;
+}
+
+:not(div) {
+    /*everything but selector*/
+    border: 3px solid chartreuse;
+}
+
+ol li {
+    /*all child selector*/
+    font-style: italic;
+}
+
+h3 + h4 {
+    /*h4 immediately after h3 selector*/
+    align-content: flex-end;
+}
+
+li:first-child {
+    /*select every first child li*/
+    border: 4px dashed chartreuse;
+}
