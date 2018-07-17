@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>To Do List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <!--Add input text and button-->
+    <input type="text" id="tx"> <br>
+    <button id="bt">Add to the list</button>
+    <ul id="ans"></ul>
+         
+    <script>
+        //add global variable
+        //let elemList = [];
+    
+        window.onload = function(e){
+            //add value to the list when button is pushed
+            document.getElementById("bt").addEventListener("click", addListElem, true);
+        }
+
+        function addListElem() {
+            //Need by both methods explained below
+            let txtbox = document.getElementById("tx");
+
+            
+            //append value to list
+            //elemList[elemList.length] = txtbox.value;
+            
+            
+            //Original method used to store the whole list and print all of them at the every time the button is pushed
+            //This method inserts html data one at a time for each button push
+            let ansBox = document.getElementById("ans");
+            let lie = document.createElement('li');
+            lie.innerHTML = txtbox.value;
+            ansBox.appendChild(lie);
+
+            //Optional: Clear textbox for ease of use
+            txtbox.value = "";
+
+
+            //print elemList
+            //printListElem();
+            
+        }
+        
+        /*
+        function printListElem(){
+            //create formated version of list and display that
+            let str = "";
+            elemList.forEach((val) => {
+                str = `${str}<li>${val}</li>`;
+            });
+            document.getElementById("ans").innerHTML = str;
+        }*/
+
+
+    </script>
+</body>
+</html>

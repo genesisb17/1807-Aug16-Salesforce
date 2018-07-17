@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Intro to HTML</title>
+    <link rel="stylesheet" href="../css/stripes.css">
+    <style>
+    /* select all li tags */
+    li {
+        color:coral;
+    }
+    /* select all tags with class first */
+    .first{
+        border: 5px ridge brown !important;
+    }
+    /* select element with id five*/
+    #five{
+        background-color: yellow;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- This is a comment -->
+
+    Hello! This is my first HTML page
+    <p id="hello">Hello! This is my first HTML page</p>
+    <h1 style="color: blue; border: 1px solid orange; background-color: #9765a1">Hello!</h1>
+    <h2>Hello!</h2>
+    <h3>Hello!</h3>
+    <h4>Hello!</h4>
+    <h5>Hello!</h5>
+    <h6>Hello!</h6>
+    <hr> Grocery Lists:
+    <ul class="third">
+        <li>eggs</li>
+        <ul>
+            <li>
+                organic
+            </li>
+        </ul>
+        <li>milk</li>
+        <li>
+            steak
+        </li>
+    </ul>
+    <hr>
+    <ol class="second">
+        <li>first</li>
+        <li>second</li>
+    </ol>
+    <hr>
+    <!-- IFrame should have been implemented here but fail to work -->
+
+    <br>
+    <hr>
+    <br>
+    <div class="wrapper">
+        <div class="first" id="one">one</div>
+        <div class="first" id="two">two</div>
+        <div class="second" id="three">three</div>
+        <div class="third" id="four">four</div>
+        <div class="second" id="five">five</div>
+    </div>
+
+    <hr>
+    <table>
+        <tr>
+            <td>To</td>
+            <td>The</td>
+            <td>Left</td>
+        </tr>
+
+        <tr>
+            <td>
+                <i>To</i>
+            </td>
+            <td>
+                <b>The</b>
+            </td>
+            <td>
+                <small>Left</small>
+            </td>
+        </tr>
+
+        <tr>
+            <td>To</td>
+            <td>The</td>
+            <td>Right</td>
+        </tr>
+
+    </table>
+
+    <hr>
+    <img src="https://en.wikipedia.org/wiki/Penguin#/media/File:South_Shetland-2016-Deception_Island%E2%80%93Chinstrap_penguin_(Pygoscelis_antarctica)_04.jpg"
+        alt="oh no">
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+css - cascading style sheets
+tag
+.class
+#id
+
+w3c: World Wide Web Consortium
+layout:
+block, inline, table, position, Multi-Column, flexible box, grid layout
+
+Metadata is information about data or our web page
+meta tags provide metadata about HTML doc. It will
+not be displayed on the page, but will be machine
+parseable they describe page description, author, etc.
+Can also be used by web browsers, search engines, or
+other web services
+HTML5 introduced this viewport meta element which allows
+web designers to take control over the viewport - the user's visible area of the page
+
+<form>: action, method, <input>
+id -> css
+name -> method(form)
+aria accessible rich internet app
+
+javascript - lightweight
+
+JavaScript is a scripting language for client-side operations
+- supports prototypal inheritance
+- loosely typed. variable types are dynamically allocated
+- declare variables with keyword var, let, Const
+
+javascript document.   createElement('tag') getElementById('tag')
