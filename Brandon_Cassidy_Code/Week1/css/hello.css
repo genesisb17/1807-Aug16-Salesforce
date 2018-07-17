@@ -1,0 +1,32 @@
+
+
+h1, h2{
+    /* select h1 & h2*/
+    color: black;
+    background-color: chartreuse;
+}
+
+:not(div){
+    color:black;
+    /*self explanatory*/
+    border: 3px solid chartreuse;
+}
+
+ol li {
+    color:black;
+    font-style: italic;
+    /* select every li child of ol */
+}
+
+h3 + h4{
+    color: black;
+    align-content: flex-end;
+    /*select h3 elements placed immediately after h4 elements*/
+}
+
+li:first_child{
+    /*every first child item of the li class*/
+    border: 4px dashed chartreuse;
+    color:black;
+}
+
