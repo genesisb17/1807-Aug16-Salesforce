@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Event Handling</title>
+    <style>
+        div {
+            border: 5px solid black;
+            display: flex;
+            justify-content: center;
+        }
+        #outer {
+            background-color: rgba(116, 51, 51, 0.5);
+            width: 800px;
+            height: 800px;
+        }
+        #middle {
+            background-color: rgba(65, 99, 87, 0.5);
+            width: 400px;
+            height: 400px;
+        }
+        #inner {
+            background-color: rgba(86, 226, 180, 0.5);
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        OUTER
+        <div id="middle">
+            MIDDLE
+            <div id="inner">
+                INNER
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //bubling vs capturing
+        document.getElementById("inner").addEventListener('click', function(){
+            alert("inner");
+            event.stopPropagation();
+        }, true);
+        document.getElementById("middle").addEventListener('click', function(){
+            alert("middle");
+            event.stopPropagation();
+        }, true);
+        document.getElementById("outer").addEventListener('click', function(){
+            alert("outer");
+            event.stopPropagation();
+        }, true);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Things to buy</h1>
+    <input type="text" id="buy">
+    <input type="submit" id="add">
+    <ul id="basket"></ul>
+
+
+
+
+
+    <script>
+        document.getElementById('add').addEventListener('click', function(){
+            var thing = document.getElementById('buy').value;
+            var buy = document.createElement('li');
+            buy.innerHTML = thing;
+            var para = document.getElementById('basket');
+            para.appendChild(buy)
+        }, true); 
+       
+        
+    </script>
+</body>
+</html>
