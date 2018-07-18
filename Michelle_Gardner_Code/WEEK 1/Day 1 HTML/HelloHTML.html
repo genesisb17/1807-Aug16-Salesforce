@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <link rel="stylesheet" href="../css/stripes.css">
+
+    <title>Intro into HTML</title>
+    <!-- CSS -->
+    <style>
+        /* selelct all elements by particular type */
+        li{
+            color: red;
+        }
+        /* select all elements by class*/
+        .first{
+            border: 5px ridge brown !important;
+        }
+        /* select one element per ID */
+        #five{
+            color:palegreen;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+
+    <body>
+        <!-- THIS IS A COMMENT -->
+        Hello! This is my first HTML page.
+        <p id="Hello"> Hello!! </p>
+
+        <!-- Header tag -->
+        <h1 style="color:blue; border: 5px solid orange; background-color: mediumturquoise">Hi</h1>
+        <h2>Hi</h2>
+        <h3>Hi</h3>
+        <h4>Hi</h4>
+        <h5>Hi</h5>
+        <h6>Hi</h6>
+        <hr>
+<br>
+    Grocery List: 
+        <ol>
+            <li>strawberries</li>
+                <ul>
+                    <li>red strawberries</li>
+                </ul>
+            <li>soup</li>
+                <ul>
+                    <li>chicken</li>
+                </ul>
+            <li>apples</li>
+        </ol>
+        <hr>
+        <br>
+
+        <ol class="second">
+            <li>first</li>
+            <li>second</li>
+        </ol>
+        <br>
+        <!-- This is to display a webpage into a webpage -->
+        <h2>Revature.com</h2>
+        <iframe src="https://www.revature.com" height="400" width="500"></iframe>
+        <hr>
+        <br>
+        <div class="wrapper">
+            <div class="first" id="one">One</div>
+            <div class="first" id="two">Two</div>
+            <div class="second" id="three">Three</div>
+            <div class="third" id="forth">Forth</div>
+            <div class="fourth" id="five">Five</div>
+        </div>
+        <h2>Mountain View</h2>
+        <img src="https://www.w3schools.com/images/picture.jpg" alt="Moutain">
+    </body>
+
+</html>

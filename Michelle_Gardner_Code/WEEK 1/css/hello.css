@@ -1,0 +1,23 @@
+
+
+h1, h2 {
+    background-color:chartreuse;
+}
+
+:not(div){
+    border: 3px solid chartreuse;
+}
+/* style every li child of ol */
+ol li{
+    font-style: italic;
+}
+
+/* Select h3 elements placed immediately after h4 elements */
+h3 + h4 {
+    align-content: flex-end;
+}
+
+/* Selects every list item that is the first child of its parent */
+li.wrapper:first-child{
+    boarder: 4px dashed chartreuse
+}
