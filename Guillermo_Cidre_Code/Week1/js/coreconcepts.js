@@ -135,7 +135,7 @@ function scopes(){
     let func2 = 'this is also funciton scoped';
     var func = 'function scoped'
     if(func.length>5){
-        blockScope = 5;
+        //blockScope = 5; //this is global scoped
         let blockScope = 10;
         var func = 6;
     }

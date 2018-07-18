@@ -29,3 +29,49 @@ JavaScript is a scripting language for client-side operations
 - declare variables with keyword var, let, Const
 
 javascript document.   createElement('tag') getElementById('tag')
+
+submit + post
+
+jQuery - javascript but shorter
+
+JSON - JavaScript Object Notation (server responses)
+not Object
+no single quotes
+95% http
+GET, POST
+JSP Java server pages
+HTTP & AJAX
+REpresentational
+State 
+Transfer
+
+HTTP Verbs
+Safe- read only (GET, head)
+Idempotent - no side effect. same action can be done at the same time
+Cacheable- if it can be cached.
+
+Verbs
+GET safe Idempotent
+POST
+DELETE Idempotent
+PUT Idempotent
+head no request body for either SAFE Idempotent
+CONNECT
+options SAFE Idempotent
+TRACE
+PATCH
+
+HTTP status code
+1XX information
+2XX success
+3XX redirection
+4XX client error
+5XX server error
+
+POSTMAN app
+class bla() {
+
+    static void main() {
+        
+    }
+}
