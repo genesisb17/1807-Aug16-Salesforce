@@ -1,0 +1,25 @@
+window.onload = function(e){
+    //alert('js works');
+    document.getElementById(`runFib`).addEventListener(`click`, runFib, true);
+}
+
+
+/*Fib sequence recursive*/
+
+function runFib(){
+    let n = document.getElementById(`fibN`).value;
+    console.log(fib(n));
+    document.getElementById(`fibOut`).innerHTML = fib(n);
+
+}
+
+
+function fib(n){
+if(n == 0) return 0;
+if (n == 1) return 1;
+return fib(n-1) + fib(n-2);
+
+}
+
+
+

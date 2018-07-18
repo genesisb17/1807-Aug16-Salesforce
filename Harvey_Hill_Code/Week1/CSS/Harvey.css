@@ -1,0 +1,38 @@
+/*
+Core html elements
+
+
+*/
+
+body{
+background: linear-gradient(rgba(0,0,0,60%), rgba(0,0,0,60%)), url(../images/spacebg.gif);
+background-repeat: no-repeat;
+background-size: 100%, 100%;
+background-attachment: fixed;
+}
+
+
+content{
+    background:rgba(0,0,0,70%);
+    box-sizing: content-box;
+    margin-left: 6.5%;
+    width: 87%;
+    height: 80%;
+    color: white;
+    float: left;
+}
+
+.floatright{
+    width: 30%;
+    height: auto;
+float: right;
+}
+
+#spin{
+    transition-duration: 1s;
+    transition-property: all;
+}
+
+#spin:hover{
+transform: rotate(1080deg);
+}
