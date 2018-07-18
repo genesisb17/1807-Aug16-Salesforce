@@ -1,0 +1,21 @@
+h1,h2{
+    background-color: chartreuse;
+}
+
+:not(div){
+    border: 3px solid chartreuse;
+}
+
+ol li {
+/* style every li child of ol*/
+    font-style:  italic;
+}
+
+h3 + h4{
+    /* select h3 elements immeduatley after hy 4 elements */
+    align-content: flex-end;
+}
+li:first-child{
+/*select every <li> that is the first child of its parent*/
+border: 4px dashed chartreuse;
+}
