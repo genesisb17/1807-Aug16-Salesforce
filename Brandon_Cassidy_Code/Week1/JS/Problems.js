@@ -19,3 +19,23 @@ function runFib(){
     console.log("hi");
     
 }
+
+//2. bubble sort
+function switcher(array, i, j) {
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+function bubblesort(ARay){
+    var modified;
+    do {
+      modified = false;
+      for(var i = 0; i < array.length; i++) {
+        if(array[i] && array[i + 1] && array[i] > array[i + 1]) {
+          switcher(array, i, i + 1);
+          modified = true;
+        }//if
+      }//for
+    } while(modified); //do while
+    return array;
+  }//bubblesort
