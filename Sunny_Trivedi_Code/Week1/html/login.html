@@ -21,18 +21,18 @@ take control over the viewport- the user's visible area of the page-->
             <div class= "row">
                 <div class ="col-sm">left</div>
                <!-- code here-->
+               <div class="col-sm" style="background-color:aqua">
+                    <form action="/someURL">
+                        <input type="text" id="username" class="form-control" name="username" placeholder="Username" required=true>
+                        <input type="password" id="password" class="form-control">
+                        <input type="submit" class="btn btn-warning">
+        
+        
+                    </form>
+                </div>
                 <div class = "col-sm-2">right </div>
             </div>
     </div>
-    <form action="/someURL">
-        <input type="text" id= "username" class="form-control name">
-            
-        <input type name="username" placeholder="Username" required="true">
-
-            
-    </form>
-    <input type="password" name="password" >
-    <input type="submit">
 
     <br>
     <hr>
@@ -40,12 +40,12 @@ take control over the viewport- the user's visible area of the page-->
     <div class = "jumbotron">
         <h1> More on forms... </h1>
         <form oninput = "y.value = a.value;
-        x.value = parseInt(a.value) + parseInt(b.value);
-        z.value = a.value * b.value">
+            x.value = parseInt(a.value) + parseInt(b.value);
+            z.value = a.value * b.value">
             <input type = "range" name = "a" min = "0" max="500">
             <output  name = "y" for ="a"></output>
             <input class = "form-control col-sm-1" type="number" name="b" max="100">
-            <input type = "number" name="b">
+           
             <p> a + b = </p><output name = "x" for= "a b"></output></output> 
             <p>a * b =</p><output name = "z" for = "a b"> </output></output>
         </form>
