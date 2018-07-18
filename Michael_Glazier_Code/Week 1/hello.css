@@ -1,0 +1,22 @@
+h1, h2{
+    background-color:chartreuse;
+}
+
+:not(div){
+    border: 3px solid green;
+}
+
+ol li{
+    /*Style every child of ol*/
+    font-style: italic;
+}
+
+h3 + h4{
+    /*Select h3 elements immediately after h4 elements*/
+    align-content: flex-end;  
+}
+
+li:first-child{
+    /*Select every list item that is first of its parent*/
+    border: 4px dotted orange;
+}
