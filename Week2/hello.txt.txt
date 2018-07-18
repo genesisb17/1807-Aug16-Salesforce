@@ -1,0 +1,9 @@
+hi guys, the way to push stuff is to put it in your repo folder (via copy paste or working directly in 
+the folder it doesnt matter)
+
+in git bash, 
+cd into directory
+
+git add .
+git commit -m "commit message. keep it appropriate!"
+git push
