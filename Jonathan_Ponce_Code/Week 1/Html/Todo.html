@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To-Do List</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    <div class="jumbotron">
+        <h1>To-Do List</h1>
+            <label for="newItem"></label>
+            <input type="text" id="newItem">
+            <button id="add_item">Add</button>
+            <ul id="list"></ul>
+
+            <script>
+            document.getElementById('add').addEventListener("click", function(){
+                var input = document.getElementById('newItem');
+                var li = document.createElement('id');
+                li.innerText = input.value;
+                var list = document.getElementById('list');
+                list.appendChild(li);
+                input.value = " ";
+            },true);
+            </script>
+
+        <script type="text/javascript" src="../js/todo.js"></script>
+    </div>
+</body>
+
+</html>

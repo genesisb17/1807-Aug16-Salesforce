@@ -1,0 +1,28 @@
+*{
+    background-color: red;
+}
+
+h1, h2{
+    color: green;
+    background-color: chartreuse;
+
+}
+
+:not(div){
+    border: 4px solid navajowhite;
+}
+
+ol li {
+ /* style li child of ol */ 
+    font-style: italic;
+}
+
+h3 + h4 {
+    /* select h3 elements immediatly after h4 elemerts*/ 
+    align-content: flex-end;
+}
+
+li:first-child{
+    /* Select every list item that is the first child of list items*/ 
+    font-family: fantasy;
+}
