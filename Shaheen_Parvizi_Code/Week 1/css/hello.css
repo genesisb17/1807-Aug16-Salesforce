@@ -1,0 +1,31 @@
+h1,h2 {
+
+    background-color: green;
+
+}
+
+:not(div){
+    /*Selects everything not in a div tag*/
+    border: 3px solid green;
+
+}
+
+ol li{
+    /* Selects every li child of ol*/
+
+    font-style: italic;
+
+}
+
+h3 + h4 {
+
+    /* Select h3 elements placed immediately after h4 elements*/
+    align-content: flex-end;
+
+}
+
+li:first-child{
+    /* Selects every <li> that is the first child of its parent */
+
+    border: 4px dotted green;
+}
