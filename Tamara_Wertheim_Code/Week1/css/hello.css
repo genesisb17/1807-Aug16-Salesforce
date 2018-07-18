@@ -1,0 +1,19 @@
+h1, h2 {
+    background-color: chartreuse;
+}
+
+:not(div){
+    border: 3px solid chartreuse;
+}
+
+ol li{
+    font-style: italic;
+}
+
+h3 + h4{
+    align-content: flex-end;
+}
+
+li:first-child{
+    border: 4px dashed chartreuse;
+}

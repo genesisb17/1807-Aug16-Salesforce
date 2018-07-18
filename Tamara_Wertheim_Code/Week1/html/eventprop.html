@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta charset="UTF=8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title>Event Handling</title>
+
+        <style>
+        div{
+            display: flex;
+            border: 5px solid black;
+            justify-content: center;
+            align-content: center;
+        }
+        
+        #inner{
+            background-color: rgba(255, 255, 255, 50%);
+            width: 200px;
+            height: 200px;
+        }
+
+        #middle{
+            background-color: rgba(183, 218, 57, 50%);
+            width: 400px;
+            height: 400px;
+        }
+
+        #outer{
+            background-color: rgba(172, 22, 22, 50%);
+            width: 800px;
+            height: 800px;
+        }
+        
+        </style>
+    </head>
+    <body>
+        <div id="outer">
+            OUTER
+            <div id="middle">
+                MIDDLE
+                <div id="inner">
+                    INNER
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById("inner").addEventListener("click", function(){ 
+            alert("INNER!!!");
+        }, true);
+        document.getElementById("middle").addEventListener("click", function(){ 
+            alert("MIDDLE!!!");
+        }, true);
+        document.getElementById("outer").addEventListener("click", function(){ 
+            alert("OUTER!!!");
+        }, true);
+    </script>
+    </body>
+    </html>

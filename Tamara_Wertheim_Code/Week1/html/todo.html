@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF=8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title>Todo</title>
+    </head>
+<body>
+        <p>Create a list!</p>
+
+        <button onclick="createBox()">New</button> <button onclick="deleteBox()">Delete</button> 
+
+        <br>
+        <br>
+        <input type="text" id="newItem">
+
+        <script>
+        var count = 0;
+
+        function createBox() {
+            count++;
+            var input = document.getElementById("newItem");
+            var li = document.createElement("li");
+            li.setAttribute('id', `li+${count}`);
+            li.innerText = input.value;
+
+            var txt = document.createElement("li");
+            txt.setAttribute('id', `txt+${count}`);
+            document.body.appendChild(li);
+            input.value = " ";
+        }
+
+        function deleteBox(){
+            var txt = document.getElementById(`txt+${count}`);
+            txt.parentNode.removeChild(txt);
+
+            var li = document.getElementById(`li+${count}`);
+            li.parentNode.removeChild(li);
+            count--;
+        }
+</script>    
+</body>
+</html>
