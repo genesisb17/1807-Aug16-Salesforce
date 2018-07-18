@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang= "en">
+<head>
+    <meta charset= "UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/stripes.css">
+    <title>Document</title>
+    <style>
+       /* Select all elements of a particular type. Just simply write element tag name */
+        li {
+            color:coral;
+        }
+        /* Select elements by class, use . */
+        .first{
+            border: 5px ridge brown;
+        }
+
+        /* Should only have oen element per ID, select with # */
+        #five{
+            background-color: yellow;
+            }
+
+        
+    </style>
+
+</head>
+<body>
+    <!--THIS IS A COMMENT. It cannot be seen in rendered view, but anything 
+        else in the body tag is -->
+
+    Hello! This is my first HTML page.
+    <p id="hello">Hello! This is my first HTML page.</p>
+    <h1 style="color:blue; border: 5px solid orange; background-color:#9765a1">Hello!</h1>
+    <h2>Hello!</h2>
+    <h3>Hello!</h3>
+    <h4>Hello!</h4>
+    <h5>Hello!</h5>
+    <h6>Hello!</h6>
+
+    <hr>
+    Grocery List:
+    <ul>
+        <li>eggs
+            <ul>
+                <li>organic</li>
+            </ul>
+        <li>milk</li>
+        <li>steak</li>
+    </ul>
+
+    <hr>
+    <ol class="second">
+        <li>first</li>
+        <li>second</li>
+
+    </ol>
+
+    <hr>
+    <ol type="i">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ol>
+    <hr>
+    <iframe src="http://www.revature.com" width="500" height="400" ></iframe>
+
+    <br>
+    <hr>
+    <br>
+    <div class="wrapper">
+        <div class="first" id="one">ONE</div>
+        <div class="first" id="two">TWO</div>
+        <div class="second" id="three">THREE</div>
+        <div class="third" id="four">FOUR</div>
+        <div class="second" id="five">FIVE</div>
+
+    </div>
+
+
+</body>
+
+
+</html>
