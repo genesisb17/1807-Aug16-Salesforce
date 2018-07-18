@@ -1,6 +1,7 @@
 window.onload = function(e){
  //   alert('js works!');
- document.getElementById("runFib").addEventListener("click", runFib, true);
+ document.getElementById("runFib").
+    addEventListener("click", runFib, true);
 
 }
 
@@ -16,5 +17,7 @@ function fib(n){
 }
 function runFib(){
     let n = document.getElementById('fibN').value;
-    console.log(fib(n));
+   // console.log(fib(n));
+   let x = fib(n);
+    document.getElementById('fibOut').innerHTML = '= ' + x;
 }
