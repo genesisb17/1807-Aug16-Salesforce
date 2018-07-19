@@ -169,3 +169,25 @@ function printShape(shape, height, character) {
     }
     console.log(str);
 }
+
+/**Problem 9 */
+function traverseObject(someObj){
+    let str = "";
+    if(someObj === Object(someObj)){
+        let x = 0;
+        let keyArray = Object.keys(someObj);
+        for(let property in someObj){
+            str = str + keyArray[x] + ": " + someObj[property] + '\n';
+            x++;
+        }
+    }
+    console.log(str);
+    return str;
+}
+
+/**Problem 10 */
+function deleteElement(someArr){
+    console.log(someArr.length);
+    someArr[2] = undefined;
+    console.log(someArr.length);
+}
