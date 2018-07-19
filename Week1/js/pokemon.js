@@ -17,9 +17,9 @@ function getPokemon(){
         console.log(Date() + " " + xhr.readyState);
         if(xhr.readyState == 4 && xhr.status==200){
             //CODE TO PROCESS RESPONSE
-            resp = xhr.responseText;
-            pokemon = JSON.parse(resp);
-            setPokeValues(pokemon);
+            let resp = xhr.responseText; //JSON STRING REPRESENTING POKEMON
+            let pokemon = JSON.parse(resp); //PARSE RESPONSE INTO JS OBJECT
+            setPokeValues(pokemon); //MANIPULATE DOM WITH POKE PROPERTIES
         }
     }
     //STEP 3 - open request
