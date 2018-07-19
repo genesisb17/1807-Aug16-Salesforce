@@ -1,0 +1,21 @@
+<html>
+    <script>
+        //Intro to jQuery
+        // Same as document.getElementById("add")
+        // Add the text to the first list:
+        $('#add').on('click', function(){    // Add an on "click" to the button. It works like the CSS selector
+            let itemText = $('#newItem').val();     // Get the new value from the user textbox
+            let item = document.createElement('li'); // Create the item tags
+            item.innerHTML = itemText;                  // Add the text to the tags
+            $('#toBuy').append(item);                   // Add the value
+            $('#newItem').
+        });
+
+        $(('li')).on('click', function(){alert("clicked li")};
+
+        // When the user clicks on a particular list item:
+        $('#toBuy').on('click', 'li', function() {
+            $('#bought').append(this);      // Append the list item to the second list. Not part of another list
+        });
+    </script>
+</html>

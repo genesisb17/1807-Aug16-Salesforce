@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Metadata is information about data or our web page. Meta tags
+            -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+        <title>Login</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm">left</div>
+                <div class="col-sm" style="background-color: aqua">
+                    <form  action="/someURL" method="GET">
+                        <!-- Input. Note that you use name for get and post. id is used for CSS and JS: -->
+                        <input type="text" name="username" placeholder="username" class="form-control" required="true" /><br />
+                        <input type="password" name="password" placeholder="password" required="true" class="form-control" /><br />
+                        <input type="submit" class="btn btn-warning" name="Log In" />
+                    </form>
+            <div class="col-sm">right</div>
+            </div>
+            <div class="col-sm-2">right</div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="jumbotron">
+            <h1>More on forms...</h1>
+            <form oninput="y.value = a.value;
+                x.value = parseInt(a.value) + parseInt(b.value);
+                z.value = a.value * b.value">
+                <!-- Scrollbar for numbers. Set the range from 0 to 100 -->
+                <input type="range" name="a" min="0" max="100">
+                <!-- Name the bar y and link it to a -->
+                <output name="y" for="a"></output>
+                <input type="number" name="b">
+                <p>a + b = <output name="x" for="a b"></output></p>
+                <p>a * b = <output name="z" for="a b" ></output></p>
+            </form>
+        </div>
+    </body>
+</html>
