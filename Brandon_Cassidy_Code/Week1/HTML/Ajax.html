@@ -13,20 +13,29 @@
     crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
     crossorigin="anonymous"></script>
-    <script type ="" source="../"></script>
+<style>
+    #h2, h3{
+        text-align: center, bold;
+        color:black;
+        
+    }
+</style>
 </head>
 <body>
     <div class="jumbotron">
     <h1>
         SWShips
     </h1>
-    <input type="text" id='shipID'>
+    <label for="shipId">Search by ship ID OR name</label>
+    <input type="text" id='shipID' placeholder="Ship ID">
+    <input type="text" id='searchName' placeholder = "Ship Name">
     <button class= "button btn-primary" id="getShip">Go!</button>
     </div>
 
     <div class="well text-center">
         <h3 id="shipName"></h3>
-        <h4 id="shipCost"></h4>
+        <h4 id="shipClass"></h4>
+        <h5 id="shipCost"></h4>
     </div>
     <script type="text/javascript" src="../js/ajaxdemo.js"></script>
 </body>

@@ -6,7 +6,9 @@ window.onload=function(){
 function getShip(){
     //get id from input
     var id=$('#shipID').val();
-
+    if(!id){
+        var searchName = $('searchName');
+    }//if
     //Send ajax req, process response
 
     //1 create xhr object
@@ -19,12 +21,17 @@ function getShip(){
             //response processing code
             var resp = xhr.responseText;
             let ship = JSON.parse(resp);
-            $('#shipName').html(ship.name);
-            $('#shipCost').html(ship.cost_in_credits);
+            $('#shipName').html("Starship: " + ship.name);
+            $('#shipCost').html("Cost in credits: " + ship.cost_in_credits);
         }//if
     }//function/readystatechange
     //3 open request
+    if(id>0){
     var url=`https://www.swapi.co/api/starships/${id}/`;
+    }//if
+    if(searchName){
+        var url=`https://www.swapi.co/api/starships/?search=${searchName}/`;
+    }//if
     xhr.open("GET",url,true);
 
     //4 send request, has requestbody param
