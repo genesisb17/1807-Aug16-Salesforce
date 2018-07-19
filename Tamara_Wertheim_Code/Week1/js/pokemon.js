@@ -1,24 +1,42 @@
 window.onload = function(){
-    //getPokemon();
-    $("getPokemon").on('click', getPoekmon);
-}
+    $("#getPokemon").on('click', getPokemon);
+    $("#randomizePokemon").on('click', randomizePokemon);
+};
 
 function getPokemon(){
-    var id=$('#pokemonId').val();
+    let pokemonId=$('#pokemonId').val();
+    ajaxRequest("pokemon", pokemonId)
+}
 
-    var xhr = new XMLHttpRequest
+function randomizePokemon(){
+    let pokemonId=(Math.floor(Math.random() * 792) + 1);
+    ajaxRequest("pokemon", pokemonId);
+}
+
+function ajaxRequest(data, id){
+    var xhr = new XMLHttpRequest();
 
     xhr.onreadystatechange = function(){
         console.log(Date() + " " + xhr.readyState);
         if(xhr.readyState == 4 && xhr.status==200){
             resp = xhr.responseText;
+
             pokemon = JSON.parse(resp);
+            setPokeValues(pokemon);
         }
     }
 
-    var url = `https://pokeapi.co/api/v2/pokemon/${id}/`;
-    xhr.open("GET", url, true);
+        var url = `https://pokeapi.co/api/v2/${data}/${id}/`;
+        xhr.open("GET", url, true);
+        xhr.send();    
 
-    xhr.send();
+    console.log("CODE AFTER REQUEST WAS SENT");
+}
 
+function setPokeValues(pokemon, nature){
+    $('#pokemonName').html(pokemon.name);
+    $('#pokemonNature').html("set");
+    var image = $('#pokemonImg');
+    image.attr("src", pokemon.sprites.front_default);
+    image.attr("alt", pokemon.name);
 }
