@@ -82,6 +82,7 @@ function getInfo(el){
             $('#info1').html(`There are ${entity.count} ${el}. Enter the ID you'd like to view`);
             $('#cont').attr("hidden",false);
             $('#id').attr("max", entity.count);
+            $('#sw2').off('click');
             $('#sw2').on('click', function(){
                 
                 getSW(el);}
