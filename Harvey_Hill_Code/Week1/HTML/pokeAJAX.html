@@ -1,0 +1,51 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color: black; color:aliceblue;">
+    <div class='jumbotron' style="color:antiquewhite; background-color: darkgrey">
+        <h1>RESTful Pokemon</h1>
+        <input type='number' id='pokemonID' class='form-control col-3' placeholder='Poke ID'>
+        <button class='btn btn-primary' id='getPokemon'>Get Pokemon</button>
+    </div>
+    <div class="well text-center">
+        <img id='pokePic' alt="" src="">
+        <h3 id="pokeName"></h3>
+    </div>
+
+
+    <div class="jumbotron" style="color:aquamarine; background-color: darkblue">
+        <h1>Set me up Star Wars!</h1>
+        <p>Welcome guest!</p>
+        <p>We know you're in eager anticipation, so don't wait a minute, push the button to find your Staaaaaar Match!</p>
+        <!-- <input type="number" id='spellID' class='form-control col-3' placeholder="What Spell?"> -->
+        <button class='btn btn-primary' id='getSpell'>Get Match</button>
+    </div>
+    <div class='well text-center'>
+        <p>You lucky nerfherder, your match is:</p>
+        <h3 id='spellName' style='color: antiquewhite'></h3>
+        <p>This <content id='gender'></content> of the <content id='species'></content> species is quite a catch!</p>
+        <p>Standing at an estimated height of <content id='height'></content> cm, this <content id='skin'></content> skinned match with fabulous <content id='hair'></content> has piercing <content id="eyes"></content> eyes just for you.</p>
+        <p>Get ready for the trip of a life time as you go to <content id='homeworld'></content>, your match's homeworld!</p>
+    </div>
+
+</body>
+
+<footer>
+    <script type="text/javascript" src="../js/pokeapi.js"></script> </footer>
+
+</html>
