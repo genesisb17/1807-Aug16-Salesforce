@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Tamara",
+      "lastName": "Wertheim",
+      "username": "tw",
+      "password": "123",
+      "balance": 123456789
+    },
+    {
+      "id": 2,
+      "firstName": "Sabrina",
+      "lastName": "Palmer",
+      "username": "SP",
+      "password": "123",
+      "balance": 1.00
+    }
+  ]
+}
