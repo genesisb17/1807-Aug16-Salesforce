@@ -1,0 +1,6 @@
+li { color: coral } 
+.first { border: 20px ridge brown }
+#five { background-color: orange }
+img { border: 4px solid #fab }
+h1 { color: blue; border: 5px solid orange; background-color: #a6f }
+li:first-child { border: 4px dashed red }

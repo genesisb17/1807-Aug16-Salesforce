@@ -1,0 +1,15 @@
+<style>
+  .done { text-decoration: line-through; }
+</style>
+<input type="text" id="nouveau">
+<ul id='list'></ul>
+<script>
+  const nouveau = document.getElementById('nouveau');
+  nouveau.addEventListener('change', function(){
+    const item = document.getElementById('list').appendChild(document.createElement('li'));
+    const cbox = item.appendChild(document.createElement('input'));
+    cbox.type = 'checkbox';
+    cbox.addEventListener('change', () => item.classList.toggle('done'));
+    item.appendChild(document.createTextNode(nouveau.value));
+  });
+</script>
