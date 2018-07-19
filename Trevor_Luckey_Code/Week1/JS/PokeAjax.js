@@ -1,10 +1,10 @@
 window.onload = function () {
     //getPokemon();
-    $('#getPokemon').on("click", getPokemon);
+    $('#getMovie').on("click", getMovie);
 }
 
-function getPokemon() {
-    var id = $('#pokemonID').val();
+function getMovie() {
+    var id = $('#movieNum').val();
 
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
