@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Lucas",
+      "lastName": "Cuba",
+      "username": "lcuba",
+      "password": "abc123",
+      "balance": 1337
+    },
+    {
+      "id": 2,
+      "firstName": "Andrew",
+      "lastName": "Dumas",
+      "username": "adumas",
+      "password": "helloworld",
+      "balance": 1234
+    },
+    {
+      "id": 3,
+      "firstName": "Hayley",
+      "lastName": "Dumas",
+      "username": "hdumas",
+      "password": "foobar",
+      "balance": 1010
+    },
+    {
+      "firstName": "Lucas",
+      "lastName": "Cuba",
+      "username": "lcuba",
+      "password": "asdfjkl;",
+      "balance": 0,
+      "id": 4
+    },
+    {
+      "firstName": "first",
+      "lastName": "last ",
+      "username": "username",
+      "password": "password",
+      "balance": 0,
+      "id": 5
+    }
+  ]
+}
