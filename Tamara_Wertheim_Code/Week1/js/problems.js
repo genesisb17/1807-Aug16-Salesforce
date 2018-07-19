@@ -1,6 +1,7 @@
 window.onload = function(e){
     //this.alert("js works!");
     document.getElementById("runFib").addEventListener("click", runFib, true);
+    document.getElementById("runBubbleSort").addEventListener("click", runBubbleSort, true);
 }
 
 /*
@@ -16,8 +17,28 @@ function fib(n){
     return fib(n-1) + fib(n-2);
 }
 
+function bubbleSort(numArray){
+    for(var i = 0; i < numArray.length; i++) {
+        for(var j = 1; j < numArray.length; j++) {
+            if(numArray[j - 1] > numArray[j]) {
+                var temp = numArray[j - 1];                   
+                numArray[j- 1] = numArray[j];
+                numArray[j] = temp;               
+             }
+         }
+     }
+     return numArray;
+ }
+
 function runFib(){
     let n = document.getElementById("fibN").value;
     //console.log(fib(n));
     document.getElementById("fibOut").innerHTML = "= " + fib(n);
+}
+
+ function runBubbleSort(){
+    let n = document.getElementById("bubbleInput").value;
+    numArray = "["+n+"]";
+    console.log(bubbleSort(numArray));
+    //document.getElementById("fibOut").innerHTML = "= " + fib(n);
 }
