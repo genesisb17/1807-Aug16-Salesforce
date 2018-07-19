@@ -61,6 +61,7 @@ function loadOptions(){ //what can we see from SWAPI.co
 
             $('#sw').on('click', function(){
                 var el = $('#things option:selected').val();
+                console.log("IN GET INFO" + el);
                 getInfo(el);
             }
             );
@@ -82,9 +83,9 @@ function getInfo(el){
             $('#info1').html(`There are ${entity.count} ${el}. Enter the ID you'd like to view`);
             $('#cont').attr("hidden",false);
             $('#id').attr("max", entity.count);
+            $('#sw2').off('click');
             $('#sw2').on('click', function(){
-                
-                getSW(el);}
+                getSW(url);}
             );
         }
     }
@@ -92,7 +93,6 @@ function getInfo(el){
     xhr.send();
 }
 
-function getSW(el){
-    let url = `https://swapi.co/api/${el}/${$('#id').val()}`;
-    console.log(url);
+function getSW(url){ 
+    console.log(`${url}/${$('#id').val()}`);
 }
