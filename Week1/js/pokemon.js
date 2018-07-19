@@ -19,6 +19,7 @@ function getPokemon(){
             //CODE TO PROCESS RESPONSE
             resp = xhr.responseText;
             pokemon = JSON.parse(resp);
+            setPokeValues(pokemon);
         }
     }
     //STEP 3 - open request
@@ -34,3 +35,12 @@ function getPokemon(){
 
 
 }
+
+function setPokeValues(poke) {
+    //manipulate DOM with response
+    $('#pokemonName').html(pokemon.name);
+    var pic = $('#pokemonImg');
+    pic.attr("src", pokemon.sprites.front_shiny);
+    pic.attr("alt", pokemon.name);
+}
+
