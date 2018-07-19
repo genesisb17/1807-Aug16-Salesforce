@@ -1,0 +1,21 @@
+h1, h2 {
+
+}
+
+:not(div) {
+
+}
+ol li {
+    /* style every li child of ol */
+    font-style:italic;
+}
+
+h4 + h3 {
+    /* Select h3 elements immediatley after h4 elements */
+    align-content:flex-end;
+}
+
+.li:first_child {
+    /* Select every <li> (list item) that is the first child of its parent */
+    border:4px dashed chartreuse;
+}

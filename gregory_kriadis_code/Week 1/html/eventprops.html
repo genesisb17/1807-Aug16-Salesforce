@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA Compatible" content="IE-edge">
+    <title>Event Props</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        div{
+            border: 5px solid black;
+            justify-content: center;
+            align-content: center;
+        }
+        #outer{
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 800px;
+            height: 800px;
+        }
+        #middle{
+            background-color: rgba(183, 218, 57, 0.5);
+            width: 400px;
+            height: 400px;
+        }
+        #inner{
+            background-color: rgba(182, 22, 40, 0.5);
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div id="outer">
+        OUTER
+        <div id="middle">
+            MIDDLE
+            <div id="inner">
+                INNER
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.getElementById("inner").addEventListener("click", function(){
+        alert("Inner!");
+    }, true);
+    document.getElementById("middle").addEventListener("click", function(){
+        alert("Middle!!");
+    }, false);
+    document.getElementById("outer").addEventListener("click", function(){
+        alert("Outer!!");
+    }, true);
+    </script>
+</body>

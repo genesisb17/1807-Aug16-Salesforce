@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA Compatible" content="IE-edge">
+    <title>Intro to HTML</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/stripes.css">
+    <style>
+        /* Select all elements of a particular type.
+        Simply write element tag name. */
+        li {
+            color:coral; 
+        }
+        
+        /* Select elements by class, use . */
+        .first {
+            border: 5px ridge brown;
+        }
+
+        /* Should only have one element per ID, select with # */
+        #five {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<!-- THIS IS A COMMENT.it cannot be seen in the rendered view, but anything
+    else in the body tag is-->
+
+Hello! This is my first HTML page.
+<p id="hello">Hello! This is my first HTML page.</p>
+
+<!-- h1-h6 are header elements-->
+<h1 style="color:blue; border: 1px solid orange; background-color:#9765a1">Hello!</h1>
+<h2>Hello!</h2>
+<h3>Hello!</h3>
+<h4>Hello!</h4>
+<h5>Hello!</h5>
+<h6>Hello!</h6>
+
+<!--Unordered list Example-->
+<hr> Grocery List:
+<ul>
+    <li>eggs</li>
+    <ul>
+        <li>organic</li>
+    </ul>
+    <li>milk</li>
+    <li>steak</li>
+</ul>
+<ol>
+    <!-- This is an ordered list-->
+    <li>first</li>
+    <li>second</li>
+</ol>
+
+<hr>
+<iframe src="https://www.bing.com" width="500" height="400"></iframe>
+
+<br>
+<hr>
+<br>
+<div class="wrapper">
+    <div class="first" id="one">ONE</div>
+    <div class="first" id="two">TWO</div>
+    <div class="second" id="three">THREE</div>
+    <div class="third" id="four">FOUR</div>
+    <div class="second" id="five">FIVE</div>
+</div>
+
+<body>
+
+</body>
+
+</html>
