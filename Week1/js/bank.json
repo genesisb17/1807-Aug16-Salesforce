@@ -23,6 +23,22 @@
       "password": "test",
       "balance": 0,
       "id": 3
+    },
+    {
+      "firstName": "",
+      "lastName": "",
+      "username": "",
+      "password": "",
+      "balance": 0,
+      "id": 4
+    },
+    {
+      "firstName": "x",
+      "lastName": "x",
+      "username": "x",
+      "password": "x",
+      "balance": 0,
+      "id": 5
     }
   ]
 }
