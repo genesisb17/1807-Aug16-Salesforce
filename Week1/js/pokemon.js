@@ -1,5 +1,6 @@
 window.onload = function(){
     $("#getPokemon").on('click', getPokemon);
+    loadOptions();
 };
 
 function getPokemon(){
@@ -17,8 +18,9 @@ function getPokemon(){
         console.log(Date() + " " + xhr.readyState);
         if(xhr.readyState == 4 && xhr.status==200){
             //CODE TO PROCESS RESPONSE
-            resp = xhr.responseText;
-            pokemon = JSON.parse(resp);
+            let resp = xhr.responseText; //JSON STRING REPRESENTING POKEMON
+            let pokemon = JSON.parse(resp); //PARSE RESPONSE INTO JS OBJECT
+            setPokeValues(pokemon); //MANIPULATE DOM WITH POKE PROPERTIES
         }
     }
     //STEP 3 - open request
@@ -33,4 +35,64 @@ function getPokemon(){
     console.log("CODE AFTER REQUEST WAS SENT");
 
 
+}
+
+function setPokeValues(poke) {
+    //manipulate DOM with response
+    $('#pokemonName').html(pokemon.name);
+    var pic = $('#pokemonImg');
+    pic.attr("src", pokemon.sprites.front_shiny);
+    pic.attr("alt", pokemon.name);
+}
+
+
+function loadOptions(){ //what can we see from SWAPI.co
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState==4 && xhr.status==200){
+            let op = JSON.parse(xhr.responseText);
+            for(let i in op){ 
+                let elem = document.createElement("option");
+                elem.innerHTML = i;
+                elem.value = i;
+                elem.text = i;
+                $("#things").append(elem);
+            }
+
+            $('#sw').on('click', function(){
+                var el = $('#things option:selected').val();
+                getInfo(el);
+            }
+            );
+        }
+    }
+    xhr.open("GET", "https://swapi.co/api/", true);
+    xhr.send();
+}
+
+function getInfo(el){
+    
+    console.log(el);
+   // var selected = document.getElementById("genres").options[e.selectedIndex].value;
+    var url=`https://swapi.co/api/${el}`;
+    let xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState==4 && xhr.status==200){
+            let entity = JSON.parse(xhr.responseText);
+            $('#info1').html(`There are ${entity.count} ${el}. Enter the ID you'd like to view`);
+            $('#cont').attr("hidden",false);
+            $('#id').attr("max", entity.count);
+            $('#sw2').on('click', function(){
+                
+                getSW(el);}
+            );
+        }
+    }
+    xhr.open("GET", url, true);
+    xhr.send();
+}
+
+function getSW(el){
+    let url = `https://swapi.co/api/${el}/${$('#id').val()}`;
+    console.log(url);
 }
