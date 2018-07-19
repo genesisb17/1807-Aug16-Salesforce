@@ -15,6 +15,7 @@ function fib(n) {
   const phi = (1 + rt5) / 2;
   return Math.round((phi ** n) / rt5);
 }
+const fibHTML = (s) => fib(Number(s));
 
 //2. Bubble Sort
 //Define function: bubbleSort(numArray)
@@ -27,6 +28,7 @@ function bubbleSort(numArray) {
         numArray.splice(j, 2, numArray[j+1], numArray[j]);
   return numArray;
 }
+const bubbleSortHTML = (s) => bubbleSort(s.split(' ').map(Number));
 
 //3. Reverse String
 //Define function: reverseStr(someStr)
@@ -41,6 +43,7 @@ function reverseStr(someStr) {
 function factorial(someNum) {
   return someNum <= 1 ? 1 : someNum * factorial(someNum - 1);
 }
+const factorialHTML = (s) => factorial(Number(s));
 
 //5. Substring
 //Define function substring(someStr, length, offset)
@@ -62,6 +65,7 @@ function substring(someStr, length, offset) {
 function isEven(someNum) {
   return !(someNum & 1);
 }
+const isEvenHTML = (s) => isEven(Number(s));
 
 //7. Palindrome
 //Define function isPalindrome(someStr)
@@ -92,7 +96,8 @@ function isPalindrome(someStr) {
 // ***
 //  *
 function printShape(shape, height, character) {
-  const putLine = (len, char, pad) => console.log(' '.repeat(pad || 0) + char.repeat(len));
+  let outStr = '';
+  const putLine = (len, char, pad) => outStr += ' '.repeat(pad || 0) + char.repeat(len) + '\n';
   switch (shape) {
     case "Square":
       for (let i = 0; i < height; ++i)
@@ -109,6 +114,12 @@ function printShape(shape, height, character) {
       }
       break;
   }
+  return outStr;
+}
+
+function printShapeHTML(s) {
+  let args = s.split(' ');
+  return `<pre>${printShape(args[0], args[1], args[2])}</pre>`;
 }
 
 //9. Object literal
@@ -162,10 +173,9 @@ function getPerson(name, age) {
   };
 }
 
-/*
-14. Display the current time on the top right of your HTML page, 
-updating every second
-*/
+//14. Display the current time on the top right of your HTML page, 
+//updating every second
+// SEE HTML
 
 //15.  Descending order
 //Your task is to make a function that can take any non-negative 
