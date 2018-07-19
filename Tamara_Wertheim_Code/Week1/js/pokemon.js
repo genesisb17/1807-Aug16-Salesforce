@@ -21,7 +21,6 @@ function ajaxRequest(id){
         console.log(Date() + " " + xhr.readyState);
         if(xhr.readyState == 4 && xhr.status==200){
             resp = xhr.responseText;
-            nature = JSON.parse(resp);
             pokemon = JSON.parse(resp);
             setPokeValues(pokemon, nature);
         }
