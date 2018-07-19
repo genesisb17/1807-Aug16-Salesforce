@@ -31,7 +31,7 @@ function bubbleSort(numArray) {
                 let bigger = numArray[i-1];
                 numArray[i-1] = numArray[i];
                 numArray[i] = bigger;
-                swapVal = i
+                swapVal = i;
             }
         }
         bubbles = swapVal;
@@ -93,9 +93,9 @@ function isPalindrome(someStr) {
 }
 
 function printShape(shape, height, character) {
+    let string = '';
     switch (shape) {
         case "square":
-            let string = '';
             for (let i=0; i < height; i++) {
                 for (let c=0; c < height; c++) {
                     string = string.concat(character);
@@ -105,33 +105,32 @@ function printShape(shape, height, character) {
             }
             break;
         case "triangle":
-            let tString = '';
             let count = 0;
             for (let i=1; i <= height; i++) {
                 for (let c=0; c < i; c++) {
-                    tString = tString.concat(character);
+                    string = string.concat(character);
                 }
-                console.log(`${tString}\n`);
-                tString = '';
+                console.log(`${string}\n`);
+                string = '';
             }
             break;
         case "diamond":
-            let dString ='';
-            let dCount = 1;
-            for (dCount; dCount <= height; dCount += 2) {
-                for (let i=0; i < dCount; i++) {
-                    dString = dString.concat(character);
+            let string ='';
+            let count = 1;
+            for (count; count <= height; count += 2) {
+                for (let i=0; i < count; i++) {
+                    string = string.concat(character);
                 }
-                console.log(`${dString}\n`);
-                dString = '';
+                console.log(`${string}\n`);
+                string = '';
             }
-            dCount -= 2
-            for (dCount; dCount >= 1; dCount -= 2) {
-                for (let i=1; i <= dCount-2; i++) {
-                    dString = dString.concat(character);
+            count -= 2
+            for (count; count >= 1; count -= 2) {
+                for (let i=1; i <= count-2; i++) {
+                    string = string.concat(character);
                 }
-                console.log(`${dString}\n`);
-                dString = '';
+                console.log(`${string}\n`);
+                string = '';
             }
             break;
         default:
