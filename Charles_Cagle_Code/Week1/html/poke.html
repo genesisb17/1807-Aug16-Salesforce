@@ -1,0 +1,23 @@
+<input type="text" id="in" onChange="
+  const xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function(){
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      const pobj = JSON.parse(xhr.responseText);
+      document.getElementById('number').innerText = pobj.id;
+      document.getElementById('name').innerText = pobj.name;
+      const sprites = document.getElementById('sprites');
+      sprites.innerHTML = '';
+      for (const prop in pobj.sprites) {
+        if (pobj.sprites[prop] != null)
+          sprites.appendChild(document.createElement('img')).src = pobj.sprites[prop];
+      }
+    }
+  }
+  xhr.open('GET', `https://pokeapi.co/api/v2/pokemon/${document.getElementById('in').value}/`, true);
+  xhr.send();
+"></input>
+<br>
+<span id="number"></span>
+<span id="name">NULL</span>
+<br>
+<div id="sprites"></div>
