@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="../css/stripes.css">
+    <title>Intro to HTML</title>
+    <style>
+
+        /* Select all elements of a particular type: Simply write element tag name.*/
+
+        li {
+            color:maroon;
+        }
+
+        /* Select all elements by class: use a period. */
+        .first {
+            border:steelblue 15px ridge;
+        }
+
+        /* Select by ID, select with # */
+        #five {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- THIS IS A COMMENT.  It cannot be seen in the rendered view,
+        but anything else in the body tag can be -->
+        
+        <!-- Plain text and paragraph tags naturally have the same styling-->
+        Hello! This is my first HTML page.
+        <p id="hello">Hello! This is my first HTML page. </p>
+
+        <!-- h1-h6 tags are header elements-->
+        <h1 style="color: blue; border: 2px solid orange; background-color:slategrey">Hello! </h1>
+        <h2>Hello!</h2>
+        <h3>Hello!</h3>
+        <h4>Hello!</h4>
+        <h5>Hello!</h5>
+        <h6>Hello!</h6>
+
+        <hr>
+        Grocery List:
+        <ul>
+            <li>eggs
+                <ul>
+                    <li>organic</li>
+                </ul>
+            </li>
+            <li>milk</li>
+            <li>steak</li>
+        </ul>
+        <hr>
+        <ol class="second">
+            <li>first</li>
+            <li>second</li>
+        </ol>
+
+        <hr>
+        <iframe src="https://www.revature.com" width="500" height="400"></iframe>
+        
+        <br>
+        <hr>
+        <br>
+        <div class="wrapper">
+            <div class="first" id="one">ONE</div>
+            <div class="first" id="two">TWO</div>
+            <div class="second" id="three">THREE</div>
+            <div class="third" id="four">FOUR</div>
+            <div class="second" id="five">FIVE</div>
+        </div>
+
+        <a href="https://www.w3schools.com">This is a link</a>
+
+        <br>
+        <hr>
+        <br>
+
+        <img src="w3schools.jpg" alt="W3Schools.com" width="104" height="300">
+            
+
+</body>
+
+</html>
