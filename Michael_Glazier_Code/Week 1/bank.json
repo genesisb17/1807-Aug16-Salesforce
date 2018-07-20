@@ -1,0 +1,108 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Walace",
+      "lastName": "McKinley",
+      "userName": "wmckinley",
+      "pwd": "12345",
+      "balance": "100000000000001.01"
+    },
+    {
+      "id": 2,
+      "firstName": "Nick",
+      "lastName": "Swift",
+      "userName": "nswift",
+      "pwd": "helloWorld",
+      "balance": "8.15"
+    },
+    {
+      "id": 3,
+      "firstName": "Gina",
+      "lastName": "Tempest",
+      "userName": "Gtempest",
+      "pwd": "storm123",
+      "balance": "2015.12"
+    },
+    {
+      "id": 4,
+      "firstName": "Lisa",
+      "lastName": "Smith",
+      "userName": "lisasmith",
+      "pwd": "1q2w3e4r5t",
+      "balance": "579.17"
+    },
+    {
+      "id": 5,
+      "firstName": "Phillip",
+      "lastName": "Fry",
+      "userName": "pjfry",
+      "pwd": "1077",
+      "balance": "0.93"
+    },
+    {
+      "id": 6,
+      "firstName": "Albert",
+      "lastName": "Einstien",
+      "userName": "emc2",
+      "pwd": "generalrelativityrules!",
+      "balance": "299792458.00"
+    },
+    {
+      "id": 7,
+      "firstName": "Samantha",
+      "lastName": "Gleeson",
+      "userName": "sgleeson",
+      "pwd": "43i52i9fd",
+      "balance": "921.18"
+    },
+    {
+      "id": 8,
+      "firstName": "Cicero",
+      "lastName": "Romanus",
+      "userName": "cromanus",
+      "pwd": "weknow",
+      "balance": "478.29"
+    },
+    {
+      "id": 9,
+      "firstName": "Harley",
+      "lastName": "Davidson",
+      "userName": "hdavidson",
+      "pwd": "borntobewild",
+      "balance": "9933499323.92"
+    },
+    {
+      "id": 10,
+      "firstName": "Obi",
+      "lastName": "Wan",
+      "userName": "benKenobi",
+      "pwd": "hellothere",
+      "balance": "9435.01"
+    },
+    {
+      "id": 66,
+      "firstName": "Sheeve",
+      "lastName": "Palpatine",
+      "userName": "theSenate",
+      "pwd": "executeOrder66",
+      "balance": "66066066.66"
+    },
+    {
+      "id": 11,
+      "firstName": "Elizabeth",
+      "lastName": "Sheen",
+      "userName": "esheen",
+      "pwd": "hockeyLover1",
+      "balance": "8712.74"
+    },
+    {
+      "firstName": "Jessica",
+      "lastName": "Manely",
+      "userName": "jmanely",
+      "pwd": "password",
+      "balance": 0,
+      "id": 67
+    }
+  ]
+}

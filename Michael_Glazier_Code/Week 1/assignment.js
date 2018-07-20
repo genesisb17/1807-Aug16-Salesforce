@@ -225,6 +225,10 @@ window.onload = function(){
         event.stopPropagation();
         runIsPalindrome();
     });
+    $("#runPrintShape").click(function(event){
+        event.stopPropagation();
+        runPrintShape();
+    })
 }
 
 window.onkeypress = function(){
@@ -333,4 +337,13 @@ function runIsPalindrome(){
     else{
         document.getElementById("sevenOutput").innerText = "It's not a palindrome."   
     }
+}
+
+function runPrintShape(){
+    let shape = $(`#shape`).val();
+    let height = $('#rows').val();
+    let ch = $('#character').val();
+
+    let results = printShape(shape, height, ch);
+    document.getElementById("eightOutput").innerText = results;
 }

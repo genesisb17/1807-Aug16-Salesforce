@@ -201,22 +201,11 @@
             <div id="eight" class="problemBox" style="background-color:rgb(243, 140, 234)">
                 <h1>Print Shape</h1>
                 <div class="row">
-                    <div class="col-sm-4" style="padding-left: 0%">
-                        <div class="list-group">
-                            <button type="button" class="list-group-item list-group-item-action active">
-                                Shapes
-                            </button>
-                            <button type="button" id="square" class="list-group-item list-group-item-action">Square</button>
-                            <button type="button" id="triangle" class="list-group-item list-group-item-action">Triangle</button>
-                            <button type="button" id="diamond" class="list-group-item list-group-item-action">Diamond</button>
-                        </div>
-                    </div>
-                    <div class="col-sm-8" style="padding-left: 0%">
-                        <!--Number Input-->
+                    <div class="col-sm-12" style="padding-left: 0%">
+                        <!--Input-->
                         <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="shapeText" style="width:10em"></span>
-                            </div>
+                            <input type="text" id="shape" class="form-control" placeholder="Square, Triangle, or Diamond">
+
                             <input type="number" id="rows" class="form-control" placeholder="Number of rows" min="0">
                             <input type="text" id="character" class="form-control" placeholder="character to use" maxlength="1">
                         </div>
