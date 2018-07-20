@@ -168,6 +168,7 @@ function printShape(shape, height, character) {
         default: return null;
     }
     console.log(str);
+    return str;
 }
 
 /**Problem 9 */
@@ -190,4 +191,146 @@ function deleteElement(someArr){
     console.log(someArr.length);
     someArr[2] = undefined;
     console.log(someArr.length);
+}
+
+/**End of Problems, beginning of helper functions */
+var globalBSArray = new Array();
+window.onload = function(){
+    $("#runFib").click( function(event){
+        event.stopPropagation();
+        runFib();
+    });
+    $("#runBubbleSort").on("click", function(event){
+        event.stopPropagation();
+        runBubbleSort();
+    });
+    $("#bsAdd").on("click", updateArray);
+    $('#runReverseString').on("click", function(event){
+        event.stopPropagation();
+        runReverseString();
+    })
+    $('#runFactorial').on("click", function(event){
+        event.stopPropagation();
+        runFactorial();
+    })
+    $("#runSubstring").click( function(event){
+        event.stopPropagation();
+        runSubstring();
+    });
+    $("#runIsEven").click( function(event){
+        event.stopPropagation();
+        runIsEven();
+    });
+    $("#runIsPalindrome").click( function(event){
+        event.stopPropagation();
+        runIsPalindrome();
+    });
+}
+
+window.onkeypress = function(){
+    /**Adds key press functionality */
+    /**Actions to be taken on 'Enter' key press */
+    if(this.event.keyCode == 13){
+        if(document.getElementById("runFib") == document.activeElement || document.getElementById("fibN") == document.activeElement){
+            runFib();
+        }
+        if(document.getElementById("bsArrayNum") == document.activeElement){
+            updateArray();
+        }
+        if(document.getElementById("factorialNumber") == document.activeElement){
+            runFactorial();
+        }
+        if(document.getElementById("RSText") == document.activeElement){
+            runReverseString();
+        }
+        if(document.getElementById("numIsEven") == document.activeElement){
+            runIsEven();
+        }
+        if(document.getElementById("palindromeText") == document.activeElement){
+            runIsPalindrome();
+        }
+    }
+}
+
+function runFib(){
+    let n = $('#fibN').val();
+    let result = fib(n);
+    let outputLabel = document.getElementById("oneOutput");
+    outputLabel.innerText=result;
+}
+
+function runBubbleSort(){
+    let output = bubbleSort(globalBSArray);
+    document.getElementById("twoOutput").innerText = output;
+    globalBSArray = [];
+    document.getElementById("bsArrayDisplay").innerText = "";
+}
+
+function updateArray(){
+    let n = $('#bsArrayNum').val();
+    n = Number(n);
+    globalBSArray.push(n);
+
+    document.getElementById("bsArrayDisplay").innerText = globalBSArray.toString();
+
+    document.getElementById("bsArrayNum").value = 0;
+}
+
+function runReverseString(){
+    let str = document.getElementById("RSText").value;
+
+    str = reverseString(str);
+    document.getElementById("RSText").value = "";
+    document.getElementById("threeOutput").innerText=str;
+}
+
+function runFactorial(){
+    let n = document.getElementById("factorialNumber").value;
+
+    n = factorial(n);
+
+    document.getElementById("fourOutput").innerText = n;
+}
+
+function runSubstring(){
+    let str = document.getElementById("stringF").value;
+    let strLength = document.getElementById("strLength").value;
+    let strOffset = document.getElementById("strOffset").value;
+    
+    strLength = parseInt(strLength);
+    strOffset = parseInt(strOffset);
+    str = subString(str, strLength, strOffset);
+
+    document.getElementById("fiveOutput").innerText = str;
+}
+
+function runIsEven(){
+    let num = document.getElementById("numIsEven").value;
+    num = Number(num);
+    
+    let results = isEven(num);
+    if(results == NaN){
+        document.getElementById("sixOutput").innerText = "Nice try, but that's not even a number";
+    }
+    else if(results){
+        document.getElementById("sixOutput").innerText = `${num} is even!`;
+    }
+    else if(results == undefined){
+        document.getElementById("sixOutput").innerText = "Decimal values do not possess the property of even or odd.";
+    }
+    else{
+        document.getElementById("sixOutput").innerText = `${num} is odd.`;
+    }
+}
+
+function runIsPalindrome(){
+    let str = document.getElementById("palindromeText").value;
+
+    let results = isPalindrome(str);
+    if(results==true){
+        document.getElementById("sevenOutput").innerText = "It's a palindrome!"
+    }
+    else{
+        document.getElementById("sevenOutput").innerText = "It's not a palindrome."   
+    }
 }

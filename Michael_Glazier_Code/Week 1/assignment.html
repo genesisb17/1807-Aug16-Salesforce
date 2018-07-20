@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Homework 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+    <style>
+        #wrapper {
+            display: flex;
+            justify-content: center;
+        }
+
+        #bsArrayDisplay {
+            font-weight: bold;
+            font-size: large;
+            text-align: left;
+            float: left;
+            padding-top: 0%
+        }
+
+        .fontHeight {
+            height: 1ex;
+        }
+    </style>
+    <link rel="stylesheet" href="assignment.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="text-center">
+            <!--Start of problem 1-->
+            <div id="one" class="problemBox" style="background-color: lightblue">
+                <h1>Fibonacci</h1>
+                <div class="row">
+                    <!--Number input-->
+                    <input type="number" class="form-control col-sm" min="0" placeholder="Fibonacci number" step="1" value="0" id="fibN">
+                </div>
+                <div class="row">
+                    <!--Button-->
+                    <button type="button" id="runFib" class="btn btn-primary btn-lg col-sm">Run Fibonacci</button>
+                </div>
+                <div class="row">
+                    <div class="col-lg fontHeight">
+                        <label id="oneOutput" class="output"> </label>
+                    </div>
+                </div>
+            </div>
+            <!--End of problem 1-->
+            <!--Beggining of problem 2-->
+            <div id="two" class="problemBox" style="background-color: rgb(162, 197, 243)">
+                <h1>Bubble Sort</h1>
+                <div class="row">
+                    <div class="col-sm-4" style="padding-left: 0%">
+                        <!--Number Input-->
+                        <div class="input-group mb-3">
+                            <input type="number" id="bsArrayNum" class="form-control" placeholder="Number to add">
+                            <div class="input-group-append">
+                                <button class="btn btn-secondary" type="button" id="bsAdd">Add</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <!--Array Display-->
+                        <label id="bsArrayDisplay"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <!--Run button-->
+                    <button type="button" id="runBubbleSort" class="btn btn-lg btn-primary col-sm">Run Bubble Sort</button>
+                </div>
+                <div class="row">
+                    <div class="col-lg fontHeight">
+                        <label id="twoOutput" class="output"></label>
+                    </div>
+                </div>
+            </div>
+            <!--End of problem 2-->
+            <!--Beginning of problem 3-->
+            <div id=three class="problemBox" style="background-color: rgb(162, 177, 243)">
+                <h1>Reverse String</h1>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!--Text Input-->
+                        <input type="text" id="RSText" class="form-control" placeholder="Enter text here">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!--Button-->
+                        <button type="button" id="runReverseString" class="btn btn-primary btn-lg">Run Reverse String</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 fontHeight">
+                        <label id="threeOutput" class="output"></label>
+                    </div>
+                </div>
+            </div>
+            <!--End of problem 3-->
+            <!--Beginning of problem 4-->
+            <div id="four" class="problemBox" style="background-color: rgb(162, 160, 243)">
+                <h1>Factorial</h1>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!--Number Input-->
+                        <input type="number" id="factorialNumber" class="form-control" placeholder="Enter number here">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!--Button-->
+                        <button type="button" id="runFactorial" class="btn btn-primary btn-lg">Run Factorial</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 fontHeight">
+                        <label id="fourOutput" class="output"></label>
+                    </div>
+                </div>
+            </div>
+            <!--End of problem 4-->
+            <!--Beginning of problem 5-->
+            <div id="five" class="problemBox" style="background-color:rgb(162, 140, 243)">
+                <h1>Substring</h1>
+                <div class="row">
+                    <div class="col-sm-12" style="padding-left: 0%">
+                        <!--Number Input-->
+                        <div class="input-group mb-3">
+                            <input type="text" id="stringF" class="form-control" placeholder="Initial String">
+                            <input type="number" id="strLength" class="form-control" placeholder="Length of substring" min="0">
+                            <input type="number" id="strOffset" class="form-control" placeholder="Offset of substring" min="0">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!--Run button-->
+                    <button type="button" id="runSubstring" class="btn btn-lg btn-primary col-sm">Run Substring</button>
+                </div>
+                <div class="row">
+                    <div class="col-lg fontHeight">
+                        <label id="fiveOutput" class="output"></label>
+                    </div>
+                </div>
+            </div>
+            <!--End of problem 5-->
+            <!--Beginning of problem 6-->
+            <div id="six" class="problemBox" style="background-color:rgb(205, 140, 243)">
+                <h1>Is it Even?</h1>
+                <div class="row">
+                    <div class="col-sm" style="padding-left: 0%">
+                        <!--Number Input-->
+                        <input type="number" class="form-control" id="numIsEven" placeholder="A number to test for eveness">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm" style="padding-left:0%">
+                        <!--Run button-->
+                        <button type="button" id="runIsEven" class="btn btn-lg btn-primary col-sm">Run Is Even</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg fontHeight">
+                        <label id="sixOutput" class="output"></label>
+                    </div>
+                </div>
+            </div>
+            <!--End of Problem 6-->
+            <!--Beginning of Problem 7-->
+            <div id=seven class="problemBox" style="background-color: rgb(222, 140, 243)">
+                <h1>Is it a Palindrome</h1>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!--Text Input-->
+                        <input type="text" id="palindromeText" class="form-control" placeholder="Enter text here">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!--Button-->
+                        <button type="button" id="runIsPalindrome" class="btn btn-primary btn-lg">Run Is Palindrome</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 fontHeight">
+                        <label id="sevenOutput" class="output"></label>
+                    </div>
+                </div>
+            </div>
+            <!--End of Problem 7-->
+            <!--Beginning of Problem 8-->
+            <div id="eight" class="problemBox" style="background-color:rgb(243, 140, 234)">
+                <h1>Print Shape</h1>
+                <div class="row">
+                    <div class="col-sm-4" style="padding-left: 0%">
+                        <div class="list-group">
+                            <button type="button" class="list-group-item list-group-item-action active">
+                                Shapes
+                            </button>
+                            <button type="button" id="square" class="list-group-item list-group-item-action">Square</button>
+                            <button type="button" id="triangle" class="list-group-item list-group-item-action">Triangle</button>
+                            <button type="button" id="diamond" class="list-group-item list-group-item-action">Diamond</button>
+                        </div>
+                    </div>
+                    <div class="col-sm-8" style="padding-left: 0%">
+                        <!--Number Input-->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="shapeText" style="width:10em"></span>
+                            </div>
+                            <input type="number" id="rows" class="form-control" placeholder="Number of rows" min="0">
+                            <input type="text" id="character" class="form-control" placeholder="character to use" maxlength="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!--Run button-->
+                    <button type="button" id="runPrintShape" class="btn btn-lg btn-primary col-sm">Run Print Shape</button>
+                </div>
+                <div class="row">
+                    <div class="col-lg">
+                        <label id="eightOutput" class="output"></label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assignment.js" type="text/javascript"></script>
+</body>
+
+</html>
