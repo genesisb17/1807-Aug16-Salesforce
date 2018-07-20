@@ -1,0 +1,58 @@
+{
+  "users": [
+    {
+      "fn": "Frodo",
+      "ln": "Baggins",
+      "un": "ringbearer",
+      "pw": "carrymesam",
+      "balance": 500,
+      "id": 1
+    },
+    {
+      "fn": "Parappa",
+      "ln": "Rappa",
+      "un": "dropsthebeat",
+      "pw": "sunny",
+      "balance": 25,
+      "id": 2
+    },
+    {
+      "fn": "Michael",
+      "ln": "Meyers",
+      "un": "slasher",
+      "pw": "friday",
+      "balance": 5000,
+      "id": 3
+    },
+    {
+      "fn": "Gabe",
+      "ln": "Newell",
+      "un": "GabeN",
+      "pw": "halflife3",
+      "balance": 10000000,
+      "id": 4
+    },
+    {
+      "fn": "Obi-Wan",
+      "ln": "Kenobi",
+      "un": "hellothere",
+      "pw": "highground",
+      "balance": 10000,
+      "id": 5
+    }
+  ],
+  "objects": [
+    {
+      "id": 1,
+      "text": "why am i here"
+    },
+    {
+      "text": "more text",
+      "id": 2
+    },
+    {
+      "text": "extra text",
+      "id": 3
+    }
+  ]
+}
