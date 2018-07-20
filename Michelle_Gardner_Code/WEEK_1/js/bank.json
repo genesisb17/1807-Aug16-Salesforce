@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fn": "Michelle",
+      "ln": "Gardner",
+      "username": "M.Gardner",
+      "pw": "123",
+      "balance": 132.32
+    },
+    {
+      "id": 2,
+      "fn": "Mitch",
+      "ln": "Maler",
+      "username": "M.Maler",
+      "pw": "321",
+      "balance": 77737.32
+    },
+    {
+      "fn": "John",
+      "ln": "Watson",
+      "username": "J.Watson",
+      "pw": "55555",
+      "balance": 0,
+      "id": 3
+    },
+    {
+      "fn": "John",
+      "ln": "Watson",
+      "username": "J.Watson",
+      "pw": "55555",
+      "balance": 0,
+      "id": 4
+    },
+    {
+      "fn": "Test",
+      "ln": "Test",
+      "username": "test",
+      "pw": "test",
+      "balance": 0,
+      "id": 5
+    }
+  ]
+}

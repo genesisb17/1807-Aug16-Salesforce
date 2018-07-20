@@ -1,0 +1,74 @@
+<!-- Michelle Gardner-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <meta name="viewpoint" content="width=device-width, initial-scale = 1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+
+            <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+            <title>JS Problem Viewer</title>
+        <style>
+            /* for #14 */
+        .date {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+            font-size: 18px;
+        }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="jumbotron">
+            <h1>1. Fibonacci</h1>
+            <label for="fibN">Enter n:</label>
+            <input type="number" id="fibN"> <b><span id="fibOut"></span></b>
+            <button class="btn btn-submit" id="runFib">Fibnoacci!</button>
+
+            <h1>2. Bubble Sort</h1>
+            <label>Enter a series of numbers followed by spaces:</label><br>
+            <input type="text" id="sortInput">
+            <button class="btn btn-submit" id="sortArray">Sort!</button><br>
+            <label for="sortedArray" id="sortedArray">Sorted Array: </label> <b><span id = "newArray"></span></b>
+
+            <h1>3. Reverse String</h1>
+            <label for="wordIN">Enter a Word: </label>
+            <input type="text" id="wordIN"> <b><span id="wordOUT"></span></b>
+            <button class="btn btn-submit" id="reverseWordBTN">Reverse Word!</button>
+            
+            <h1>4. Factorial</h1>
+            <label for="inputNum">Enter a Number:</label>
+            <input type="number" id="inputNum"><b><span id="outputNum"></span></b>
+            <button class="btn btn-submit" id="findFactorial">Factorial!</button>
+
+
+            <h1>7. Palindrome</h1>
+            <label for="inputWord">Enter a Word: </label>
+            <input type="text" id="inputWord"> <b><span id="outputWord"></span></b>
+            <button class="btn btn-submit" id="palindromeBTN">Is it a Palindrome?</button>
+            <label for="palindromeBTN" id="isPalindrome"></label>
+
+            <div  class="date">
+            <h1> 14. Date </h1>
+            <button class="btn btn-submit" id = "getTimeBtn">Get Current Time</button>
+            <br>
+            <label for="currentTime">Current Time: </label> <b><span id = "time"></span></b>
+            </div>
+            
+        </div>
+
+
+
+        <script type="text/javascript" src="../Assignment_1/JS_Assignment1.js"></script>
+
+    </body>
+</html>
+
+
