@@ -1,6 +1,7 @@
 window.onload = (e) => {
     //alert('js works!');
     document.getElementById("runFib").addEventListener("click", runFib, true);
+    $('#runBubble').on("click", bubbleSort);
 }
 
 // 1. Fibonacci
@@ -21,7 +22,10 @@ Define function: bubbleSort(numArray)
 Use the bubble sort algorithm to sort the array.
 Return the sorted array. */
 
-function bubbleSort(numArray) {
+function bubbleSort() {
+    let bubbleIn = $('#bubbleList').val();
+    console.log(bubbleIn);
+    let numArray = bubbleIn.split(',');
     let bubbles = numArray.length;
     let swapVal = 1;
     while (swapVal != 0) {
@@ -36,7 +40,8 @@ function bubbleSort(numArray) {
         }
         bubbles = swapVal;
     }
-    console.log(numArray);
+    console.log(numArray.join(','));
+    $('#bubbleOut').text(numArray.join(','));
 }
 
 /* 3. Reverse String
@@ -105,7 +110,6 @@ function printShape(shape, height, character) {
             }
             break;
         case "triangle":
-            let count = 0;
             for (let i=1; i <= height; i++) {
                 for (let c=0; c < i; c++) {
                     string = string.concat(character);

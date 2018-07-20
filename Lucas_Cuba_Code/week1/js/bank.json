@@ -39,6 +39,28 @@
       "password": "password",
       "balance": 0,
       "id": 5
+    },
+    {
+      "firstName": "Lucas",
+      "lastName": "Cuba",
+      "username": "lcuba",
+      "password": "abc123",
+      "balance": 1337,
+      "id": 6
+    }
+  ],
+  "objects": [
+    {
+      "id": 1,
+      "text": "this is some text"
+    },
+    {
+      "text": "inserting text",
+      "id": 2
+    },
+    {
+      "text": "inserting text",
+      "id": 3
     }
   ]
 }
