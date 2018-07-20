@@ -2,45 +2,27 @@
 <html>
   <head>
     <title>JS Assignment Week 1</title>
-    <style type="text/css">
-      .clock {
-        display: flex;
-        justify-content: flex-end;
-      }
-    </style>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+          crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+            integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="js_assignment.css">
   </head>
   <body>
     <span class="clock" id="clock"></span>
+    <div class="container"><div id="row" class="row"></div></div>
     <script type="text/javascript" src="js_assignment.js"></script>
-    <script type="text/javascript">
-      const clock = document.getElementById('clock');
-      window.setInterval(function(){
-        clock.innerText = new Date().toLocaleTimeString();
-      }, 250);
-
-      function addIOPair(label, transform) {
-        const div = document.createElement('div');
-        div.appendChild(document.createElement('h3')).innerHTML = label;
-        const output = div.appendChild(document.createElement('span'));
-        div.appendChild(document.createElement('br'));
-        const input = div.appendChild(document.createElement('input'));
-        const update = div.appendChild(document.createElement('input'));
-        input.type = 'text';
-        update.type = 'button';
-        update.value = 'update';
-        update.addEventListener('click', () => { output.innerHTML = transform(input.value); });
-        input.addEventListener('change', () => update.click());
-        document.body.appendChild(div);
-      }
-
-      addIOPair('1. Fibonacci', fibHTML);
-      addIOPair('2. Bubble Sort', bubbleSortHTML);
-      addIOPair('3. Reverse String', reverseStr);
-      addIOPair('4. Factorial', factorialHTML);
-      addIOPair('6. EvenNumber', isEvenHTML);
-      addIOPair('7. Palindrome', isPalindrome);
-      addIOPair('8. Shapes', printShapeHTML);
-      addIOPair('15. Descending order', descendingDigits);
-    </script>
+    <script type="text/javascript" src="js_assignment_clock.js"></script>
+    <script type="text/javascript" src="js_assignment_dom.js"></script>
   </body>
 </html>

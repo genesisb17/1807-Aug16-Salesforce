@@ -28,7 +28,7 @@ function bubbleSort(numArray) {
         numArray.splice(j, 2, numArray[j+1], numArray[j]);
   return numArray;
 }
-const bubbleSortHTML = (s) => bubbleSort(s.split(' ').map(Number));
+const bubbleSortHTML = (s) => bubbleSort(s.split(' ').map(Number)).join(' ');
 
 //3. Reverse String
 //Define function: reverseStr(someStr)
@@ -65,7 +65,7 @@ function substring(someStr, length, offset) {
 function isEven(someNum) {
   return !(someNum & 1);
 }
-const isEvenHTML = (s) => isEven(Number(s));
+const isEvenHTML = (s) => String(isEven(Number(s)));
 
 //7. Palindrome
 //Define function isPalindrome(someStr)
@@ -73,6 +73,7 @@ const isEvenHTML = (s) => isEven(Number(s));
 function isPalindrome(someStr) {
   return someStr == reverseStr(someStr);
 }
+const isPalindromeHTML = (s) => String(isPalindrome(s));
 
 //8. Shapes
 //Define function: printShape(shape, height, character)
@@ -126,7 +127,9 @@ function printShapeHTML(s) {
 //Define function traverseObject(someObj)
 //Print every property and it's value.
 function traverseObject(someObj) {
-  Object.getOwnPropertyNames(someObj).forEach((prop) => console.log(`${prop} => ${JSON.stringify(someObj[prop])},`));
+  for (const prop in someObj) {
+    console.log(`${prop} => ${JSON.stringify(someObj[prop])},`);
+  }
 }
 
 //10. Delete Element
@@ -175,7 +178,7 @@ function getPerson(name, age) {
 
 //14. Display the current time on the top right of your HTML page, 
 //updating every second
-// SEE HTML
+// See js_assignment_clock.js
 
 //15.  Descending order
 //Your task is to make a function that can take any non-negative 
