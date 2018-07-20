@@ -131,12 +131,12 @@
           var space = height-1/2;
           for(i = 1; i < height; i++){
               if(i <= (height - 1)/2){
-                  return(" ".repeat(space) + character.repeat(n));
+                  console.log(" ".repeat(space) + character.repeat(n));
                   n += 2;
                   space--;
               }
               if(i >= (height - 1)/2){
-                return(" ".repeat(space) + character.repeat(n));
+                console.log(" ".repeat(space) + character.repeat(n));
                 n -= 2;
                 space++;
             }
@@ -148,7 +148,7 @@
 
     console.log(printShape("Square", 3, "%"));
     console.log(printShape("Triangle", 3, "$"));
-    console.log(printShape("Diamond", 5, "*"));
+    printShape("Diamond", 5, "*");
 
     /*
    9. Object literal

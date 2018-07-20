@@ -7,11 +7,50 @@ window.onload = function(e){
     document.getElementById("runSubstring").addEventListener("click", runSubstring, true);
     document.getElementById("runIsEven").addEventListener("click", runIsEven, true);
     document.getElementById("runIsPalindrome").addEventListener("click", runIsPalindrome, true);
-    //document.getElementById("runPrintShape").addEventListener("click", runPrintShape, true);
+    document.getElementById("runPrintShape").addEventListener("click", runPrintShape, true);
     document.getElementById("runDeleteElement").addEventListener("click", runDeleteElement, true);
     document.getElementById("runSpliceElement").addEventListener("click", runSpliceElement, true);
 }
 
+function runSelection(){
+    let n = document.getElementById("onSelect").value;
+    $('.jumbotron').attr("hidden", true);            
+
+    switch(n){
+        case "fibOption":
+            $('#fibSelection').attr("hidden", false);            
+            break;
+        case "bsOption":
+            $('#bsSelection').attr("hidden", false);            
+            break;
+        case "reverseOption":
+            $('#reverseSelection').attr("hidden", false);            
+            break;
+        case "factorialOption":
+            $('#factorialSelection').attr("hidden", false);            
+            break;
+        case "substringOption":
+            $('#substringSelection').attr("hidden", false);            
+            break;
+        case "evenOption":
+            $('#evenSelection').attr("hidden", false);            
+            break;
+        case "paliOption":
+            $('#paliSelection').attr("hidden", false);            
+            break;
+        case "shapeOption":
+            $('#shapeSelection').attr("hidden", false);            
+            break;  
+        case "deleteOption":
+            $('#deleteSelection').attr("hidden", false);            
+            break;
+        case "spliceOption":
+            $('#spliceSelection').attr("hidden", false);            
+            break;
+
+        default:
+    }
+}
 /*
 1. Fibonacci 
 Define function: fib(n)
@@ -164,41 +203,45 @@ Example for printShape("Diamond", 5, "*");
 
 function printShape(shape, height, character){
     shape = shape.toLowerCase();
-    count = 0;
-    height = 5;
-    character = "*";
+    let arr = [];
+
     switch(shape){
       case "triangle":
           for(i = 1; i <= height; i++){
-            return(character.repeat(i));
-        }
+              arr[i] = character.repeat(i);
+          }
           break;
       case "square":
-          for(i = 1; i <= height; i++) return(character.repeat(height));
+          for(i = 1; i <= height; i++){
+              arr[i] = character.repeat(height);
+          } 
           break;
       case "diamond":
-          var n = 1;
-          var space = height-1/2;
-          for(i = 1; i < height; i++){
-              if(i <= (height - 1)/2){
-                  return(" ".repeat(space) + character.repeat(n));
-                  n += 2;
-                  space--;
-              }
-              if(i >= (height - 1)/2){
-                return(" ".repeat(space) + character.repeat(n));
+        var n = 1;
+        var space = height-1/2;
+        for(i = 1; i < height; i++){
+            if(i <= (height - 1)/2){
+                arr[i] = (" ".repeat(space) + character.repeat(n));
+                n += 2;
+                space--;
+            }else{
+                arr[i] = (" ".repeat(space) + character.repeat(n));
                 n -= 2;
                 space++;
             }
           }
+          arr[arr.length] = " ".repeat(height - 1/2) + character;
           break;
       default:
     }
+    return arr;
 }
 
 function runPrintShape(){
     let shape = document.getElementById("shapeInput").value;
-    document.getElementById("shapeOut").innerHTML = "= To Be Added";
+    let height = document.getElementById("heightInput").value;
+    let character = document.getElementById("characterInput").value;
+    document.getElementById("shapeOut").innerHTML = printShape(shape, height, character).join("<br>");
 }
 
 
