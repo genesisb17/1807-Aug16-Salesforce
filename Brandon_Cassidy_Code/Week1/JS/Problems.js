@@ -8,6 +8,43 @@ window.onload = function(e)
         let itemTxt = $('#string').val();
         
     })
+    $('#bubbleSort').on('click',bubbleSortCaller);
+    $('#runReverse').on('click',reverseStrCaller);
+    $('#factorial').on('click',factorialCaller);
+    $('#getSubStr').on('click',subStringCaller);
+    $('#getEvenNum').on('click',isEvenCaller);
+    $('#getPal').on('click',isPalindromeCaller);
+    $('#getObject').on('click',traverseObjectCaller);
+}
+//Caller functions to avoid modifying functionality of methods
+//parse the user input into a form the methods can be passed.
+function bubbleSortCaller(){
+    //parse
+    let usrArray=$('#ARay').val().split(' ');//Assume user enters stuff correctly
+    //good joke
+    console.log('bubbl');
+    //process
+
+    $('#bubbleOut').html(bubblesort(usrArray).join(' '));
+    //display
+}
+function reverseStrCaller(){
+    reverseStr(string);
+}
+function factorialCaller(){
+    factorial(usrNumber);
+}
+function subStringCaller(){
+    subString(usrString,usrLen,usrOffset);
+}
+function isEvenCaller(){
+    isEven(usrNumber);
+}
+function isPalindromeCaller(){
+    isPalindrome(usrString);
+}
+function traverseObjectCaller(){
+    traverseObject(usrObject);
 }
 
 function fib (n){
@@ -34,14 +71,14 @@ function bubblesort(ARay){
     var modified;
     do {
       modified = false;
-      for(var i = 0; i < array.length; i++) {
-        if(array[i] && array[i + 1] && array[i] > array[i + 1]) {
-          switcher(array, i, i + 1);
+      for(var i = 0; i < ARay.length; i++) {
+        if(ARay[i] && ARay[i + 1] && ARay[i] > ARay[i + 1]) {
+          switcher(ARay, i, i + 1);
           modified = true;
         }//if
       }//for
     } while(modified); //do while
-    return array;
+    return ARay;
   }//bubblesort
 
 //3. reverse string order
@@ -132,14 +169,14 @@ function isPalindrome(someStr)
 //     }//outerFor
 // }
 //TODO
-switch (key) {
-    case value:
+// switch (key) {
+//     case value:
         
-        break;
+//         break;
 
-    default:
-        break;
-}
+//     default:
+//         break;
+// }
 
 //9. Object literal
 

@@ -1,0 +1,72 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "fn": "Bobby",
+      "ln": "Bobberson",
+      "username": "bb1234",
+      "password": "password123",
+      "balance": 21
+    },
+    {
+      "id": 1,
+      "fn": "Klemen",
+      "ln": "Christoffersen",
+      "username": "BeastWireMind",
+      "password": "iamverysmart",
+      "balance": 28
+    },
+    {
+      "id": 2,
+      "fn": "Ingibjörg",
+      "ln": "Nagi",
+      "username": "GnomeTreasure",
+      "password": "33halflife",
+      "balance": 15
+    },
+    {
+      "id": 3,
+      "fn": "Mikaela",
+      "ln": "Crawford",
+      "username": "EatsyouLuke",
+      "password": "hungryhippo1",
+      "balance": 118
+    },
+    {
+      "id": 4,
+      "fn": "Sargon",
+      "ln": "Császár",
+      "username": "sargonofakkad",
+      "password": "mynameisbetterthanyours",
+      "balance": 46
+    },
+    {
+      "fn": "test",
+      "username": "test",
+      "password": "test",
+      "balance": 0,
+      "id": 5
+    },
+    {
+      "fn": "",
+      "username": "test",
+      "password": "1",
+      "balance": 0,
+      "id": 6
+    },
+    {
+      "fn": "",
+      "username": "test",
+      "password": "1",
+      "balance": 0,
+      "id": 7
+    }
+  ],
+  "Objects" :[
+    {
+      "id": 1,
+      "text": "why am I typing actual text"
+    }
+  ]
+  
+}

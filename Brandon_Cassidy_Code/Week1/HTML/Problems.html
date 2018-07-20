@@ -9,7 +9,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-    
+    <style>
+        output{
+            color:darkgreen;
+            font-style: italic;
+        }
+    </style>
 </head>
 <body>
     <div class ="jumbotron">
@@ -17,11 +22,16 @@
         <label for="fibN">Enter N:</label>
         <input type="number" id="fibN">
         <button class ="btn btn-submit" id="runFib" >Fibonacci...</button>
-        <output type="text" id="fibout"  ></output>
+        <output type="text" id="fibout"></output>
     </div>
     <div class="jumbotron">
         <h1>BubbleSort</h1>
-
+        <input type="text" id="ARay">
+        <button class ="btn btn-submit" id="bubbleSort">Bubble Sort</button>
+        <div>
+        <output type="text" id="bubbleOut"></output>
+        </div>
+        <!--better do input correctly, funny joke :ok_hand:-->
     </div>
     
     <div class="jumbotron">
@@ -32,20 +42,40 @@
         
     </div>
     <div class="jumbotron">
-        <h1>BubbleSort</h1>
-
+        <h1>Factorial</h1>
+        <input type="text" id="facNum">
+        <button class ="btn btn-submit" id="factorial"> Factorial</button>
+        <output type="text" id="facNumOut"></output>
     </div>
     
-    <div class="jumbotron">
-        <h1>BubbleSort</h1>
 
+    <div class="jumbotron" id="palindr">
+            <h1>Substring</h1>
+            <input type="text" id="subString">
+            <button class ="btn btn-submit" id="getSubStr"> subString</button>
+            <output type="text" id="subStringOut"></output>
     </div>
     
-    <div class="jumbotron">
-        <h1>BubbleSort</h1>
 
+    <div class="jumbotron" id="palindr">
+            <h1>Evenness check</h1>
+            <input type="text" id="evenNum">
+            <button class ="btn btn-submit" id="getEvenNum"> Check evenness</button>
+            <output type="text" id="evenOrOdd"></output>
+    </div>
+    <div class="jumbotron" id="palindr">
+        <h1>Palindrome check</h1>
+        <input type="text" id="palStr">
+        <button class ="btn btn-submit" id="getPal"> Palindrome check</button>
+        <output type="text" id="palStrResult"></output>
+    </div>
+    <div class="jumbotron" id="objLit">
+        <h1>Object Literal</h1>
+        <input type="text" id="object">
+        <button class ="btn btn-submit" id="getObject"> Print Object</button>
+        <output type="text" id="objectLiteralOut"></output>
     </div>
     
-        <script type="text/javascript" src="JS/Problems.js"></script>
+        <script type="text/javascript" src="../JS/Problems.js"></script>
 </body>
 </html>
