@@ -11,7 +11,7 @@
 **/target/
 **/bin/
 **/META-INF/**
-
+**/node_modules/**
 #Eclipse
 **/.metadata
 **/.project
