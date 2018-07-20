@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        div {
+            border: 3px solid black;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+        #inner {
+            background-color: rgba(255, 255, 255, .5);
+            width: 200px;
+            height: 200px;
+        }
+
+        #middle {
+            background-color: rgba(223, 95, 95, 0.5);
+            width: 400px;
+            height: 400px;
+        }
+
+        #outer {
+            background-color: rgba(90, 4, 4, 0.781);
+            width: 800px;
+            height: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        OUTER
+        <div id="middle">
+            MIDDLE
+            <div id="inner">
+                INNER
+            </div>
+        </div>
+    </div>
+    <script>
+        //addeventlistener(eventType, function[what to do], useCapture)
+        //Bubbling vs Capturing
+        document.getElementById("inner").addEventListener("click", () => {
+            alert("INNER!!!!!!!!!!!");
+        }, true);
+
+        document.getElementById("middle").addEventListener("click", () => {
+            alert("MIDDLE!!!!!!!!!!!");
+            event.stopPropagation
+        }, true);
+
+        document.getElementById("outer").addEventListener("click", () => {
+            alert("OUTER!!!!!!!!!!!");
+        }, true);
+    </script>
+</body>
+</html>
