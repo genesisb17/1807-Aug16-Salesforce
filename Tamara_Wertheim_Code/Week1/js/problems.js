@@ -126,7 +126,6 @@ function runFactorial(){
     document.getElementById("factorialOut").innerHTML = "= " + factorial(someNum);
 }
 
-
  /* 5. Substring
 Define function substring(someStr, length, offset)
 Return the substring contained between offset and (offset + length) inclusively.
@@ -310,6 +309,23 @@ The following line should set a Person object to the variable john:
 14. Display the current time on the top right of your HTML page, 
 updating every second
 */
+
+function currentTime(){
+    let currentTime = new Date()
+    let hr = currentTime.getHours()
+    let min = currentTime.getMinutes()
+    let sec = currentTime.getSeconds()
+    if (min < 10){
+        min = "0" + min
+    }
+    if (sec < 10){
+        min = "0" + min
+    }
+    let time = `\xa0\xa0\xa0\xa0${hr}:${min}:${sec}`;
+
+    document.getElementById('runTime').innerHTML = time;
+}
+setInterval(currentTime, 1000);
 
 /*
 15.  Descending order
