@@ -98,7 +98,7 @@ const isPalindromeHTML = (s) => String(isPalindrome(s));
 //  *
 function printShape(shape, height, character) {
   let outStr = '';
-  const putLine = (len, char, pad) => outStr += ' '.repeat(pad || 0) + char.repeat(len) + '\n';
+  const putLine = (len, char, pad) => outStr += ' '.repeat((pad || 0) * character.length) + char.repeat(len) + '\n';
   switch (shape) {
     case "Square":
       for (let i = 0; i < height; ++i)
@@ -119,8 +119,10 @@ function printShape(shape, height, character) {
 }
 
 function printShapeHTML(s) {
-  let args = s.split(' ');
-  return `<pre>${printShape(args[0], args[1], args[2])}</pre>`;
+  const args = s.split(' ');
+  const pre = document.createElement('pre');
+  pre.appendChild(document.createTextNode(printShape(args[0], args[1], args[2])));
+  return pre;
 }
 
 //9. Object literal
