@@ -3,26 +3,90 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Week1 Homework</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <style>
+      #shapeOut {
+        list-style: none;
+      }
+
+      body {
+        background-image: url(abstract_bg_1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        background-position: center center;
+      }
+
+      .jumbotron {
+        background: hsla(0, 0%, 18%, 0.2);
+        color: #ccc;
+        box-shadow: 5px 5px 3px #000;
+        border-radius: 8px;
+      }
+
+      h1 {
+        color: #ccc;
+        text-align: center;
+      }
+    </style>
 </head>
 <body>
+    <h1>Week1 Javascript Homework</h1>
     <div class="jumbotron">
-        <h1>1. Fibonacci</h1>
+        <h2>1. Fibonacci</h2>
         <label for="">Enter n:</label>
         <input type="number" id="fibN"> <b><span id="fibOut"></span></b> <br />
         <button class='btn btn-submit' id='runFib'>Fibonaccify!</button>
     </div>
     <div class="jumbotron">
-            <h1>2. Bubble Sort</h1>
-            <label for="">Enter Comma Separated list of numbers to be sorted in ascending order:</label>
-            <input type="text" id="bubbleList"><b><span id="bubbleOut"></span></b> <br />
-            <button class='btn btn-submit' id='runBubble'>Sort!</button>
-        </div>
+        <h2>2. Bubble Sort</h2>
+        <label for="">Enter Comma Separated list of numbers to be sorted in ascending order:</label>
+        <input type="text" id="bubbleList"><b><span id="bubbleOut"></span></b> <br />
+        <button class='btn btn-submit' id='runBubble'>Sort!</button>
+    </div>
+    <div class="jumbotron">
+        <h2>3. Reverse String</h2>
+        <label for="">Enter a string and see it reversed:</label>
+        <input type="text" id="revString"><b><span id="revOut"></span></b> <br />
+        <button class='btn btn-submit' id='runReverse'>!Esrever</button>
+    </div>
+    <div class="jumbotron">
+        <h2>4. Factorial</h2>
+        <label for="">Enter a number to see its factorial value (don't go nuts with this one):</label>
+        <input type="text" id="factorialIn"><b><span id="factorialOut"></span></b> <br />
+        <button class='btn btn-submit' id='runFactorial'>Find That Factorial!</button>
+    </div>
+    <div class="jumbotron">
+        <h2>5. Even Number?</h2>
+        <label for="">Enter a number to see if it is odd or even (without a % operator!):</label>
+        <input type="text" id="evenIn"><b><span id="evenOut"></span></b> <br />
+        <button class='btn btn-submit' id='runEven'>Is it Even?</button>
+    </div>
+    <div class="jumbotron">
+        <h2>6. Palindrome?</h2>
+        <label for="">Enter a word or phrase to check whether or not it is a palindrome:</label>
+        <input type="text" id="palIn"><b><span id="palOut"></span></b> <br />
+        <button class='btn btn-submit' id='runPal'>Is it a Palindrome?</button>
+    </div>
+    <div class="jumbotron">
+        <h2>7. Make a Shape!</h2>
+        <label for="">Type in a comma seperated list (no spaces) of the shape you want, ("square", "triangle", "diamond") the height of the shape (an odd number), and the symbol you want to create this shape out of (any character as long as it is a single one). Unfortunately, the way I originally designed this to print to the console, the diamond shape doesn't look quite right because of how the console handles lines of characters that jut out further than the rest in the middle:</label>
+        <input type="text" id="shapeIn">
+        <b><ul id="shapeOut"></ul></b> <br />
+        <button class='btn btn-submit' id='runShape'>Generate Shape!</button>
+    </div>
+    <div class="jumbotron">
+        <h2>8. Person Object</h2>
+        <label for="">Fill out the following fields to create a new Person object with your parameters:</label>
+        <input type="text" id="personName" placeholder="Full Name">
+        <input type="text" id="yearsOld" placeholder="Age"><b><span id="personOut"></span></b> <br />
+        <button class='btn btn-submit' id='runPerson'>Make Person Object!</button>
+    </div>
     <script type="text/javascript" src="problems.js"></script>
 </body>
 </html>
