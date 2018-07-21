@@ -1,22 +1,20 @@
 function addIOPair(label, transform) {
-  const div = $('<div class="jumbotron col-sm-4"></div>');
-  const output = $('<span></span>');
-  const input = $('<input type="text">');
-  const update = $('<input type="button" value="update">');
-
-  div.append($(`<h3>${label}</h3>`));
-  div.append(output);
-  div.append($('<br>'));
-  div.append(input);
-  div.append(update);
+  const div = $(`
+    <div class="jumbotron col">
+      <h3 class="text-nowrap">${label}</h3>
+      <span class="output"></span><br>
+      <input type="text" class="input form-control"><br>
+      <input type="button" value="update" class="update btn btn-primary">
+    </div>
+  `);
   $('#row').append(div);
 
-  update.click(() => {
+  const output = div.find('.output');
+  const input = div.find('.input');
+  div.find('.update').click(() => {
     output.empty();
     output.append(transform(input.val()));
   });
-  input.change(() => update.click());
-
 }
 
 addIOPair('1. Fibonacci', fibHTML);
