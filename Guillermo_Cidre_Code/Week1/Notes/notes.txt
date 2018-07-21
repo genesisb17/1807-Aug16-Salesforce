@@ -75,3 +75,33 @@ class bla() {
         
     }
 }
+
+
+AJAX - Asynchronous JavaScript And XML
+- Series of steps revolving around the XMLHHPREQUEST object, ready states, steps to send request and receive responses
+Steps:
+
+1. Create xhr xml/http
+    -var xhr = new XMLHttpRequest();
+2. Callback function
+    -//define how to process responses
+3. open xhr
+    -xhr.open(url,method,async) // async is always true or throw error
+4. send request
+    -xhr.send(req.body)
+
+npm, node.js, json-server
+Staging
+
+overview so far
+<html>
+    #css
+    JS
+</ html>
+
+next week JDBC
+Java DataBase Connectivity
+
+reminder:
+RestonHousing@Revature.Com 
+Maintenace@Revature.com

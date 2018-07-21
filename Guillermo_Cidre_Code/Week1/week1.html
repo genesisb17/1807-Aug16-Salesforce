@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Week 1 Assignment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <!--Show each of the 8 solved problems using div with input texts and outputs-->
+    <div style="float: right" class="cTime">Time will be displayed here</div>
+    <div class="jumbotron">
+        <h1>Welcome to Week 1 problem showcase</h1>
+        <div class="alert alert-success">
+            <h2>1. Nonrecursive Fibonacci Function</h2>
+            <h3>Gives the nth fibonacci given in textbox. Invalid inputs outputs -1.</h3>
+            <h4>It will reach infinty at 1477, but it will still run</h4>
+            <input type="text" id="fib" placeholder="Enter a number">
+            <button class="btn btn-primary" id="fibGo">Calculate Fibonacci Number</button>
+            <br> <br>
+            <h5 id="fibAns">Fibonacci Number will be displayed here.</h5>
+        </div>
+
+        <br><hr><br>
+
+        <div class="alert alert-primary">
+            <h2>3. Reverse String</h2>
+            <h3>Outputs the reverses of the string in the textbox.</h3>
+            <input type="text" id="rev" placeholder="Enter a String">
+            <button class="btn btn-secondary" id="revGo">Reverse String</button>
+            <br> <br>
+            <h5 id="revAns">Reversed String will be put here</h5>
+        </div>
+
+        <br><hr><br>
+
+        <div class="alert alert-secondary">
+            <h2>4. Recursive Factorial</h2>
+            <h3>Outputs the factorial of the number in the textbox.</h3>
+            <input type="text" id="fac" placeholder="Enter a number">
+            <button class="btn btn-success" id="facGo">Compute Factorial!</button>
+            <br> <br>
+            <h5 id="facAns">Factorial result will be given here</h5>
+        </div>
+
+        <br><hr><br>
+
+        <div class="alert alert-danger">
+            <h2>6. Even Number</h2>
+            <h3>Say if given number is even.</h3>
+            <input type="text" id="eve" placeholder="Enter a number">
+            <button class="btn btn-dark" id="eveGo">Is it Even?</button>
+            <br> <br>
+            <h5 id="eveAns">Result will be given here</h5>
+        </div>
+
+        <br><hr><br>
+
+        <div class="alert alert-warning">
+            <h2>7. Palindrome</h2>
+            <h3>Say if given string is a Palindrome.</h3>
+            <input type="text" id="pal" placeholder="Enter a String">
+            <button class="btn btn-danger" id="palGo">Is it a Palindrome?</button>
+            <br> <br>
+            <h5 id="palAns">Result will be given here</h5>
+        </div>
+
+        <br><hr><br>
+
+        <div class="alert alert-info">
+            <h2>8. Shape</h2>
+            <h3>Outputs shapes specified by parameters below. It supports even numbers.</h3>
+            <h4>Output the result below and in the console.</h4>
+            <select id="shap1">
+                <option value="Square">Square</option>
+                <option value="Triangle">Triangle</option>
+                <option value="Diamond">Diamond</option>
+            </select>
+            <input type="text" id="shap2" placeholder="Enter a height">
+            <input type="text" id="shap3" placeholder="Enter a character">
+            <button class="btn btn-success" id="shapGo">Draw Shape</button>
+            <br> <br>
+            <h5 id="shapAns">Drawn shape will be written here</h5>
+        </div>
+
+        <br><hr><br>
+
+        <div class="alert alert-dark">
+            <h2>10. Delete element</h2>
+            <h3>Removes the third element of a given list.</h3>
+            <h3>String is parse using comma separation. No whitespace support!</h3>
+            <input type="text" id="del" placeholder='elem1,elem2,elem3,elem4,...'>
+            <button class="btn btn-light" id="delGo">Delete Element</button>
+            <br> <br>
+            <h4>The perceived list is given below</h4>
+            <h5 id="delAns1">answer here</h5>
+            <hr>
+            <h4>The list when the third element is removed</h4>
+            <h5 id="delAns2">answer here</h5>
+        </div>
+
+        <br><hr><br>
+
+        <div class="alert alert-light">
+            <h2>14. Current Time</h2>
+            <h3>Display current time on the top right corner of html and here </h3>
+            <br> <br>
+            <h5 class="cTime">Result will be given here</h5>
+        </div>
+    </div>
+
+
+    <script src="./week1.js"></script>
+</body>
+</html>

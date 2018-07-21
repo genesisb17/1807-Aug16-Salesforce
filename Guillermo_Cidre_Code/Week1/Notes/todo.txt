@@ -1,0 +1,10 @@
+1. JS assignment
+2. Study for QC, 1 on 1, and MC quiz
+3. HTML assignment (optional) - about me page, include
+info on your favorite topic from this week
+
+
+----
+Project 0 - Due during QC on Wed 8/1
+Created a client side application that does the following:
+- uses html5, CSS3, 

@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "id": 12345,
+      "fistName": "Major",
+      "lastName": "Sherfield",
+      "username": "mash",
+      "password": "F13ldc0rn",
+      "balance": 500000
+    },
+    {
+      "id": 54035,
+      "firstName": "Joey",
+      "lastName": "Wheeler",
+      "username": "survivalist",
+      "password": "Z0mb13",
+      "balance": 3000000
+    },
+    {
+      "id": 66066,
+      "firstName": "Apollo",
+      "lastName": "Jet",
+      "username": "rocketman",
+      "password": "@p0ll011",
+      "balance": 1532000
+    },
+    {
+      "id": 11358,
+      "firstName": "John",
+      "lastName": "Moo",
+      "username": "cyberfarmer24",
+      "password": "cyberC0ws",
+      "balance": 40000
+    },
+    {
+      "id": 83001,
+      "fistName": "Newton",
+      "lastName": "Bay",
+      "username": "quantumboy",
+      "password": "qu@rkB00st",
+      "balance": 1000020
+    },
+    {
+      "firstName": "American",
+      "lastName": "Joe",
+      "username": "america",
+      "password": "l@nd0fth3fr33",
+      "balance": 0,
+      "id": 83002
+    },
+    {
+      "fistName": "Pope",
+      "lastName": "Dope",
+      "username": "rayman",
+      "password": "L3g3nds",
+      "balance": 0,
+      "id": 83003
+    },
+    {
+      "fistName": "Alex",
+      "lastName": "Newman",
+      "username": "gladeleaf",
+      "password": "F0r3st",
+      "balance": 0,
+      "id": 83004
+    },
+    {
+      "id": 83005
+    },
+    {
+      "fistName": "Josh",
+      "lastName": "Deacon",
+      "username": "toohot55",
+      "password": "H0td@mn",
+      "balance": 653000,
+      "id": 83006
+    }
+  ],
+  "objects": {
+    "text": "oh baby baby baby!"
+  }
+}
