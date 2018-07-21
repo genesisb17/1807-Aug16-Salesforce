@@ -64,11 +64,17 @@ function login(){
                 let user = arr[0];
                 if(user.password == $('#password').val()){
                     // credentials are correct
-                    $("successMessage").attr()
+                    $("errorMessage").attr("hidden", true);
+                    $("#successMessage").atrr("hidden", false);
+                    $('#successMessage').html("Success! You're logged in");
 
                     console.log("Correct credentials");
                 }
                 else{
+
+                    $('#errorMessage').html("Incorrect Password. Try again");
+                    $('#errorMessage').attr("hidden", false);
+
                     console.log("Incorrect credentials")
                 }
             }

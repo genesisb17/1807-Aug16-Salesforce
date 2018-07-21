@@ -40,5 +40,22 @@
       "balance": 0,
       "id": 5
     }
+  ],
+
+  "authors":[
+    {
+    "author_id": 1,
+    "first_name": "Michelle",
+    "last_name":"Gardner",
+    "bio" : "Nice things about myself"
+    }
+  ],
+
+  "demo":[
+    {
+      "id":1,
+      "text": "this is text"
+    }
   ]
+
 }
