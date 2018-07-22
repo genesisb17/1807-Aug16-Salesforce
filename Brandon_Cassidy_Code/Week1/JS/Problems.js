@@ -29,7 +29,8 @@ function bubbleSortCaller(){
     //display
 }
 function reverseStrCaller(){
-    reverseStr(string);
+    let userString=$('#string');
+    $('#stringout').html(reverseStr(userString));
 }
 function factorialCaller(){
     factorial(usrNumber);
