@@ -13,6 +13,7 @@
         output{
             color:darkgreen;
             font-style: italic;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -22,6 +23,7 @@
         <label for="fibN">Enter N:</label>
         <input type="number" id="fibN">
         <button class ="btn btn-submit" id="runFib" >Fibonacci...</button>
+        <br>
         <output type="text" id="fibout"></output>
     </div>
     <div class="jumbotron">
@@ -52,7 +54,15 @@
 
     <div class="jumbotron" id="palindr">
         <h1>Substring</h1>
+        <label for="subString">Enter string</label>
         <input type="text" id="subString">
+        <br>
+        <label for="subLen">Enter substring length</label>
+        <input type="text" id="subLen">
+        <br>
+        <label for="subOff">Enter offset</label>
+        <input type="text" id="subOff">
+        <br>
         <button class ="btn btn-submit" id="getSubStr"> subString</button>
         <br>
         <output type="text" id="subStringOut"></output>
@@ -75,6 +85,7 @@
     </div>
     <div class="jumbotron" id="objLit">
         <h1>Object Literal</h1>
+        <label for="object">Give an object as a JSON string</label>
         <input type="text" id="object">
         <button class ="btn btn-submit" id="getObject"> Print Object</button>
         <br>

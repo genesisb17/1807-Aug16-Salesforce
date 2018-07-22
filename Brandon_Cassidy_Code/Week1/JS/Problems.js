@@ -3,7 +3,6 @@ window.onload = function(e)
 {
     //alert('js works!');
     document.getElementById("runFib").addEventListener("click",runFib, true);
-    console.log("stuff");
     $('#string').on('click',function(){
         let itemTxt = $('#string').val();
         
@@ -29,25 +28,57 @@ function bubbleSortCaller(){
     //display
 }
 function reverseStrCaller(){
-    let userString=$('#string');
+    let userString=$('#string').val();
     $('#stringout').html(reverseStr(userString));
 }
 function factorialCaller(){
-    factorial(usrNumber);
+    let userNum=$('#facNum').val();
+    console.log(userNum);
+    console.log(factorial(userNum))
+    $('#facNumOut').html(factorial(userNum));
 }
 function subStringCaller(){
-    subString(usrString,usrLen,usrOffset);
+    //Substring figure out parsing 3 args from single input? or just make 3 inputs...
+    let usrString=$('#subString').val();
+    let usrLen=$('#subLen').val();
+    let usrOffset=$('#subOff').val();
+    // console.log(usrString);
+    // console.log(usrLen);
+    // console.log(usrOffset);
+    // console.log('offset length sum' + +usrLen + +usrOffset);
+    // console.log(usrString.length);
+    $('#subStringOut').html(subString(usrString,usrLen,usrOffset));
+
 }
 function isEvenCaller(){
-    isEven(usrNumber);
+    let usrNumber=$('#evenNum').val();
+    // console.log(usrNumber);
+    // console.log(isEven(usrNumber));
+    let result = '';
+    if(isEven(usrNumber)){ result = 'true';}
+    else{ result = 'false';}
+    $('#evenOrOdd').html(result);
+
 }
 function isPalindromeCaller(){
+    let usrString=$('#palStr').val();
+    let result = '';
+    if(isPalindrome(usrString)){ result = 'true';}
+    else{ result = 'false';}
+    $('#palStrResult').html(result);
     isPalindrome(usrString);
 }
 function traverseObjectCaller(){
-    traverseObject(usrObject);
+    let objIn=$('#object').val();
+    console.log(JSON.parse(objIn));
+    let sampleObj = JSON.parse(objIn);
+    $('#objectLiteralOut').html(traverseObject(sampleObj));
 }
 
+
+
+//-------------------------------------------------------------
+//Function implementation below, display and interface to implementation above
 function fib (n){
     if(n==0)
     return 0;
@@ -100,19 +131,19 @@ function factorial(someNum){
         return 1;
     }//if
     else{
-        return someNum*Factorial(someNum-1);
+        return someNum*factorial(someNum-1);
     }//else
 }//factorial
 
 //5. Substring
 function subString(someStr,length,offset){
-    if(offset+length > someStr.length | offset<0 | offset>someStr.length | length>someStr.length){
+    if( +offset + +length > someStr.length | offset<0 | offset>someStr.length | length>someStr.length){
     alert("Substring extends beyond bounds of string");
     return;
     }//if
     let subStr=''
     let pos=offset;
-    for (let i=1; i<length;i++){
+    for (let i=1; i<=length;i++){
         subStr=subStr.concat(someStr.charAt(pos));
         pos++;
     }
@@ -168,8 +199,14 @@ function isPalindrome(someStr)
 //         console.log(str);
 //         str = "";
 //     }//outerFor
+/*
+loop logic to build the appropriate strings, again to make elements of them? 
+just build elements directly and don't worry about the strings?
+:thinking:
+*/
 // }
 //TODO
+//switch syntax ref
 // switch (key) {
 //     case value:
         
@@ -179,15 +216,17 @@ function isPalindrome(someStr)
 //         break;
 // }
 
-//9. Object literal
 
+//9. Object literal
 function traverseObject(someObj){
-    
+    let results= '';
     for( var property in someObj)
     {
         let propValue=someObj[property]
+        results = results + "Property:  " + property + "  Value:  " + propValue +"<br>";
         console.log("Property: ",property, "Value: ",propValue);
     }//for
+    return results;
 }
 testObj={
     name:"Bob",
