@@ -1,0 +1,83 @@
+<!-- <!DOCTYPE html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale = 1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="../AboutMe/aboutme.css">
+
+</head>
+
+<body>
+
+    <h1>Michelle, that's me!</h1>
+
+    <button id="menuItemName" class="accordion">
+        <span id="sectionName">About Me</span>
+    </button>
+    <div class="panel">
+        <ul id="listItems">
+            <li>My name is Michelle, I graduated from the University of Missouri-Kansas City. </li>
+            <li>I like to spend my free time painting my nails and playing the Sims.</li>
+            <li>I love the Harry Potter series and I have two cats.</li>
+            <li>My favorite thing to eat is breakfast food and popcorn.</li>
+        </ul>
+        </p>
+    </div>
+
+    <button id="menuItemName" class="accordion">
+        <span id="sectionName">What I'd like to Gain from this Adventure</span>
+    </button>
+    <div class="panel">
+        <ul id="listItems">
+            <li>I'd like to gain experience.</li>
+            <li>I'd like to gain some new and improve my current technical skills and soft skills.</li>
+            <li>I'd like to learn about what tools are in demand and how I can utilize those tool in the work force.</li>
+        </ul>
+    </div>
+
+    <button id="menuItemName" class="accordion">
+        <span id="sectionName">Favorite Topic of the Week</span>
+    </button>
+    <div class="panel">
+        <ul id="listItems">
+            <li>My favorite topic of the week is HTML, because that's what I started with way back when in highschool.</li>
+        </ul>
+    </div>
+
+<h3 id="aesthetic">aesthetic because I can</h3>
+
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+html {
+    background-color: aliceblue;
+}
+
+body {
+    margin: 40px;
+    border-style: solid;
+    border-color: lightgray;
+}
+
+h1{
+    text-align: center;
+}
+
+#listItems {
+   margin-left: 400px;
+   font-size: 20px;
+   padding: 20px;
+}
+
+#sectionName {
+    color: white;
+}
+
+#menuItemName {
+    text-align: center;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.accordion {
+    background-color: darkgray;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    transition: 0.4s;
+}
+
+.active,
+.accordion:hover {
+    background-color: lightblue;
+}
+
+.panel {
+    padding: 0 18px;
+    display: none;
+    background-color: whitesmoke;
+    overflow: hidden;
+}
+
+
+
+h3 {
+    text-transform: capitalize;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    text-shadow: 2px 2px 5px black;
+    color: red;
+    -webkit-transition: width 2s, height 2s, -webkit-transform 2s; /* Safari */
+    transition: width 2s, height 2s, transform 2s;
+}
+
+h3:hover {
+    
+    width: 300px;
+    height: 300px;
+    /* -webkit-transform: rotate(180deg); Safari */
+    -webkit-transform: rotateX(150deg);
+    transform: rotate(180deg);
+}
