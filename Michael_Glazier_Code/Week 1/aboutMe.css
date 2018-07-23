@@ -1,0 +1,31 @@
+aside{
+    position: fixed;
+    width:420px;
+}
+.contents{
+    margin-left:420px;
+    padding: 2%;
+}
+#picture{
+    width:400px;
+    height:auto;
+    border: 0.5em;
+    border-color: gray;
+    border-style: solid;
+    border-radius: 11%;
+    margin: 10px;
+}
+#side{
+    position:fixed;
+    width:420px;
+    height:100%;
+    background-color: rgb(224, 224, 224);
+}
+
+h1{
+    font-size: 4vw;
+}
+
+.section{
+    width: 50%;
+}

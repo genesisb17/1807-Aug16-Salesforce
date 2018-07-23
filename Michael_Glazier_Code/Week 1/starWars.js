@@ -43,17 +43,15 @@ function fillTable(starship){
     let tName = document.getElementById("tName");
     if(tName.hasChildNodes){
         for(let x = 0; x < tName.children; x++){
-            
-        }
-        while(tName.firstChild){
-            if(tName.firstChild.tagName == 'td'){
-                tName.firstChild.remove();
+            if(tName[x].tagName =='td'){
+                tname.remove();
             }
-        }
+        }   
     }
     let dName = document.createElement("td");
     let name = starship.name;
     dName.innerText = name;
+    dname.
     tName.appendChild(dName);
 
     let tModel = document.getElementById("tModel");
