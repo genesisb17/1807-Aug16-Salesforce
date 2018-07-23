@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Week 1 Homework</title>
+    <style>
+        ul {
+            list-style-type:none;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="jumbotron" style="text-align:center">
+        <h1>Problems</h1><hr>
+
+        <h3>1. Fibonacci</h3>
+        <p>Enter a number to run the Fibonacci sequence that many times.</p>
+        <input type="number" id="fib"> <b><span id="fibOut"></span></b><br><br>
+        <button class="btn btn-primary" id="fibButton">Run Fib!</button><hr>
+        
+        <h3>2. Bubble Sort</h3>
+        <p>Enter a list of numbers to sort, no spaces.</p>
+        <input type="number" id="sort"><b><span id="sortOut"></span></b><br><br>
+        <button class="btn btn-primary" id="sortButton">Bubble Sort!</button><hr>
+
+        <h3>3. Reverse String</h3>
+        <p>Enter a string to reverse.</p>
+        <input type="text" id="reverse"><b><span id="reverseOut"></span></b><br><br>
+        <button class="btn btn-primary" id="reverseButton">Reverse!</button><hr>
+
+        <h3>4. Factorial</h3>
+        <p>Enter the size of the factorial to compute.</p>
+        <input type="number" id="factorial"><b><span id="factorialOut"></span></b><br><br>
+        <button class="btn btn-primary" id="factorialButton">Factorial!</button><hr>
+
+        <h3>5. Substring</h3>
+        <p>Enter a string to get a substring from.</p>
+        <input type="text" id="sub">
+        <p>Input the length of the desired substring.</p>
+        <input type="number" id="length">
+        <p>Input the left offset for the substring to start.</p>
+        <input type="number" id="offset"><br><br>
+        <b><span id="subOut"></span></b><br><br>
+        <button class="btn btn-primary" id="subButton">Substring!</button><hr>
+
+        <h3>6. Even Number</h3>
+        <p>Enter a number to check if it's even.</p>
+        <input type="number" id="even"><b><span id="evenOut"></span></b><br><br>
+        <button class="btn btn-primary" id="evenButton">Even/Odd!</button><hr>
+
+        <h3>7. Palindrome</h3>
+        <p>Enter a string to check if it's a palindrome.</p>
+        <input type="text" id="palindrome"><b><span id="palOut"></span></b><br><br>
+        <button class="btn btn-primary" id="palButton">Palindrome!</button><hr>
+
+        <h3>8. Shapes</h3>
+        <p>Choose one of three shapes: triangle, diamond, or square.</p>
+        <input type="text" id="shape">
+        <p>Input an odd number as the height of the desired shape.</p>
+        <input type="number" id="height">
+        <p>Input a character to print for the shape.</p>
+        <input type="text" id="character"><br><br>
+        <b><ul id="shapeOut">
+
+        </ul></b>
+        <button class="btn btn-primary" id="shapeButton">Create Shape!</button>
+    </div>
+
+    <script src="week_1_hw.js"></script>
+
+</body>
+
+</html>
