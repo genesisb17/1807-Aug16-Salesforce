@@ -9,8 +9,8 @@ Return the nth number in the fibonacci sequence.
 0 1 1 2 3 5 8
 */
 
-window.onload = function(e){
-    // alert('js works!');
+window.onload = function(){
+    //alert('js works!');
     document.getElementById("runFib").addEventListener("click",runFib,true); 
     document.getElementById("runSort").addEventListener("click", runSort, true); 
     document.getElementById("runReverse").addEventListener("click", runReverse,true);
@@ -20,7 +20,7 @@ window.onload = function(e){
     document.getElementById("runDescOrder").addEventListener("click", runDescOrder,true);
     document.getElementById("runPerson").addEventListener("click", runPerson,true);
 
- }
+ };
 function fib(n){
     if(n==0) return 0;
     if(n==1) return 1;
