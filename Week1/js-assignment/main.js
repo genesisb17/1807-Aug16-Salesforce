@@ -343,14 +343,17 @@ function spEl(){
 // The following line should set a Person object to the variable john:
 // 	var john = new Person("John", 30);
 function objCon(){
-    $('#submit').prop("onclick", null);
+    //$('#submit').on("onclick", null);
     function Person(name,age){
         this.name = name;
         this.age = age;
     }
-    var john = new Person("Carl", 29);
+    let carl = new Person("Carl", 29);
+
+    $('#answer').text("Obj 'Carl' created with using constructor [ var carl = new Person('Carl', 29);]. \n JSON string of that object is -> " + JSON.stringify(carl));
+
     console.log(john);
-    alert("Check console.");
+    //alert("Check console.");
 }
 
 
@@ -359,15 +362,17 @@ function objCon(){
 // The following line should set a Person object to the variable john:
 // 	var john = getPerson("John", 30);
 function  objLit(){
-    $('#submit').prop("onclick", null);
+    //$('#submit').prop("onclick", null);
     function getPerson(name,age){
         this.name = name;
         this.age = age;
         return this;
     }
-    var john = getPerson("John", 30);
+    let john = getPerson("John", 30);
+    $('#answer').text("Obj 'John' created with using object literal [ var john = getPerson('John', 30);]. \n ->" + 'name :' + john.name + ' age: ' + john.age);
+
     console.log(john);
-    alert("Check console.");
+    //alert("Check console.");
 
 }
 
