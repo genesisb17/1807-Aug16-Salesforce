@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF=8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title>JS Problem Viewer</title>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <style>
+        #shapeSelection{
+            white-space:pre-wrap;
+        }
+        .center{
+            margin: auto;
+            width: 60%;
+            padding: 75px;
+        }
+        #clock{
+            position: absolute;
+            top: 50px;
+            right: 150px;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="landingView" class="container">
+            <br>
+            <hr>
+            <h1 style="text-align:center"> Assignment 1 </h1>
+            <br>
+            <hr>
+
+            <section class="portlet grid_6 leading" id="clock"> 
+                <p>~~ Time ~~</p>
+                <p><span id="runTime"></span></p>
+                <p>~~ ------- ~~<span id="time"></span></p>
+            </section>
+
+            <select id="onSelect" onchange="runSelection()">
+                <option value = "defaultOption">
+                <option value = "fibOption">Fibonacci
+                <option value = "bsOption">Bubble Sort
+                <option value = "reverseOption">Reverse String
+                <option value = "factorialOption">Factorial
+                <option value = "substringOption">Substring
+                <option value = "evenOption">Is Even
+                <option value = "paliOption">Palindrome
+                <option value = "shapeOption">Print Shape
+                <option value = "deleteOption">Delete Element
+                <option value = "spliceOption">Splice Element
+            </select>
+            <br>
+            <hr>
+            <br>
+
+            <div class="jumbotron" hidden=true id="fibSelection">
+                <h1>Fibonacci</h1>
+                <br>
+                <label for="">Enter number:</label>
+                <input type="number" id="fibN"> <span id="fibOut"></span>
+                <br>
+                <br>
+                <button class="btn btn-submit" id="runFib">Go!</button>
+            </div>
+
+            <div class="jumbotron" hidden=true id="bsSelection">
+                <h1>Bubble Sort</h1>
+                <br>
+                <label for="">Enter numbers:</label>
+                <input type="text" id="bubbleInput"> <span id="bubbleOut"></span>
+                <br>
+                <br>
+                <button class="btn btn-submit" id="runBubbleSort">Go!</button>
+            </div>
+
+            <div class="jumbotron" hidden=true id="reverseSelection">
+                <h1>Reverse String</h1>
+                <br>
+                <label for="">Enter string:</label>
+                <input type="text" id="reverseInput"> <span id="reverseOut"></span>
+                <br>
+                <br>
+                <button class="btn btn-submit" id="runReverse">Go!</button>
+            </div>
+                
+            <div class="jumbotron" hidden=true id="factorialSelection">
+                <h1>Factorial</h1>
+                <br>
+                <label for="">Enter number:</label>
+                <input type="text" id="factorialInput"> <span id="factorialOut"></span>
+                <br>
+                <br>
+                <button class="btn btn-submit" id="runFactorial">Go!</button>
+            </div>
+
+            <div class="jumbotron" hidden=true id="substringSelection">
+                <h1>Substring</h1>
+                <br>
+                <label for="">Enter string:</label>
+                <input type="text" id="strInput">
+                <br>
+                <label for="">Enter length:</label>
+                <input type="number" id="lengthInput">
+                <br>
+                <label for="">Enter offset:</label>
+                <input type="number" id="offsetInput"> 
+                <br> 
+                <span id="subOut"></span>
+                <br>
+                <br>
+                <button class="btn btn-submit" id="runSubstring">Go!</button>
+            </div>
+        
+            <div class="jumbotron" hidden=true id="evenSelection">
+                <h1>Is Even?</h1>
+                <br>
+                <label for="">Enter number:</label>
+                <input type="text" id="evenInput"> <span id="evenOut"></span>
+                <br>
+                <br>
+                <button class="btn btn-submit" id="runIsEven">Go!</button>
+            </div>
+            
+            <div class="jumbotron" hidden=true id="paliSelection">
+                <h1>Palindrome</h1>
+                <br>
+                <label for="">Enter string:</label>
+                <input type="text" id="paliInput"> <span id="paliOut"></span>
+                <br>
+                <br>
+                <button class="btn btn-submit" id="runIsPalindrome">Go!</button>
+            </div>
+
+            <div class="jumbotron" hidden=true id="shapeSelection">
+                <h1>Print Shape</h1>
+                <label for="">Enter shape:</label> <input type="text" id="shapeInput">
+                <label for="">Enter height:</label> <input type="number" id="heightInput">
+                <label for="">Enter character:</label> <input type="text" id="characterInput"> 
+                <button class="btn btn-submit" id="runPrintShape">Go!</button>
+                <div class="center"><span id="shapeOut"></span></div>
+            </div>
+
+            <div class="jumbotron" hidden=true id="deleteSelection">
+                <h1>Delete Element</h1>
+                <br>
+                <label for="">Enter numbers:</label>
+                <input type="text" id="deleteInput"> <span id="deleteOut"></span>
+                <br>
+                <br>
+                <button class="btn btn-submit" id="runDeleteElement">Go!</button>
+            </div>
+
+            <div class="jumbotron" hidden=true id="spliceSelection">
+                <h1>Splice Element</h1>
+                <br>
+                <label for="">Enter numbers:</label>
+                <input type="text" id="spliceInput"> <span id="spliceOut"></span>
+                <br>
+                <br>
+                <button class="btn btn-submit" id="runSpliceElement">Go!</button>
+            </div>
+        </div>
+    <script type="text/javascript" src="problems.js"></script>
+    </body>
+    </html>
