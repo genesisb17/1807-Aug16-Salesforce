@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Problem Viewer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script type="text/javascript " src="problems.js"></script>
+
+    <!-- 1. Fibonacci
+            Define function: fib(n)
+            Return the nth number in the fibonacci sequence. -->
+    <div class="jumbotron">
+        <h1>1. Fibonacci</h1>
+        <label for="fibN">Enter n:</label>
+        <input type="number" id="fibN">
+        <b>
+            <span id="fibOut"></span>
+        </b>
+        <br>
+        <button class="btn btn-submit" id="runFib">Fibonacci!</button>
+
+    </div>
+
+    <!-- 2. Bubble Sort
+            Define function: bubbleSort(numArray)
+            Use the bubble sort algorithm to sort the array.
+            Return the sorted array.-->
+    <div class="jumbotron">
+        <h1>2. Bubble Sort</h1>
+        <label for="input2">Enter a series of numbers:</label>
+        <input type="text" id="input2">
+        <b>
+            <span id="output2"></span>
+        </b>
+        <br>
+        <button class="btn btn-submit" id="submit2">Sort!</button>
+    </div>
+
+    <!-- 3. Reverse String
+            Define function: reverseStr(someStr)
+            Reverse and return the String. -->
+    <div class="jumbotron">
+        <h1>3. Reverse String</h1>
+        <label for="input3">Enter a string:</label>
+        <input type="text" id="input3">
+        <b>
+            <span id="output3"></span>
+        </b>
+        <br>
+        <button class="btn btn-submit" id="submit3">Reverse!</button>
+    </div>
+
+    <!-- 4. Factorial
+            Define function: factorial(someNum)
+            Use recursion to compute and return the factorial of someNum. -->
+    <div class="jumbotron">
+        <h1>4. Factorial</h1>
+        <label for="input4">Enter a number:</label>
+        <input type="number" id="input4">
+        <b>
+            <span id="output4"></span>
+        </b>
+        <br>
+        <button class="btn btn-submit" id="submit4">Calculate!</button>
+    </div>
+
+    <!-- 5. Substring
+            Define function substring(someStr, length, offset)
+            Return the substring contained between offset and (offset + length) inclusively.
+            If incorrect input is entered, use the alert function and describe why the input was incorrect. -->
+    <div class="jumbotron">
+        <h1>5. Substring</h1>
+        <label for="input5a">Enter a string:</label>
+        <input type="text" id="input5a">
+        <br />
+
+        <label for="input5b">Enter a length:</label>
+        <input type="number" id="input5b">
+        <br />
+
+        <label for="input5c">Enter an offset beginning with 0:</label>
+        <input type="number" id="input5c">
+        <b>
+            <span id="output5"></span>
+        </b>
+        <br>
+        <button class="btn btn-submit" id="submit5">Process!</button>
+    </div>
+
+    <!-- 6. Even Number
+            Define function: isEven(someNum)
+            Return true if even, false if odd.
+            Do not use % operator. -->
+    <div class="jumbotron">
+        <h1>6. Even Number</h1>
+        <label for="input6">Enter a number:</label>
+        <input type="text" id="input6">
+        <b>
+            <span id="output6"></span>
+        </b>
+        <br>
+        <button class="btn btn-submit" id="submit6">Process!</button>
+    </div>
+
+    <!-- 7. Palindrome
+            Define function isPalindrome(someStr)
+            Return true if someStr is a palindrome, otherwise return false -->
+    <div class="jumbotron">
+        <h1>7. Palindrome</h1>
+        <label for="input7">Enter a number:</label>
+        <input type="text" id="input7">
+        <b>
+            <span id="output7"></span>
+        </b>
+        <br>
+        <button class="btn btn-submit" id="submit7">Parse!</button>
+    </div>
+
+    <!-- <div class="jumbotron">
+        <h1>8. Shapes</h1>
+        <label for="input8a">Enter a shape:</label>
+        <input type="text" id="input8a">
+
+        <br />
+
+        <label for="input8b">Enter a height:</label>
+        <input type="text" id="input8b">
+
+        <br />
+
+        <label for="input8c">Enter a character:</label>
+        <input type="text" id="input8c">
+
+        <b>
+            <span id="output8"></span>
+        </b>
+        <br>
+        <button class="btn btn-submit" id="submit8">Build!</button>
+    </div> -->
+
+    <!-- 14. Display the current time on the top right of your HTML page,
+                updating every second -->
+    <div style="position: absolute; top: 8px; right: 16px; font-size: 18px; text-align:right">
+        <h6>14. Current Time:</h1>
+            <span id="time"></span>
+    </div>
+
+    <!-- 15.  Descending order
+                Your task is to make a function that can take any non-negative
+                integer as a argument and return it with its digits in descending
+                order. Essentially, rearrange the digits to create the highest possible number. -->
+    <div class="jumbotron">
+        <h1>15. Descending order</h1>
+        <label for="input15">Enter a set of non-negative numbers:</label>
+        <input type="text" id="input15">
+        <b>
+            <span id="output15"></span>
+        </b>
+        <br>
+        <button class="btn btn-submit" id="submit15">Sort!</button>
+    </div>
+
+</body>
+
+</html>
