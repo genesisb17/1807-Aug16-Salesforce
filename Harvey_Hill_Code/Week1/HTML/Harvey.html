@@ -43,8 +43,8 @@
             <div style="float: right; color: white" id="hours">Placeholder</div>
             <div>
                 <details id="about14" style="float: right; color:white">
-                    <p>14. Display the current time on the top right of your HTML page,<br> 
-                            updating every second</p>
+                    <p>14. Display the current time on the top right of your HTML page,
+                        <br> updating every second</p>
                 </details>
             </div>
         </nav>
@@ -53,10 +53,27 @@
     <!-- Main Content -->
 
     <content style="background-color: rgba(0,0,0,0)">
-        <!-- Fibonacci -->
         <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+            <div class="container"><label style="color: aliceblue" for="dropmenu">Select Problem</label>
+                <div class="row">
+                    <select id="dropmenu">
+                        <option value="1">1. Fibonacci</option>
+                        <option value="2">2. Bubblesort</option>
+                        <option value="3">3. Reverse String</option>
+                        <option value="4">4. Factorial</option>
+                        <option value="5">6. Even Number</option>
+                        <option value="6">10 & 11. Delete and Splice Arrays</option>
+                        <option value="7">12. Person Object</option>
+                        <option value="8">13. Person Literal Object</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <!-- Fibonacci -->
+        <div class="jumbotron prob" id="prob1" style="background-color: rgba(0, 0, 0,50%)">
             <details id="about1" style="float: right;">
-                <p>1. Fibonacci <br>Define function: fib(n) Return the nth number in the fibonacci sequence.</p>
+                <p>1. Fibonacci
+                    <br>Define function: fib(n) Return the nth number in the fibonacci sequence.</p>
             </details>
             <h2> 1. Let's Get Fibbin'!</h2>
             <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
@@ -77,11 +94,12 @@
         </div>
 
         <!-- Bubblesort -->
-        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+        <div class="jumbotron prob" id="prob2" style="background-color: rgba(0, 0, 0,50%)" hidden=true>
             <details id="about2" style="float: right;">
-                <p>2. Bubble Sort<br>Define function: bubbleSort(numArray)
-                <br>Use the bubble sort algorithm to sort the array.
-                <br>Return the sorted array.</p>
+                <p>2. Bubble Sort
+                    <br>Define function: bubbleSort(numArray)
+                    <br>Use the bubble sort algorithm to sort the array.
+                    <br>Return the sorted array.</p>
             </details>
             <h2> 2. Ev'ry day I'm Bubblin'!</h2>
             <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
@@ -107,11 +125,11 @@
         </div>
 
         <!-- Reverse String -->
-        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+        <div class="jumbotron prob" id="prob3" style="background-color: rgba(0, 0, 0,50%)" hidden=true>
             <details id="about3" style="float: right;">
-                <p>3. Reverse String<br>
-                        Define function: reverseStr(someStr)<br>
-                        Reverse and return the String.</p>
+                <p>3. Reverse String
+                    <br> Define function: reverseStr(someStr)
+                    <br> Reverse and return the String.</p>
             </details>
             <h2> 3. Strike that, reverse it!</h2>
             <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
@@ -132,11 +150,11 @@
         </div>
 
         <!-- Factorial -->
-        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+        <div class="jumbotron prob" id="prob4" style="background-color: rgba(0, 0, 0,50%)" hidden=true>
             <details id="about4" style="float: right;">
-                <p>4. Factorial<br>
-                        Define function: factorial(someNum)<br>
-                        Use recursion to compute and return the factorial of someNum.</p>
+                <p>4. Factorial
+                    <br> Define function: factorial(someNum)
+                    <br> Use recursion to compute and return the factorial of someNum.</p>
             </details>
             <h2> 4. Just the factorial, and nothing but the factorial.</h2>
             <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
@@ -157,12 +175,12 @@
         </div>
 
         <!-- Even Number -->
-        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+        <div class="jumbotron prob" id="prob5" style="background-color: rgba(0, 0, 0,50%)" hidden=true>
             <details id="about6" style="float: right;">
-                <p>6. Even Number<br>
-                        Define function: isEven(someNum)<br>
-                        Return true if even, false if odd.<br>
-                        Do not use % operator.</p>
+                <p>6. Even Number
+                    <br> Define function: isEven(someNum)
+                    <br> Return true if even, false if odd.
+                    <br> Do not use % operator.</p>
             </details>
             <h2> 6. We're even, right?</h2>
             <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
@@ -183,23 +201,24 @@
         </div>
 
         <!-- Delete and splice an element-->
-        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+        <div class="jumbotron prob" id="prob6" style="background-color: rgba(0, 0, 0,50%)"hidden=true>
             <details id="about10" style="float: right;">
-                <p>10. Delete Element<br>
-                        Define function deleteElement(someArr)<br>
-                        Print length<br>
-                        Delete the third element in the array.<br>
-                        Print length<br>
-                        The lengths should be the same.</p>
-            </details><br>
+                <p>10. Delete Element
+                    <br> Define function deleteElement(someArr)
+                    <br> Print length
+                    <br> Delete the third element in the array.
+                    <br> Print length
+                    <br> The lengths should be the same.</p>
+            </details>
+            <br>
             <details id="about11" style="float: right;">
-                    <p>11. Splice Element<br>
-                            Define function spliceElement(someArr)<br>
-                            Print length<br>
-                            Splice the third element in the array.<br>
-                            Print length<br>
-                            The lengths should be one less than the original length..</p>
-                </details>
+                <p>11. Splice Element
+                    <br> Define function spliceElement(someArr)
+                    <br> Print length
+                    <br> Splice the third element in the array.
+                    <br> Print length
+                    <br> The lengths should be one less than the original length..</p>
+            </details>
             <div class="row">
                 <h2> 10, and 11. Operating on Arrays!!</h2>
             </div>
@@ -231,12 +250,11 @@
         </div>
 
         <!-- Person object with constructor -->
-        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+        <div class="jumbotron prob" id="prob7" style="background-color: rgba(0, 0, 0,50%)" hidden=true>
             <details id="about12" style="float: right;">
-                <p>12. Defining an object using a constructor<br>
-                        Define a function Person(name, age)<br>
-                        The following line should set a Person object to the variable john:
-                            var john = new Person("John", 30);</p>
+                <p>12. Defining an object using a constructor
+                    <br> Define a function Person(name, age)
+                    <br> The following line should set a Person object to the variable john: var john = new Person("John", 30);</p>
             </details>
             <h2> 12. Turning a person into an object...</h2>
             <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
@@ -261,12 +279,11 @@
         </div>
 
         <!-- Person object with literal -->
-        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+        <div class="jumbotron prob" id="prob8" style="background-color: rgba(0, 0, 0,50%)" hidden=true>
             <details id="about13" style="float: right;">
-                <p>13. Defining an object using an object literal<br>
-                        Define function getPerson(name, age)<br>
-                        The following line should set a Person object to the variable john:
-                            var john = getPerson("John", 30);</p>
+                <p>13. Defining an object using an object literal
+                    <br> Define function getPerson(name, age)
+                    <br> The following line should set a Person object to the variable john: var john = getPerson("John", 30);</p>
             </details>
             <h2> 13. Turning a person into an object, literally.</h2>
             <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
@@ -291,8 +308,8 @@
         </div>
     </content>
     <footer>
-    <script src="../JS/Homework.js"></script>
-</footer>
+        <script src="../JS/Homework.js"></script>
+    </footer>
 </body>
 
 

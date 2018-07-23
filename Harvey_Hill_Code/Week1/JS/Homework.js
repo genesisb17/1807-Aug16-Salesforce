@@ -30,6 +30,8 @@ window.onload = function () {
     updateTime();
     //StarMatch
     $('#getSpell').on('click', getSpell);
+    //menu
+    $('#dropmenu').on('change', changeMenu);
 };
 
 
@@ -441,4 +443,16 @@ function setHomeworld(homeworld){
 //Get a random integer.
 function getRndInteger() {
     return Math.floor(Math.random() * 88 ) + 1;
+}
+
+//Menu
+function changeMenu(){
+
+    var selection = $('#dropmenu').val();
+    let length = $('.prob').length;
+    for (i = length; i > 0; i--)
+    {
+        $(`#prob${i}`).attr('hidden', true);
+    }
+    $('#prob'+selection).attr('hidden', false);
 }
