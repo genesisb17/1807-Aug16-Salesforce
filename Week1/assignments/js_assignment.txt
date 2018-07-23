@@ -2,7 +2,8 @@ Javascript Homework
 Due Monday 7/23 -- to be pushed by 9AM in your branch
 
 -----------------------------------------------------------------------------------
-Create a single Javascript file to answer at least 8 of these questions.
+Create an HTML file that takes in input and carries out at least 8
+of the following functions and manipulates the DOM to show the outcome.
 (Can include #1, though we've completed it together in class)
 Please put the question itself as a comment above each answer.
 -----------------------------------------------------------------------------------

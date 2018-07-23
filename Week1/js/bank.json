@@ -39,6 +39,32 @@
       "password": "x",
       "balance": 0,
       "id": 5
+    },
+    {
+      "firstName": "Ravi",
+      "lastName": "Singh",
+      "username": "CTO",
+      "password": "boss",
+      "balance": 100000000,
+      "id": 6
+    }
+  ],
+  "objects": [
+    {
+      "id": 1,
+      "text": "this is text"
+    },
+    {
+      "text": "inserting text",
+      "id": 2
+    },
+    {
+      "text": "more text",
+      "id": 3
+    },
+    {
+      "text": "aoijfoiajeoigk",
+      "id": 4
     }
   ]
 }
