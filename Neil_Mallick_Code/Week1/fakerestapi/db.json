@@ -1,0 +1,36 @@
+{
+  "user": [
+    {
+      "id": 1,
+      "fn": "Neil",
+      "ln": "Mallick",
+      "username": "nema3026",
+      "pw": "123456",
+      "balance": "$356"
+    },
+    {
+      "id": 2,
+      "fn": "Roger",
+      "ln": "Allie",
+      "username": "roger.allie",
+      "pw": "123456",
+      "balance": "$500000"
+    },
+    {
+      "firstName": "deek",
+      "lastName": "FJDSKLFSJKL",
+      "username": "FJDSLKFJKL",
+      "password": "FJESKL",
+      "balance": 0,
+      "id": 3
+    },
+    {
+      "id": 9,
+      "fn": "Neil",
+      "ln": "Mallick",
+      "username": "nema3026",
+      "pw": "123456",
+      "balance": 356
+    }
+  ]
+}

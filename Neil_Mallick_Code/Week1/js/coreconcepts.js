@@ -22,7 +22,7 @@ a === b; //Forces a direct comparison - FALSE
 
 function truthyorFlasy(cond){
 if(cond){
-    coonsole.log("condition = T")
+    console.log("condition = T")
 }
 else{
     console.log("condition = F")
@@ -54,7 +54,7 @@ var mod = 4%2;
 var currSession = null;
 var userInfo = {username: 'gb', password: '123'};
 var getUser = function(){
-    return currSession && userInfo;
+    return currSession && userInfo; 
 }
 
 /* Default operator ||
@@ -70,7 +70,7 @@ var leaveToday = earlyLeave || outTime;
 /********STRINGS ******* *
 - 0 or more 16-bit characters
 - '' OR ', but cannot do things like "hello" -> 'hello' or "hello"
-- == similar strings are equal
+- == similar s   trings are equal
 - string.length
 - charAt, concat, indexOf, replace, split, splice, substring, etc.
 - search -- regex
@@ -172,4 +172,4 @@ function scopes(){
 }
 
 //HOISTING 
-//if you don't declare it, it assumes a certain scope
+//if you don't declare it, it assumes a certain scope -- global

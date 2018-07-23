@@ -1,0 +1,69 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event Handling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <style>
+        div{
+            display:flex;
+            border: 5px dotted black;
+            justify-content: center;
+            align-content: center;
+        }
+
+        #inner{
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 200px;
+            height: 200px;
+
+        }
+
+        #middle{
+            background-color: rgba(183, 218, 57, 0.5);
+            width: 400px;
+            height: 400px;
+        }
+
+        #outer{
+            background-color: rgba(172, 22, 22, 0.5);
+            width: 800px;
+            height: 800px;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="outer">
+        OUTER
+        <div id="middle">
+            MIDDLE
+            <div id="inner">
+                INNER
+
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        //addEventListener(eventType, function, useCapture)
+        //Bubbling (false) vs. Capturing (true)
+        document.getElementById("inner").addEventListener("click", function(){
+            alert("INNER!!");
+        }, true);
+        document.getElementById("middle").addEventListener("click", function(){
+            alert("MIDDLE!!");
+            event.stopPropagation();
+        }, false);
+        document.getElementById("outer").addEventListener("click", function(){
+            alert("OUTER!!");
+        }, true);
+    </script>
+    
+</body>
+</html>
