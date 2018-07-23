@@ -319,7 +319,7 @@ function currentTime(){
         min = "0" + min
     }
     if (sec < 10){
-        min = "0" + min
+        sec = "0" + sec
     }
     let time = `\xa0\xa0\xa0\xa0${hr}:${min}:${sec}`;
 
