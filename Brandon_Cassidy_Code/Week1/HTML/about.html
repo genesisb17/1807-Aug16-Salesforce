@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <style>
+        .jumbotron{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin: 5%;
+            justify-content: center;
+            align-content: center;
+        }
+        .headerWrap{
+            font-weight: bold;
+            font-style: italic;
+            text-align: center;
+            }
+        #about{
+            color: blueviolet;
+            text-indent: 4%;
+            text-align: center;
+            flex-wrap:wrap;
+            margin-left:30%;
+            margin-right:30%;
+        }
+        #topic{
+            color: darkgoldenrod;
+            text-indent: 3%;
+            text-align: center;
+            margin-left:30%;
+            margin-right:30%;
+        }
+        #picMe{
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="jumbotron">
+        <div class="headerWrap">
+            <h1>About: Me</h1>
+        </div>
+            <img src="https://media.licdn.com/dms/image/C5603AQHVdsqJyRlXxg/profile-displayphoto-shrink_200_200/0?e=1538006400&v=beta&t=kJYOpYBMECS95POGaqS0yaj_5txVBTMGmyt201XxpcY" id="picMe">
+            <br>
+            <span id="about">I am a CS major from Winthrop University; my professional interests include Security and 
+            and big data. I do a variety of things in my downtime, including reading, gaming, and walking, jogging and running.
+            </span>
+
+            <br>
+    <div class="headerWrap">
+    <h3>Favorite topic from week 1: JQuery</h2>
+        <br>
+    </div>
+        <span id="topic">Shorter javascript is good, selector syntax($('#., etc')) lines up well with my php experience.
+            Further, it relates to actual processing, which is of course one of the reasons I decided to begin a career
+            in programming; I like processes in general, particularly efficient ones.
+        </span>
+    </div>
+</body>
+</html>
