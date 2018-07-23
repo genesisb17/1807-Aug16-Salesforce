@@ -6,7 +6,7 @@ window.onload = function(){
 
 function getSpell(){
     var id = getRndInteger();
-
+    alert('test');
     var dndxhr = new XMLHttpRequest();
     dndxhr.onreadystatechange = function(){
         console.log(Date() + "   " + dndxhr.readyState);

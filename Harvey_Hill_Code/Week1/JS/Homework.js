@@ -6,6 +6,32 @@ Create a single Javascript file to answer at least 8 of these questions.
 (Can include #1, though we've completed it together in class)
 Please put the question itself as a comment above each answer.
 -----------------------------------------------------------------------------------*/
+window.onload = function () {
+    //Fibonacci
+    $('#getFib').on('click', fibStart);
+    //BubbleSort
+    $('#addInput').on('click', addInputBox);
+    $('#getBub').on('click', bubbleStart);
+    //Reverse String
+    $('#getRevStr').on('click', revStart);
+    //Factorial
+    $('#getFacNum').on('click', facStart);
+    //Is Even
+    $('#getEvenNum').on('click', evenStart);
+    //Delete and splice arrays
+    $('#getDel').on('click', delStart);
+    $('#getSpl').on('click', splStart);
+    $('#delInput').on('click', addDelInputBox);
+    //Person object
+    $('#getPer').on('click', personStart);
+    //literal person
+    $('#getLPer').on('click', personLStart);
+    //Clock
+    updateTime();
+    //StarMatch
+    $('#getSpell').on('click', getSpell);
+};
+
 
 /*1. Fibonacci 
 Define function: fib(n) 
@@ -17,12 +43,19 @@ function fib(n) {
     return fib(n - 1) + fib(n - 2);
 }
 
+function fibStart() {
+    //var num = $('#fibnum').val();
+    $('#fibres').val(fib($('#fibnum').val()));
+}
 /*2. Bubble Sort
 Define function: bubbleSort(numArray)
 Use the bubble sort algorithm to sort the array.
 Return the sorted array.*/
 
 function bubbleSort(numArray) {
+    for (var p = 0; p < numArray.length; p++) {
+        numArray[p] = parseInt(numArray[p]);
+    }
     do {
         var change = false;
         for (var i = 0; i < numArray.length; i++) {
@@ -37,6 +70,21 @@ function bubbleSort(numArray) {
     return numArray;
 }
 
+function addInputBox() {
+    let length = $('#bubArrayInput .form-control').length;
+    $('#bubArrayInput').append(`<input type="number" id="bubnum${length + 1}" class="form-control col-3" placeholder="Number">`)
+}
+
+function bubbleStart() {
+    //alert("button pressed");
+    let length = $('#bubArrayInput .form-control').length;
+    var numArray = new Array();
+    for (i = length; i > 0; i--) {
+        numArray.unshift($(`#bubnum${i}`).val())
+    }
+    $('#bubres').val(bubbleSort(numArray));
+}
+
 /*3. Reverse String
 Define function: reverseStr(someStr)
 Reverse and return the String.*/
@@ -49,6 +97,11 @@ function reverseString(someStr) {
     return newStr;
 }
 
+function revStart() {
+    //alert('moo');
+    $('#revres').val(reverseString($('#revstr').val()));
+}
+
 /*4. Factorial
 Define function: factorial(someNum)
 Use recursion to compute and return the factorial of someNum.*/
@@ -56,6 +109,10 @@ Use recursion to compute and return the factorial of someNum.*/
 function factorial(someNum) {
     if (someNum === 0) return 1;
     return someNum * factorial(someNum - 1);
+}
+
+function facStart() {
+    $('#facres').val(factorial($('#facnum').val()));
 }
 
 
@@ -74,12 +131,34 @@ Return true if even, false if odd.
 Do not use % operator.*/
 
 function isEven(someNum) {
-    if(someNum[someNum.length-1] === 2 || someNum[someNum.length-1] === 4 || someNum[someNum.length-1] === 6 || someNum[someNum.length-1] === 8 || someNum[someNum.length-1] === 0){
+    //alert('moo')
+    if (someNum[someNum.length - 1] == 2) {
         return true;
+        console.log(someNum + '2');
     }
-    else{
-    return false;
+    else if (someNum[someNum.length - 1] == 4) {
+        return true;
+        console.log(someNum + '4');
     }
+    else if (someNum[someNum.length - 1] == 6) {
+        return true;
+        console.log(someNum + '6');
+    }
+    else if (someNum[someNum.length - 1] == 8) {
+        return true;
+        console.log(someNum + '8');
+    }
+    else if (someNum[someNum.length - 1] == 0) {
+        return true;
+        console.log(someNum + "0");
+    }
+    else {
+        return false;
+    }
+}
+
+function evenStart() {
+    $('#evenres').val(isEven($('#evennum').val()));
 }
 
 /*7. Palindrome
@@ -131,8 +210,30 @@ Delete the third element in the array.
 Print length
 The lengths should be the same.*/
 
-function deleteElement(someArr) {
+function deleteElement(someDelArr) {
+    $('#dellen1').val(someDelArr.length);
+    $('#delarr1').val(someDelArr);
+    $('#delstatus').val('Deleted third element');
+    delete someDelArr[2];
+    $('#dellen2').val(someDelArr.length);
+    $('#delarr2').val(someDelArr);
+}
 
+function addDelInputBox() {
+    alert('clicked');
+    let length = $('#delArrayInput .form-control').length;
+    $('#delArrayInput').append(`<input type="number" id="delnum${length + 1}" class="form-control col-3" placeholder="Input">`)
+}
+
+function delStart() {
+    //alert("button pressed");
+    let length = $('#delArrayInput .form-control').length;
+    let numDelArray = new Array();
+    for (i = length; i > 0; i--) {
+        numDelArray.unshift($(`#delnum${i}`).val())
+    }
+    //alert('Calling Function');
+    deleteElement(numDelArray);
 }
 
 /*11. Splice Element
@@ -143,7 +244,22 @@ Print length
 The lengths should be one less than the original length.*/
 
 function spliceElement(someArr) {
+    $('#dellen1').val(someArr.length);
+    $('#delarr1').val(someArr);
+    $('#delstatus').val('Spliced third element');
+    someArr.splice(2,1);
+    $('#dellen2').val(someArr.length);
+    $('#delarr2').val(someArr);
+}
 
+function splStart(){
+    let length = $('#delArrayInput .form-control').length;
+    let numSplArray = new Array();
+    for (i = length; i > 0; i--) {
+        numSplArray.unshift($(`#delnum${i}`).val())
+    }
+    //alert('Calling Function');
+    spliceElement(numSplArray);
 }
 
 /*12. Defining an object using a constructor
@@ -156,24 +272,54 @@ function Person(name, age) {
     this.age = age;
 }
 
+function personStart() {
+    alert('moo');
+    var john = new Person($('#pernam').val(), $('#perage').val());
+    $('#pernres').val(john.name);
+    $('#perares').val(john.age);
+}
+
 /*13. Defining an object using an object literal
 Define function getPerson(name, age)
 The following line should set a Person object to the variable john:
     var john = getPerson("John", 30);*/
 
 function getPerson(name, age) {
-    var personObj = {
+    let john = {
         name: name,
         age: age
     };
-    return personObj;
+    return john;
 
+}
+
+function personLStart() {
+    alert('moo')
+    let john = getPerson($('#lpernam').val(), $('#lperage').val());
+    var name = john.name;
+    var age = john.age;
+    $('#lpernres').val(name);
+    $('#lperares').val(age);
 }
 
 /*14. Display the current time on the top right of your HTML page, 
 updating every second*/
 
 function updateTime() {
+    var time = new Date();
+    var hours = time.getHours() % 12 || 12;
+    var minute = time.getMinutes();
+    var second = time.getSeconds();
+    if (minute < 10){
+        minute = "0" + minute;
+    }
+    if (second < 10){
+        second = "0" + second;
+    }
+    var ampm = time.getHours() >= 12 ? 'pm' : 'am';
+    $('#hours').html('Time: ' + hours + ':' + minute + ':' + second + ampm + '  ');
+    var time = setTimeout(updateTime, 1000);
+
 
 }
 
@@ -184,4 +330,115 @@ order. Essentially, rearrange the digits to create the highest possible number.*
 
 function descOrder(n) {
 
+}
+
+/* Star Match */
+function getSpell(){
+    var id = getRndInteger();
+    //alert('test');
+    var dndxhr = new XMLHttpRequest();
+    dndxhr.onreadystatechange = function(){
+        console.log(Date() + "   " + dndxhr.readyState);
+        if(dndxhr.readyState == 4 && dndxhr.status == 200)
+        {
+            dndresp = dndxhr.responseText;
+            spell = JSON.parse(dndresp);
+            setSpellValues(spell);
+        }
+    }
+
+    var url = `https://swapi.co/api/people/${id}`;
+    dndxhr.open("GET", url, true);
+
+    //Step 4 - 
+    dndxhr.send();
+}
+function setSpellValues(){
+    getSpecies(spell.species);
+    getHomeworld(spell.homeworld);
+    $('#spellName').html(spell.name);
+    //$('#gender').html(spell.gender);
+    setGender(spell.gender);
+    $('#skin').html(spell.skin_color);
+    $('#height').html(spell.height);
+    //$('#hair').html(spell.hair_color);
+    setHair(spell);
+    $('#eyes').html(spell.eye_color);
+    $('#match').removeAttr("hidden");
+
+
+}
+
+//gets the species.
+function getSpecies(url){
+    var dndxhr = new XMLHttpRequest();
+    dndxhr.onreadystatechange = function(){
+        console.log(Date() + "   " + dndxhr.readyState);
+        if(dndxhr.readyState == 4 && dndxhr.status == 200)
+        {
+            dndresp = dndxhr.responseText;
+            spell = JSON.parse(dndresp);
+            setSpecies(spell);
+        }
+    }
+    dndxhr.open("GET", url, true);
+
+    //Step 4 - 
+    dndxhr.send();
+}
+
+//gets the homeworld
+function getHomeworld(url){
+    var dndxhr = new XMLHttpRequest();
+    dndxhr.onreadystatechange = function(){
+        if(dndxhr.readyState == 4 && dndxhr.status == 200)
+        {
+            dndresp = dndxhr.responseText;
+            spell = JSON.parse(dndresp);
+            setHomeworld(spell);
+        }
+    }
+    dndxhr.open("GET", url, true);
+    dndxhr.send();
+}
+
+//verifies they have hair, and if not puts in a alternate.
+function setHair(hair){
+    if(hair.hair_color == "none")
+    {
+        $('#hair').html("bald head")
+    }
+    else if(hair.hair_color == "n/a")
+    {
+        $('#hair').html("looking smile")
+    }
+    else{
+        $('#hair').html(hair.hair_color + " hair")
+    }
+}
+
+//checks if there is a gender and if there is, sets it, otherwise puts in a placeholder.
+function setGender(gender){
+    if(gender == "n/a"){
+        $('#gender').html("specimen");
+
+    }
+    else{
+        $('#gender').html(gender);
+
+    }
+
+}
+
+//Set the name of the species
+function setSpecies(species){
+$('#species').html(species.name);
+}
+//Set the homeworld
+function setHomeworld(homeworld){
+    $('#homeworld').html(homeworld.name);
+}
+//Get a random integer.
+function getRndInteger() {
+    return Math.floor(Math.random() * 88 ) + 1;
 }

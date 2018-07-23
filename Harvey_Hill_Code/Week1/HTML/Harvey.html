@@ -19,7 +19,7 @@
 
 <body>
     <!-- Logo/Title -->
-    <div class="jumbotron">
+    <div class="jumbotron" style="background-color: rgba(0,0,0,70%); color: azure; text-align: center; justify-content: center">
         <h1>Harvey's Site</h1>
     </div>
     <!-- Navigation Bar -->
@@ -37,15 +37,263 @@
                     </a>
                     <a class="nav-item nav-link" href="../HTML/about.html">About Me</a>
                     <a class="nav-item nav-link" href="../HTML/subject.html">Favorite Subject</a>
+                    <a class="nav-item nav-link" href="../HTML/StarMatch.html">Fun with AJAX</a>
                 </div>
+            </div>
+            <div style="float: right; color: white" id="hours">Placeholder</div>
+            <div>
+                <details id="about14" style="float: right; color:white">
+                    <p>14. Display the current time on the top right of your HTML page,<br> 
+                            updating every second</p>
+                </details>
             </div>
         </nav>
     </div>
+
     <!-- Main Content -->
-    <content>This is the body.</content>
-</body>
-<footer>
-    <script src=""></script>
+
+    <content style="background-color: rgba(0,0,0,0)">
+        <!-- Fibonacci -->
+        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+            <details id="about1" style="float: right;">
+                <p>1. Fibonacci <br>Define function: fib(n) Return the nth number in the fibonacci sequence.</p>
+            </details>
+            <h2> 1. Let's Get Fibbin'!</h2>
+            <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg">
+                        <label style="color: aliceblue" for="fibnum">Number to Fibbonize</label>
+                        <input type="number" id="fibnum" class="form-control col-3" placeholder="Number">
+                        <br>
+                        <button class="btn btn-danger" id="getFib">Submit</button>
+                    </div>
+                    <div class="col-lg">
+                        <label style="color: aliceblue " for="fibres">Result</label>
+                        <input type="text" id="fibres" class="form-control col-3" placeholder="Waiting" readonly="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bubblesort -->
+        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+            <details id="about2" style="float: right;">
+                <p>2. Bubble Sort<br>Define function: bubbleSort(numArray)
+                <br>Use the bubble sort algorithm to sort the array.
+                <br>Return the sorted array.</p>
+            </details>
+            <h2> 2. Ev'ry day I'm Bubblin'!</h2>
+            <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg" id="bubArrayInput">
+                        <label style="color: aliceblue" for="bubnum">Array to Bubble!</label>
+                        <input type="number" id="bubnum1" class="form-control col-3" placeholder="Number">
+                        <input type="number" id="bubnum2" class="form-control col-3" placeholder="Number">
+                    </div>
+                    <div class="col-lg">
+                        <label style="color: aliceblue " for="bubres">Result</label>
+                        <input type="text" id="bubres" class="form-control col-3" placeholder="Waiting" readonly="true">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <button class="btn btn-dark" id="addInput">Add New Array Input</button>
+                    <br>
+                    <button class="btn btn-danger" id="getBub">Submit</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reverse String -->
+        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+            <details id="about3" style="float: right;">
+                <p>3. Reverse String<br>
+                        Define function: reverseStr(someStr)<br>
+                        Reverse and return the String.</p>
+            </details>
+            <h2> 3. Strike that, reverse it!</h2>
+            <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg">
+                        <label style="color: aliceblue" for="revstr">String to Reverse</label>
+                        <input type="text" id="revstr" class="form-control col-3" placeholder="String">
+                        <br>
+                        <button class="btn btn-danger" id="getRevStr">Submit</button>
+                    </div>
+                    <div class="col-lg">
+                        <label style="color: aliceblue " for="revres">Result</label>
+                        <input type="text" id="revres" class="form-control col-3" placeholder="Waiting" readonly="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Factorial -->
+        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+            <details id="about4" style="float: right;">
+                <p>4. Factorial<br>
+                        Define function: factorial(someNum)<br>
+                        Use recursion to compute and return the factorial of someNum.</p>
+            </details>
+            <h2> 4. Just the factorial, and nothing but the factorial.</h2>
+            <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg">
+                        <label style="color: aliceblue" for="facnum">Number to Factor</label>
+                        <input type="number" id="facnum" class="form-control col-3" placeholder="Number">
+                        <br>
+                        <button class="btn btn-danger" id="getFacNum">Submit</button>
+                    </div>
+                    <div class="col-lg">
+                        <label style="color: aliceblue " for="facres">Result</label>
+                        <input type="text" id="facres" class="form-control col-3" placeholder="Waiting" readonly="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Even Number -->
+        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+            <details id="about6" style="float: right;">
+                <p>6. Even Number<br>
+                        Define function: isEven(someNum)<br>
+                        Return true if even, false if odd.<br>
+                        Do not use % operator.</p>
+            </details>
+            <h2> 6. We're even, right?</h2>
+            <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg">
+                        <label style="color: aliceblue" for="evennum">Number to Check</label>
+                        <input type="number" id="evennum" class="form-control col-3" placeholder="Number">
+                        <br>
+                        <button class="btn btn-danger" id="getEvenNum">Submit</button>
+                    </div>
+                    <div class="col-lg">
+                        <label style="color: aliceblue " for="evenres">Result</label>
+                        <input type="text" id="evenres" class="form-control col-3" placeholder="Waiting" readonly="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Delete and splice an element-->
+        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+            <details id="about10" style="float: right;">
+                <p>10. Delete Element<br>
+                        Define function deleteElement(someArr)<br>
+                        Print length<br>
+                        Delete the third element in the array.<br>
+                        Print length<br>
+                        The lengths should be the same.</p>
+            </details><br>
+            <details id="about11" style="float: right;">
+                    <p>11. Splice Element<br>
+                            Define function spliceElement(someArr)<br>
+                            Print length<br>
+                            Splice the third element in the array.<br>
+                            Print length<br>
+                            The lengths should be one less than the original length..</p>
+                </details>
+            <div class="row">
+                <h2> 10, and 11. Operating on Arrays!!</h2>
+            </div>
+            <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg" id="delArrayInput">
+                        <label style="color: aliceblue" for="delnum">Array to Operate On!</label>
+                        <input type="number" id="delnum1" class="form-control col-3" placeholder="Input">
+                        <input type="number" id="delnum2" class="form-control col-3" placeholder="Input">
+                        <input type="number" id="delnum3" class="form-control col-3" placeholder="Input">
+                    </div>
+                    <div class="col-lg">
+                        <label style="color: aliceblue " for="delres">Result</label>
+                        <input type="text" id="dellen1" class="form-control col-5" placeholder="Prior Array Length" readonly="true">
+                        <input type="text" id="delarr1" class="form-control col-5" placeholder="Array Content" readonly="true">
+                        <input type="text" id="delstatus" class="form-control col-5" placeholder="Awaiting Operation" readonly="true">
+                        <input type="text" id="dellen2" class="form-control col-5" placeholder="Post-op Array Length" readonly="true">
+                        <input type="text" id="delarr2" class="form-control col-5" placeholder="Array Content" readonly="true">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <button class="btn btn-dark" id="delInput">Add New Array Input</button>
+                    <button class="btn btn-danger" id="getDel">Delete</button>
+                    <button class="btn btn-danger" id="getSpl">Splice</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Person object with constructor -->
+        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+            <details id="about12" style="float: right;">
+                <p>12. Defining an object using a constructor<br>
+                        Define a function Person(name, age)<br>
+                        The following line should set a Person object to the variable john:
+                            var john = new Person("John", 30);</p>
+            </details>
+            <h2> 12. Turning a person into an object...</h2>
+            <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg">
+                        <label style="color: aliceblue" for="pernam">Name</label>
+                        <input type="text" id="pernam" class="form-control col-3" placeholder="Name">
+                        <label style="color: aliceblue" for="perage">Age</label>
+                        <input type="number" id="perage" class="form-control col-3" placeholder="Age">
+                        <br>
+                        <button class="btn btn-danger" id="getPer">Submit</button>
+                    </div>
+                    <div class="col-lg">
+                        <label style="color: aliceblue " for="pernres">Name Result</label>
+                        <input type="text" id="pernres" class="form-control col-3" placeholder="Waiting" readonly="true">
+                        <label style="color: aliceblue " for="perares">Age Result</label>
+                        <input type="text" id="perares" class="form-control col-3" placeholder="Waiting" readonly="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Person object with literal -->
+        <div class="jumbotron" style="background-color: rgba(0, 0, 0,50%)">
+            <details id="about13" style="float: right;">
+                <p>13. Defining an object using an object literal<br>
+                        Define function getPerson(name, age)<br>
+                        The following line should set a Person object to the variable john:
+                            var john = getPerson("John", 30);</p>
+            </details>
+            <h2> 13. Turning a person into an object, literally.</h2>
+            <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, 0.75), rgba(0, 0, 0, 0));">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg">
+                        <label style="color: aliceblue" for="lpernam">Name</label>
+                        <input type="text" id="lpernam" class="form-control col-3" placeholder="Name">
+                        <label style="color: aliceblue" for="lperage">Age</label>
+                        <input type="number" id="lperage" class="form-control col-3" placeholder="Age">
+                        <br>
+                        <button class="btn btn-danger" id="getLPer">Submit</button>
+                    </div>
+                    <div class="col-lg">
+                        <label style="color: aliceblue " for="lpernres">Name Result</label>
+                        <input type="text" id="lpernres" class="form-control col-3" placeholder="Waiting" readonly="true">
+                        <label style="color: aliceblue " for="lperares">Age Result</label>
+                        <input type="text" id="lperares" class="form-control col-3" placeholder="Waiting" readonly="true">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </content>
+    <footer>
+    <script src="../JS/Homework.js"></script>
 </footer>
+</body>
+
 
 </html>

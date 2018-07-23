@@ -19,7 +19,7 @@
 
 <body>
     <!-- Logo/Title -->
-    <div class="jumbotron">
+    <div class="jumbotron" style="background-color: rgba(0,0,0,70%); color: azure; text-align: center; justify-content: center">
         <h1>Harvey's Site</h1>
     </div>
     <!-- Navigation Bar -->
@@ -39,23 +39,53 @@
                     <a class="nav-item nav-link active" href="#">Favorite Subject
                         <span class="sr-only">(current)</span>
                     </a>
+                    <a class="nav-item nav-link" href="../HTML/StarMatch.html">Fun with AJAX</a>
                 </div>
             </div>
+            <div style="float: right; color: white" id="hours">Placeholder</div>
         </nav>
     </div>
     <!-- Main Content -->
     <content>
         <p>My favorite subject in the first week has been looking into the transform and transition functionality of CSS3. This
             simple but powerful set of tools in the latest CSS allows for a surprising amount of functionality without having
-            to delve into JavaScript or jQuery.</p>
-        <p>
-            Just a few minutes of research made me intrigued to immediately start testing out such things, and if you hover on my initials
-            on the navigation bar you can see a small example.
+            to delve into JavaScript or jQuery. Just a few minutes of research made me intrigued to immediately start testing
+            out such things, and if you hover on my initials on the navigation bar you can see a small example.
         </p>
+        <p>
+            <strong>However,</strong> after our first review I managed to fumble AJAX fairly badly. Since then I have worked to ensure
+            it will
+            <strong>NOT</strong> happen again.
+            <br>AJAX is of course Asynchronous JavaScript And XML, though it is not limited strictly to XML. It is a process
+            used to communicate asynchronously beyween a client and server, and therefore allows the client to continue to
+            operate rather than waiting on the server to respond.</p>
+        <p>The process is iteself simple, starting with the creation of a new XMLHttpRequest, followed by a callback function.
+            This callback function ensures that the ready state and status are good before executing the function. The ready
+            state must be 4 in order to proceed, this means it has gone through states 0 through 3 first. The status meanwhile
+            is required to be 200 or 201, which means there has been a successful connection with the server.</p>
+        <p>Once these first steps are complete you then must use the open method of the XMLHttpRequest object, providing the
+            following parameters: The method used to communicate with the server, if it is GET or PUSH, the URL to which
+            the connection is being made, and if the communication is to be asynchronous. Optionally you might also have
+            username and password parameters.</p>
+        <p>Last but not least you will use the XMLHttpRequest object's send method. If you are pushing data to the server you
+            will pass the request body as a parameter. Optionally you might also set a request header prior to using the
+            send method.</p>
+        <code>xhr = new XMLHttpRequest();<br>
+                xhr.onreadystatechange(function{<br>
+                <tab>if (xhr.readyState == 4 && xhr.status == 200){
+                    <tab><i>Code to be executed</i></tab>
+                }<br>
+            });</tab><br>
+                xhr.open(METHOD, URL, ASYNC(True/False), Username(Optional), Password(optional));<br>
+                xhr.setRequestHeader(header, value);<br>
+                xhr.send(<i>Request Body</i>;)
+            </code>
     </content>
-</body>
-<footer>
-    <script src=""></script>
+    
+    <footer>
+        <script src="../JS/Homework.js"></script>
 </footer>
+</body>
+
 
 </html>
