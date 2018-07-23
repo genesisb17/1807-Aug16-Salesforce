@@ -32,6 +32,8 @@
 **/package.json
 **/package-lock.json 
 
+#workspace
+**.code-workspace
 #Mac
 .DS_Store
 /.recommenders/
