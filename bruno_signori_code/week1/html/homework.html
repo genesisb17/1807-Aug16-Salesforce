@@ -4,21 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
     <title>Js Homework</title>
+    <link rel="stylesheet" href="../css/homework.css">
 </head>
 <body>
+    
     <div class="jumbotron">
         <h1>1. Fibonacci</h1>
-        <label for='fibN'></label>
         <input type="number" id="fibN">
         <button class="btn btn-submit" id="runFib">Fibonacci!</button>
         <h2 id="answer"></h2>
     </div>
+
+    <div class="jumbotron">
+        <h1>2. Bubble Sort</h1>
+        <input type="number" id="bub">
+        <button class="btn btn-submit" id="runBub">Add Numbers</button>
+        <button class="btn btn-submit" id="runSort">Done</button>
+        <h2 id="answer_sort"></h2>
+    </div>
+
+    <div class="jumbotron">
+        <h1>3. Reverse String</h1>
+        <input type="text" id="string">
+        <button class="btn btn-submit" id="runString">Add a Word</button>
+        <h2 id="answer_string"></h2>
+    </div>
+
+    <div class="jumbotron">
+        <h1>4. Factorial</h1>
+        <input type="number" id="number">
+        <button class="btn btn-submit" id="runFactorial">Add Number</button>
+        <h2 id="answer_factorial"></h2>
+    </div>
+
+    <div class="jumbotron">
+        <h1>5. Substring</h1>
+        <input type="text" id="substring">
+        <button class="btn btn-submit" id="runSubstring">Add a phrase</button>
+        <div id="show_substring">
+            <h2 id="answer_substring"></h2>
+            <label for="first_letter">Start</label>
+            <input type="number" id="first_letter">
+            <labe for="last_letter" >End</labe>
+            <input type="number" id="last_letter">
+            <button class="btn btn-submit" id="new_substring">Get the Substring</button>
+        </div>
+    </div>
+
+    <div class="jumbotron">
+        <h1>6. Even</h1>
+        <input type="number" id="even">
+        <button class="btn btn-submit" id="runEven">Is it even?</button>
+        <h2 id="answer_even"></h2>
+    </div>
     
+    <div class="jumbotron">
+        <h1>7. Palindrome</h1>
+        <input type="text" id="palindrome">
+        <button class="btn btn-submit" id="runPalindrome">Check!</button>
+        <h2 id="answer_palindrome"></h2>
+    </div>
+
+    <div class="jumbotron">
+        <h1>8. Print Shape</h1>
+        <input type="text" id="shape">
+        <button class="btn btn-submit" id="runShape">Shape!</button>
+        <h2 id="answer_shape1"></h2>
+        <h2 id="answer_shape2"></h2>
+        <h2 id="answer_shape3"></h2>
+    </div>
+
+    <div class="jumbotron">
+        <h1>9. Splice Element</h1>
+        <input type="number" id="splice">
+        <button class="btn btn-submit" id="runSplice">Add numbers</button>
+        <button class="btn btn-submit" id="print">Print the length of the array</button>
+        <h2 id="answer_splice"></h2>
+        <button class="btn btn-submit" id="splice_arr">Remove the third element</button>
+    </div>
+    
+    <div class="jumbotron">
+        <h1>10. Object Constructor</h1>
+        <label for="name">Name</label>
+        <input type="text" id="name">
+        <label for="age">Age</label>
+        <input type="number" id="age">
+        <button class="btn btn-submit" id="runConstructor">Make an Object!</button>
+        <h2 id="answer_constructor"></h2>
+    </div>
 
 
 

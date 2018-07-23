@@ -105,7 +105,6 @@ var someStr = "madam";
 function isPalindrome(someStr){
     var newStr = Math.floor(someStr.length / 2);
     var count = 0;
-    
     for(var i = 0; i < newStr; i++){
         if(someStr[i] === someStr[someStr.length - 1 - i]){
             count++;
@@ -118,3 +117,108 @@ function isPalindrome(someStr){
     }
 }
 isPalindrome(someStr);  
+/*
+8. Shapes
+Define function: printShape(shape, height, character)
+shape is a String and is either "Square", "Triangle", "Diamond".
+height is a Number and is the height of the shape. Assume the number is odd.
+character is a String that represents the contents of the shape. Assume this String contains just one character.
+Use a switch statement to determine which shape was passed in.
+Use the console.log function to print the desired shape.
+Example for printShape("Square", 3, "%");
+%%%
+%%%
+%%%
+Example for printShape("Triangle", 3, "$");
+$
+$$
+$$$
+Example for printShape("Diamond", 5, "*");
+  *
+ ***
+*****
+ ***
+  *   
+*/  
+
+function printShape(shape, height, character){
+    switch (shape) {
+        case 'diamond':
+        var limit = 5;
+        var space = limit;
+        for (i = 1; i <= limit; i++) {
+            for (j = 1; j <= space; j++) {
+                document.getElementById("answer_shape").insertAdjacentHTML('beforeend', '&nbsp;&nbsp;');
+            }
+            space--;
+            for (j = 1; j <= 2 * i - 1; j++) {
+                document.getElementById("answer_shape").insertAdjacentHTML('beforeend', '*');
+            }
+            document.getElementById("answer_shape").insertAdjacentHTML('beforeend', '<br>');
+        }
+        space = 2;
+        for (i = 1; i <= limit; i++) {
+            for (j = 1; j <= space; j++) {
+                document.getElementById("answer_shape").insertAdjacentHTML('beforeend', '&nbsp;&nbsp;');
+            }
+            space++;
+            for (j = 1; j <= 2 * (limit - i) - 1; j++) {
+                document.getElementById("answer_shape").insertAdjacentHTML('beforeend', '*');
+            }
+            document.getElementById("answer_shape").insertAdjacentHTML('beforeend', '<br>');
+        }
+            break;
+        case 'triangle':
+        var str = character;
+        var string = '';
+        for(var i = 1; i <= height; i++){
+            string += character;
+            document.getElementById(`answer_shape${i}`).innerHTML = string;
+        }
+            break;
+        case 'square':
+        var str = '';
+        for(var i = 0; i < height; i++){
+            str += character+character+character+'\n'
+        }
+        return (str);
+            break;
+        default: console.log("wrong entry");
+            break;
+    }
+}
+printShape("square",3,"%");
+
+
+/*
+11. Splice Element
+Define function spliceElement(someArr)
+Print length
+Splice the third element in the array.
+Print length
+The lengths should be one less than the original length.
+*/
+var arr = [3,6,7,8,9,4];
+
+function spliceElement(arr){
+    console.log(arr.length);
+    arr.splice(2,1);
+    console.log(arr.length);
+}
+
+spliceElement(arr);
+
+/*
+12. Defining an object using a constructor
+Define a function Person(name, age)
+The following line should set a Person object to the variable john:
+	var john = new Person("John", 30);
+*/
+
+class Person {
+    constructor(name,age){
+        this.name = name;
+        this.age = age;
+    }
+}
+var john = new Person("John", 30);
