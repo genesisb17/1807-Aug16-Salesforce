@@ -1,0 +1,15 @@
+*{
+    background-color: orange;
+}
+
+#one, #two{
+    background-color: aliceblue;
+
+    grid-column: 4;
+    grid-row: 4;
+
+}
+
+#about, #about2{
+    margin-top:50px;
+}
