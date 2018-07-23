@@ -3,8 +3,10 @@ window.onload = function() {
     $(`.sprite`).on('click', clearSelect);
     $(`.sprite`).on('click', dispPokemon);
     $(`.sprite`).attr("src", "../img/ball.jpg");
+    $(`.move-btn`).on('click', dispMove);
 }
 var pokemonTeam = ['','','','','',''];
+var curr_pokemon;
 //Create a random team of pokemon
 //Picks randomly from possible configurations
 function getPokemon() {
@@ -109,13 +111,14 @@ function getPokemon() {
         image.attr("src", pokemon.sprites.front_default);
         image.attr("alt", pokemon.name);
 
-
         //Determine Ability
         let xhrAbility = new XMLHttpRequest();
         xhrAbility.onreadystatechange = function (){
-            let resp = xhrAbility.responseText;
-            let ability = JSON.parse(resp);
-            pokemon.abilities = [ability.name, ability.effect_entries[0].effect];
+            if(xhrAbility.readyState == 4 && xhrAbility.status==200){
+                let resp = xhrAbility.responseText;
+                let ability = JSON.parse(resp);
+                pokemon.abilities = [ability.name, ability.effect_entries[0].effect];
+            }
         }
         let numAbilities = pokemon.abilities.length;
         let abilityNum = Math.floor(Math.random() * numAbilities) + 0;
@@ -127,11 +130,15 @@ function getPokemon() {
         //Determine Moveset
         function determineMoveset(pokemon, slotNum) {
             let xhrMoves = new XMLHttpRequest();
+
             xhrMoves.onreadystatechange = function (){
-                let resp = xhrMoves.responseText;
-                let move = JSON.parse(resp);
-                pokemon.moves[slotNum] = move;
+                if(xhrMoves.readyState == 4 && xhrMoves.status == 200){
+                    let resp = xhrMoves.responseText;
+                    let move = JSON.parse(resp);
+                    pokemon.moves[slotNum] = move;
+                }
             }
+
             let numMoves = pokemon.moves.length;
             let movesNum = Math.floor(Math.random() * numMoves) + 0;
             var url = `https://pokeapi.co/api/v2/move/${pokemon.moves[movesNum].move.name}/`;
@@ -151,62 +158,75 @@ function dispPokemon() {
     pokeNum = parseInt(pokeNum) - 1;
     //Set Focus
     let image= $(`#focus`);
-    image.attr("src", pokemonTeam[pokeNum].sprites.front_default);
-    image.attr("alt", pokemonTeam[pokeNum].name);
-    $(`#Name`).html(pokemonTeam[pokeNum].name.charAt(0).toUpperCase() + pokemonTeam[pokeNum].name.substring(1));
+    curr_pokemon = pokemonTeam[pokeNum];
+    image.attr("src", curr_pokemon.sprites.front_default);
+    image.attr("alt", curr_pokemon.name);
+    image.attr("class", `pokeNum-${pokeNum}`);
+    $(`#Name`).html(curr_pokemon.name.charAt(0).toUpperCase() + curr_pokemon.name.substring(1,));
     //Display Types
     let i=1;
-    pokemonTeam[pokeNum].types.forEach(element => {
+    curr_pokemon.types.forEach(element => {
         if(i == 1) {
-            $(`#Type1`).html(`${element.type.name}`);
+            $(`#Type1`).removeClass("normal fighting flying poison ground rock bug ghost steel fire water grass electric psychic ice dragon dark fairy");
+            $(`#Type1`).addClass(`${element.type.name}`);
+            $(`#Type1`).html(`${element.type.name}`[0].toUpperCase()+`${element.type.name}`.substring(1,`${element.type.name}`.length));
             $(`#Type2`).html('');
         }
-        if(i == 2) {$(`#Type2`).html(`/${element.type.name}`)}
+
+        if(i == 2) {
+            $(`#Type2`).removeClass("normal fighting flying poison ground rock bug ghost steel fire water grass electric psychic ice dragon dark fairy");
+            $(`#Type2`).addClass(`${element.type.name}`);
+            $(`#Type2`).html(`${element.type.name}`[0].toUpperCase()+`${element.type.name}`.substring(1,`${element.type.name}`.length));
+        }
         i++;
     });
-    function dispMove(id) {
-        let element = document.getElementById(id);
-        let pokeNum = element.getAttribute("pokeNum");
-        let moveNum = parseInt(element.getAttribute("id").substring(4,5)) - 1;
-        let desc = document.createElement("p");
-        let pp = document.createElement("p");
-        let power = document.createElement("p");
-        let damageClass = document.createElement("p");
-        let type = document.createElement("p");
-        type.innerHTML = `${pokemonTeam[pokeNum].moves[moveNum].type.name}`;
-        damageClass.innerHTML = `${pokemonTeam[pokeNum].moves[moveNum].damage_class.name}`;
-        desc.innerHTML = `${pokemonTeam[pokeNum].moves[moveNum].effect_entries[0].effect}`;
-        power.innerHTML = `${pokemonTeam[pokeNum].moves[moveNum].power}`;
-        pp.innerHTML = `${pokemonTeam[pokeNum].moves[moveNum].pp}`;
-        element.appendChild(type);
-        element.appendChild(damageClass);
-        element.appendChild(desc);
-        element.appendChild(power);
-        element.appendChild(pp);
-    
-    }
 
-    $(`#desc`).html(pokemonTeam[pokeNum].abilities[0].toUpperCase() + ": " 
-                    + pokemonTeam[pokeNum].abilities[1]);
-    $(`#move1`).html(pokemonTeam[pokeNum].moves[0].name.toUpperCase());
-    $(`#move1Btn`).html(pokemonTeam[pokeNum].moves[0].name.toUpperCase());
+    $(`#desc`).html(curr_pokemon.abilities[0].toUpperCase() + ": " 
+                    + curr_pokemon.abilities[1]);
+       
+    $(`#move1Btn`).html(curr_pokemon.moves[0].name.toUpperCase());
     $(`#move1`).attr("pokeNum", `${pokeNum}`);
-    dispMove("move1");
-    $(`#move2`).html(pokemonTeam[pokeNum].moves[1].name.toUpperCase());
-    $(`#move2Btn`).html(pokemonTeam[pokeNum].moves[1].name.toUpperCase());
+
+    $(`#move2Btn`).html(curr_pokemon.moves[1].name.toUpperCase());
     $(`#move2`).attr("pokeNum", `${pokeNum}`);
-    dispMove("move2");
-    $(`#move3`).html(pokemonTeam[pokeNum].moves[2].name.toUpperCase());
-    $(`#move3Btn`).html(pokemonTeam[pokeNum].moves[2].name.toUpperCase());
+
+    $(`#move3Btn`).html(curr_pokemon.moves[2].name.toUpperCase());
     $(`#move3`).attr("pokeNum", `${pokeNum}`);
-    dispMove("move3");
-    $(`#move4`).html(pokemonTeam[pokeNum].moves[3].name.toUpperCase());
-    $(`#move4Btn`).html(pokemonTeam[pokeNum].moves[3].name.toUpperCase());
+
+    $(`#move4Btn`).html(curr_pokemon.moves[3].name.toUpperCase());
     $(`#move4`).attr("pokeNum", `${pokeNum}`);
-    dispMove("move4");
 }
 
+function dispMove() {
+    let moveDisp = document.getElementById("moveDisplay");
+    let container = document.createElement("div");
+    let moveNum = parseInt(this.id.substring(4,5)) - 1;
+    let desc = document.createElement("p");
+    let powerpp = document.createElement("p");
+    let damageClass = document.createElement("p");
+    let type = document.createElement("p");
+    let currChild = moveDisp.childNodes[0];
 
+    type.innerHTML = `${curr_pokemon.moves[moveNum].type.name}`;
+    damageClass.innerHTML = `${curr_pokemon.moves[moveNum].damage_class.name}`;
+    desc.innerHTML = `${curr_pokemon.moves[moveNum].effect_entries[0].effect}`;
+    powerpp.innerHTML = `${curr_pokemon.moves[moveNum].power}` + " Power / "
+    + `${curr_pokemon.moves[moveNum].pp}` + " PP";
+
+     container.appendChild(type);
+     container.appendChild(damageClass);
+     container.appendChild(desc);
+     container.appendChild(powerpp);
+
+
+     if (currChild != null) {
+        moveDisp.replaceChild(container, moveDisp.childNodes[0]);
+     } else {
+         moveDisp.appendChild(container);
+     }
+
+
+}
 //Functions fo Party Selection
 function clearSelect() {
    let imgs = document.getElementsByTagName("img");
