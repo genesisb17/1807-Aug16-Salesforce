@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Javascript Homework!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="jumbotron">
+        <h1>1. Fibonacci!</h1>
+        <label for="fibN">Enter n:</label>
+        <input type="number" id="fibN"> <span id="fibOut"></span>
+        <button class="btn btn-submit" id="runFib">Fibonnaci!</button>
+    </div>
+    <div class="jumbotron">
+        <h1>2. Bubble Sort!</h1>
+        <p>The values of the array to be input below must be seperated by 
+            a white space. 
+        </p>
+        <label for="BubbInput">Enter an array:</label>
+        <input type="text" id="BubbInput"> <span id="BubbOut"></span>
+        <button class="btn btn-submit" id="BubbBtn">Sort!</button>
+    </div>
+    <div class="jumbotron">
+        <h1>3. Reverse String!</h1>
+        <label for="reverseStrInput">Enter string:</label>
+        <input type="text" id="reverseStrInput"> <span id="reverseStrOut"></span>
+        <button class="btn btn-submit" id="ReverseBtn">Reverse!</button>
+    </div>
+    <div class="jumbotron">
+        <h1>4. Factorial!</h1>
+        <label for="factorialInput">Enter number:</label>
+        <input type="number" id="factorialInput"> <span id="factorialOut"></span>
+        <button class="btn btn-submit" id="FactorialBtn">Factorial!</button>
+    </div>
+    <div class="jumbotron">
+        <h1>5. Substring!</h1>
+        <label for="substringInput">Enter string:</label>
+        <input type="text" id="substringInput"> <span id="subStrOut"></span>
+        <input type="number" id="substringLength">
+        <input type="number" id="substringOffset">
+        <button class="btn btn-submit" id="subStrBtn">Get a Sub String!</button>
+    </div>
+    <div class="jumbotron">
+        <h1>6. Even Number!</h1>
+        <label for="evenInput">Enter number:</label>
+        <input type="number" id="evenInput"> <span id="evenOut"></span>
+        <button class="btn btn-submit" id="evenBtn">Check if Even!</button>
+    </div>
+    <div class="jumbotron">
+        <h1>7. Palindrome!</h1>
+        <label for="palindromeInput">Enter string:</label>
+        <input type="text" id="palindromeInput"> <span id="palindromeOut"></span>
+        <button class="btn btn-submit" id="palindromeBtn">Check if Palindrome!</button>
+    </div>
+    <div class="jumbotron">
+        <h1>8. Shapes!</h1>
+        <label for="shapeInput">Enter shape:</label>
+        <input type="text" id="shapeInput"> 
+        <input type="text" id="shapeHeight">
+        <input type="text" id="shapeCharacter"> 
+        <output id="shapeOut"></output>
+        <button class="btn btn-submit" id="shapeBtn">Build Shape</button>
+    </div>
+    <div class="jumbotron">
+        <h1>9. Object Literal!</h1>
+        <p>Number 12 or 13 must be completed before testing this unless the user wishes 
+            use the console.
+        </p>
+        <label for="literalInput">Enter object:</label>
+        <input type="text" id="literalInput"> <span id="literalOut"></span>
+        <button class="btn btn-submit" id="literalBtn">Traverse Object</button>
+    </div>
+    <div class="jumbotron">
+        <h1>10. Delete Element!</h1>
+        <label for="deleteInput">Enter array:</label>
+        <input type="text" id="deleteInput"> <span id="deleteOut"></span>
+        <button class="btn btn-submit" id="deleteBtn">Delete 3rd Element!</button>
+    </div>
+    <div class="jumbotron">
+        <h1>11. Splice Element</h1>
+        <label for="spliceInput">Enter array:</label>
+        <input type="text" id="spliceInput"> <span id="spliceOut"></span>
+        <button class="btn btn-submit" id="spliceBtn">Splice 3rd Element</button>
+    </div>
+    <div class="jumbotron">
+        <h1>12. Define a person object using a constructor!</h1>
+        <label for="constructName">Enter person's name:</label>
+        <input type="text" id="constructName">
+        <label for="constructAge">Enter person's age:</label>
+        <input type="text" id="constructAge"> <span id="constructOut"></span>
+        <button class="btn btn-submit" id="constructBtn">Make the person</button>
+    </div>
+    <div class="jumbotron">
+        <h1>13. Defining an object using an object literal!</h1>
+        <label for="obLiteralName">Enter person's name:</label>
+        <input type="text" id="obLiteralName">
+        <label for="obLiteralAge">Enter person's age:</label>
+        <input type="text" id="obLiteralAge"> <span id="obLiteralOut"></span>
+        <button class="btn btn-submit" id="obLiteralBtn">Make the person</button>
+    </div>
+    <div style ="position: absolute; top: 5px; right: 5px;">
+        <p>14. Clock!</p>
+        <span id="clockOut"></span>
+        <button class="btn btn-submit" id="clockBtn">Start the Clock</button>
+    </div>
+    <div class="jumbotron">
+        <h1>15. Descending order!</h1>
+        <label for="descInput">Enter array:</label>
+        <input type="number" id="descInput"> <span id="descOut"></span>
+        <button class="btn btn-submit" id="descBtn">Sort in Descending Order</button>
+    </div>
+<script type="text/javascript" src="Assignment_1.js"></script> 
+</body>
+</html>

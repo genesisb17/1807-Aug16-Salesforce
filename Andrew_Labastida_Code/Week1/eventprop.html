@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Event Handling</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script> -->
+    <style>
+        div {
+            border: 5px dotted black;
+            justify-content: center;
+            align-content: center;
+        }
+
+        #inner{
+            background-color: rgba(255,255,255, 0.5);
+            width: 200px;
+            height: 200px;
+        }
+
+        #middle{
+            background-color: rgba(183,218,57, 0.5);
+            width: 400px;
+            height: 400px;
+        }
+        
+        #outer{
+            background-color: rgba(172,22,22, 0.5);
+            width: 600px;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        outer
+        <div id="middle">
+            middle
+            <div id="inner">
+                inner
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        //addEventListener(eventType, function[what to do], useCapture)
+        //BUBBLING VS CAPTURING
+    document.getElementById("inner").addEventListener("click", function(){
+        alert("INNER!!!!!");
+    }, true);
+    document.getElementById("middle").addEventListener("click", function(){
+        alert("MIDDLE!!!!!");
+        event.stopPropagation();
+    }, true);
+    document.getElementById("outer").addEventListener("click", function(){
+        alert("OUTER!!!!!");
+    }, true);
+    </script>
+</body>
+</html>

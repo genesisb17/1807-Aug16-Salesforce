@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first_name": "Andrew",
+      "last_name": "Labastida",
+      "username": "And_Labastida",
+      "password": "baerrito",
+      "balance": 0
+    },
+    {
+      "id": 2,
+      "first_name": "fat",
+      "last_name": "boy",
+      "username": "twinkies<3",
+      "password": "scooter",
+      "balance": 10
+    },
+    {
+      "id": 3,
+      "first_name": "skinny",
+      "last_name": "girl",
+      "username": "bunny",
+      "password": "cardio4lyfe",
+      "balance": 100
+    },
+    {
+      "id": 4,
+      "first_name": "ornery",
+      "last_name": "critter",
+      "username": "king_of_Cuerno",
+      "password": "rabbit_season!",
+      "balance": 1000
+    },
+    {
+      "id": 5,
+      "first_name": "Eldrad",
+      "last_name": "tyrant",
+      "username": "Shiny",
+      "password": "banish",
+      "balance": 10000
+    },
+    {
+      "id": 6,
+      "first_name": "test",
+      "last_name": "test",
+      "username": "test",
+      "password": "test",
+      "balance": 0
+    }
+  ]
+}
