@@ -1,0 +1,98 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstName": "Mohammed",
+      "lastName": "Toberia",
+      "username": "mt",
+      "password": "123",
+      "balance": 1983527
+    },
+    {
+      "id": 2,
+      "firstName": "Tom",
+      "lastName": "Bob",
+      "username": "tf",
+      "password": "456",
+      "balance": 2.5
+    },
+    {
+      "firstname": "tom",
+      "lastName": "bob",
+      "username": "tb",
+      "password": "rewrew",
+      "balance": 0,
+      "id": 3
+    },
+    {
+      "firstname": "",
+      "lastName": "",
+      "username": "heh",
+      "password": "hhr",
+      "balance": 0,
+      "id": 4
+    },
+    {
+      "firstname": "",
+      "lastName": "",
+      "username": "heh",
+      "password": "hhr",
+      "balance": 0,
+      "id": 5
+    },
+    {
+      "firstname": "",
+      "lastName": "",
+      "username": "heh",
+      "password": "hhr",
+      "balance": 0,
+      "id": 6
+    },
+    {
+      "firstname": "",
+      "lastName": "",
+      "username": "heh",
+      "password": "hhr",
+      "balance": 0,
+      "id": 7
+    },
+    {
+      "firstname": "",
+      "lastName": "",
+      "username": "heh",
+      "password": "hhr",
+      "balance": 0,
+      "id": 8
+    },
+    {
+      "firstname": "i",
+      "lastName": "i",
+      "username": "i",
+      "password": "i",
+      "balance": 0,
+      "id": 9
+    },
+    {
+      "firstname": "i",
+      "lastName": "i",
+      "username": "i",
+      "password": "i",
+      "balance": 0,
+      "id": 10
+    }
+  ],
+  "objects": [
+    {
+      "id": 1,
+      "text": "this is text"
+    },
+    {
+      "text": "",
+      "id": 2
+    },
+    {
+      "text": "knkij",
+      "id": 3
+    }
+  ]
+}
