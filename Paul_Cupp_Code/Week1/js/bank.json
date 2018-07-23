@@ -24,5 +24,11 @@
         "balance": 0,
         "id": 3
       }
+    ],
+    "objects": [
+        {
+            "id":1,
+            "text": "this is text"
+        }
     ]
 }

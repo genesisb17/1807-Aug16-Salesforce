@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Assignment 1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="jumbotron">
+            <h1>1. Fibonacci</h1>
+            <input type="number" id="fibN" placeholder="Enter Number">
+            <button class="btn btn-submit" id="runFib">Fibonacci!</button>
+            <br> <br>
+            <span><h5>Result:</h5></span><span id="fibOut"></span>
+    </div>
+
+    <br><hr><br>
+
+    <div class="jumbotron">
+            <h1>2. Bubble Sort</h1>
+            <input type="number" id="newNumber" placeholder="Enter Number to Add"><br>
+            <button class="btn btn-submit" id="addToArray">Add Number!</button>
+            <button class="btn btn-submit" id="runBubbleSort">Bubble Sort!</button>
+            <br> <br>
+            <span><h5>Result:</h5></span><span id="sortedNumbers"></span>            
+    </div>
+
+    <br><hr><br>
+
+    <div class="jumbotron">
+        <h1>3. Reverse String</h1>
+        <input type="text" id="reverse" placeholder="Enter String">
+        <button class="btn btn-submit" id="runReverse">Reverse String!</button>
+        <br> <br>
+        <span><h5>Result:</h5></span><span id="reverseString"></span>
+    </div>
+
+    <br><hr><br>
+
+    <div class="jumbotron">
+        <h1>4. Factorial</h1>
+        <input type="text" id="factorial" placeholder="Enter Number">
+        <button class="btn btn-submit" id="runFactorial">Factorial!</button>
+        <br> <br>
+        <span><h5>Result:</h5></span><span id="factorialAnswer"></span>
+    </div>
+
+    <br><hr><br>
+
+    <div class="jumbotron">
+        <h1>6. Even Number</h1>
+        <input type="text" id="testNumber" placeholder="Enter Number">
+        <button class="btn btn-submit" id="runTest">Test if Number is Even!</button>
+        <br> <br>
+        <span><h5>Result:</h5></span><span id="testAnswer"></span>
+    </div>
+
+    <br><hr><br>
+
+    <div class="jumbotron">
+        <h1>7. Palindrome</h1>
+        <input type="text" id="potentialPalindrome" placeholder="Enter String">
+        <button class="btn btn-submit" id="runPalindrome">Test if it is a Palindrome!</button>
+        <br> <br>
+        <span><h5>Result:</h5></span><span id="palindromeAnswer"></span>
+    </div>
+
+    <br><hr><br>
+
+    <div class="jumbotron">
+        <h1>10. Delete Element</h1>
+        <input type="text" id="delete" placeholder='element1, element2,element3,...'>
+        <button class="btn btn-submit" id="runDelete">Delete Element</button>
+        <br> <br>
+        <span><h5>Original List:</h5></span><span id="originalList"></span>
+        <hr>
+        <span><h5>List with Third Element Removed:</h5></span><span id="newList"></span>
+    </div>
+
+    <div class="jumbotron">
+        <h1>15. Descending Order</h1>
+        <input type="text" id="numberInput" placeholder="Enter Number">
+        <button class="btn btn-submit" id="runDescend">Rearrange to Descending Order!</button>
+        <br> <br>
+        <span><h5>Result:</h5></span><span id="numberOutput"></span>
+    </div>
+
+    <script type="text/javascript" src="../js/assignment1.js"></script>
+</body>
+</html>

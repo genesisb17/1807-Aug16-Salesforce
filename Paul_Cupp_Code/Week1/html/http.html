@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>HTTP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    
+    <input type="text" id="text" placeholder="Insert text">
+    <button id="add" class="btn btn-submit">Add!</button>
+    <script>
+        
+        $('#add').on('click', sendPost);
+
+        function sendPost() {
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState=4 && xhr.status==200){
+                    console.log(xhr.responseText);
+                    console.log(xhr.getAllResponseHeaders);
+                }
+            }
+            let method = "POST";
+            let url = "http://localhost:3000/objects";
+            xhr.open(mehtod, url, true);
+            let object = {text: $('#text').val()};
+            xhr.setRequestHeader("Content-type", "application/json");
+            xhr.send(JSON.stringify(object));
+        }
+        
+    </script>
+</body>
+</html>
