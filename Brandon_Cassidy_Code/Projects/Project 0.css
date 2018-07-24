@@ -56,3 +56,14 @@ p{
 	0% { top: 100%; }
 	100% { top: -170%; }
 }
+body {
+	margin: 0;
+	background-color: black;
+  }
+  
+  .star {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	background-color: white;
+  }
