@@ -1,0 +1,15 @@
+h1,h2{
+    background-color: rgb(73, 64, 109);
+}
+
+:not(div){
+    border: 3px solid rgba(29, 51, 6, 0.068);
+}
+* {
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    min-height: 100%;
+  }
+  
