@@ -41,6 +41,9 @@
 # Compiled class file
 *.class
 
+#vscode
+**.vscode/**
+
 # Log file
 *.log
 
