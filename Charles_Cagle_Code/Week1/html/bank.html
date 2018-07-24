@@ -1,0 +1,67 @@
+<script src="../jquery-3.3.1.min.js"></script>
+<div id="loginView">
+  <input id="userLogin" placeholder="User">
+  <input id="passLogin" type="password" placeholder="Pass">
+  <input type="button" value="Login" onClick="login()">
+  <input type="button" value="Register" onClick="$('#loginView').hide(); $('#registerView').show()">
+</div>
+<div id="registerView" hidden>
+  <input id="name" placeholder="Name">
+  <input id="user" placeholder="User">
+  <input id="pass" type="password" placeholder="Pass">
+  <input type="button" value="Register" onClick="register()">
+</div>
+<div id="homeView" hidden>
+  Welcome <span id="displayName"></span>!
+  <br>
+  Your balance is <span id="displayBalance" class="money"></span>.
+</div>
+<script>
+  function register() {
+    const newUser = {
+      'name': $('#name').val(),
+      'user': $('#user').val(),
+      'pass': $('#pass').val(),
+      'balance': 0
+    };
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 201) {
+        $('#registerView').hide();
+        $('#loginView').show();
+      }
+    };
+    xhr.open('POST', 'http://127.0.0.1:3000/users', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify(newUser));
+  }
+
+  function loginFail() {
+    alert('Invalid login credentials');
+  }
+
+  function loginSuccess(user) {
+    console.log(user);
+    $('#displayName').append(user.name);
+    $('#displayBalance').append(user.balance);
+    $('#loginView').hide();
+    $('#homeView').show();
+  }
+
+  function login() {
+    const user = $('#userLogin').val();
+    const pass = $('#passLogin').val();
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+        const result = JSON.parse(xhr.response);
+        if (result.length == 0)
+          loginFail();
+        else
+          loginSuccess(result[0]);
+      }
+    };
+    xhr.open('GET', `http://127.0.0.1:3000/users/?user=${user}&pass=${pass}`);
+    xhr.send();
+  }
+</script>
