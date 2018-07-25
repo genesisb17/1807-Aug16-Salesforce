@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PokeAjax</title>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+    integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+    crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+    <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+    integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+    crossorigin="anonymous"></script>
+    <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+    integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../Project 0/pokemon.css">
+</head>
+<body>
+    <section id="briefing" class="jumbotron">
+        <div class="img"></div>
+        <div class="container justify-content-center">
+            <h1>Welcome to the Pokemon World Tournament!</h1>
+            <p>The rules are simple. Once you register in the tournament, you will receive a team of 6 random pokemon. Upon receiving your team you may review
+                the information about each pokemon, and you may mulligan one of the pokemon on your team for another random pokemon. 
+                After each battle, the winning trainer may choose to exchange one of their pokemon for one of the loser's pokemon.
+                In addition Judges award points during battles based on style, style points are awarded for the following actions:
+                <ul>
+                    <li>Same type attack bonus</li>
+                    <li>Super effective attacks</li>
+                    <li>Creating weather effects</li>
+                    <li>One-hit KOs</li>
+                    <li>Impressing the Judges introduces a style point multiplier</li>
+                </ul>
+                Every 5 rounds, Players may spend points earned from the Judges on:
+                <ul>
+                    <li>Held Items</li>
+                    <li>Training their Pokemon new moves</li>
+                    <li>Replacing their Pokemon</li>
+                </ul>                
+            </p>
+            <button id="enter" class="btn btn-info" type="button">Let's Go!</button>
+        </div>
+    </section>
+    <section id="teamInfo" class="jumbotron" hidden>
+        <div class="img"></div>
+        <button class="btn btn-primary" id="getPokemon">Create a Team!</button>
+        <button class="btn btn-primary" id="submitTeam" hidden>Submit Team!</button>
+        <br>
+        <div class="row justify-content-start rounded">
+            <div class="col-4" style="padding: 5px 5px 5px 5px">
+                <div class="row">
+                    <img class="sprite" id="sprite1" src="" width="33%" height="50%"></img>
+                    <img class="sprite" id="sprite2" src="" width="33%" height="50%"></img>
+                    <img class="sprite" id="sprite3" src="" width="33%" height="50%"></img>
+                </div>
+                <div class="row">
+                    <img class="sprite" id="sprite4" src="" width="33%" height="50%"></img>
+                    <img class="sprite" id="sprite5" src="" width="33%" height="50%"></img>
+                    <img class="sprite" id="sprite6" src="" width="33%" height="50%"></img>
+                </div>
+                <button id="move1Btn" class="move-btn btn btn-info col" type="button" hidden>Move 1</button>
+                <button id="move2Btn" class="move-btn btn btn-info col" type="button" hidden>Move 2</button>
+                <button id="move3Btn" class="move-btn btn btn-info col" type="button" hidden>Move 3</button>
+                <button id="move4Btn" class="move-btn btn btn-info col" type="button" hidden>Move 4</button>
+                <div class="row">
+                    <div id="movePanel" class="panel panel-primary rounded" hidden>
+                        <div id="movePanelHead" class="panel-heading"></div>
+                        <div id="moveDisplay" class="panel-body"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="info" class="col-7 rounded">
+                    <div class="row">
+                        <div class='col'>
+                            <h1 id="Name">Pokemon Team Generator!</h1>
+                            <progress id="progress" value="0"></progress>
+                            <div class="justify-content-center col-4" style="float: none; display: table-cell; vertical-align: bottom;">
+                                <h4 class="type rounded" id="Type1"></h4>
+                                <h4 class="type rounded" id="Type2"></h4>
+                            </div>
+                        </div>
+                        <div class="col justify-content-end">
+                                <img id="focus" class="rounded-circle" height="200" width="200" src="" alt="">
+                                <button class="btn btn-warning" id="mulligan" hidden>Mulligan this Pokemon</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="abilityPanel" class="panel panel-secondary col" hidden>
+                            <div id="abilityPanelHead" class="panel-heading"></div>
+                            <div id= "desc" class="panel-body"></div>
+                        </div>
+                        <div id="statPanel" class="panel panel-secondary col" hidden>
+                            <div id="statPanelHead" class="panel-heading"></div>
+                            <div id= "statPanel" class="panel-body">
+                                <p id="hp"></p>
+                                <p id="speed"></p>
+                                <p id="attack"></p>
+                                <p id="defense"></p>
+                                <p id="special-attack"></p>
+                                <p id="special-defense"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+    </section>
+    <script type="text/javascript" src="../Project 0/pokemon.js"></script>
+</body>
+</html>
