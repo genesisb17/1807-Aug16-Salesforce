@@ -18,6 +18,7 @@ function getPokemon() {
             // Code to process response
             resp = xhr.responseText; // JSON string representing Pokemon
             pokemon = JSON.parse(resp); // Parse response into JS object
+            console.log(resp);
             setPokeValues(pokemon); // Manipulate DOM with Poke properties
         }
     }
@@ -37,8 +38,8 @@ function getPokemon() {
     function setPokeValues(poke) { 
         // Manipulate DOM with response
         $('#pokemonName').html(pokemon.name);
-        var pic = $('pokemonImg');
-        pic.attr("src",pokemon.sprites.front_shiny);
+        var pic = $('#pokemonImg');
+        pic.attr("src",pokemon.sprites.front_default);
         pic.attr("alt", pokemon.name);
     }
 }
