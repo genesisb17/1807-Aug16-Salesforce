@@ -15,6 +15,7 @@
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
         crossorigin="anonymous"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 </head>
 
 <body>
@@ -22,30 +23,76 @@
     <div class='row'>
         <div class="col-xl-2" id="left">
             <img class='poke-icon' src='assets/pokeball_icon.png' />
+            <img class='poke-icon' src='assets/pokeball_icon.png' />
+            <img class='poke-icon' src='assets/pokeball_icon.png' />
         </div>
         <div class="col-xl-8" id="center">
             <nav class="navbar navbar-light">
                 <h2 class="title">Welcome to Pok&#233;dex</h2>
             </nav>
-            <table class="table">
+            <div class="row" id="second">
+                <div class="col-2"></div>
+                <input class="form-control col-3" type="number" id="dexIn" placeholder="Pok&#233;dex Number" />
+                <div class="col-1"></div>
+                <button class="btn btn-danger col-2" id="pokeRun">Find Pok&#233;mon!</button>
+                <button class="btn btn-light col-2" id="pokeRandom">Surprise Me!</button>
+                <div class="col-2"></div>
+            </div>
+            <div class="row">
+                <h2 id="pokeName"></h2>
+            </div>
+            <table class="table" id="sprites" hidden=true>
+                <tbody>
+                    <tr>
+                        <td>
+                            <figure>
+                                <img id="frontDefault" />
+                                <figcaption>Front Default</figcaption>
+                            </figure>
+                        </td>
+                        <td id="backDefaultFigure">
+                            <figure>
+                                <img id="backDefault" />
+                                <figcaption>Back Default</figcaption>
+                            </figure>
+                        </td>
+                        <td>
+                            <figure>
+                                <img id="frontShiny" />
+                                <figcaption>Front Shiny</figcaption>
+                            </figure>
+                        </td>
+                        <td id="backShinyFigure">
+                            <figure>
+                                <img id="backShiny" />
+                                <figcaption>Back Shiny</figcaption>
+                            </figure>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="table" id="typeAbilitiesHeightDimensions" hidden=true>
                 <thead>
                     <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>Type</th>
+                        <th>Abilities</th>
+                        <th>Height and Weight</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                        <td id="type"></td>
+                        <td id="abilities"></td>
+                        <td id="heightWeight"></td>
                     </tr>
                 </tbody>
             </table>
+            <div class="row" id="statContainer"></div>
             <img class="loading-image" src="assets/pokeball.png" hidden=true />
         </div>
         <div class="col-xl-2" id="right">
+            <img class='poke-icon' src='assets/pokeball_icon.png' />
+            <img class='poke-icon' src='assets/pokeball_icon.png' />
             <img class='poke-icon' src='assets/pokeball_icon.png' />
         </div>
     </div>
