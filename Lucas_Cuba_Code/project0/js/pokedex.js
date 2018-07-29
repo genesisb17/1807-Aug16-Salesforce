@@ -5,6 +5,9 @@ window.onload = () => {
 }
 //ajax call based on user input
 function pokeRun() {
+  if ($('#dexIn').val() == '' || $('#dexIn').val() <= 0 || $('#dexIn').val() >= 803) {
+    throw new Error("Please enter a pokedex value between the numbers of 1 and 802 inclusively");
+  }
   let pokeXhr = new XMLHttpRequest();
   let id = $('#dexIn').val();
   $('#dexIn').val('');
