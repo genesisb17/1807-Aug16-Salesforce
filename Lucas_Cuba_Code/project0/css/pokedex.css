@@ -63,6 +63,12 @@ nav {
     font-weight: bold;
 }
 
+#pokeName small {
+    margin-left: .5em;
+    font-style: italic;
+    font-size: .5em;
+}
+
 .poke-icon {
     width: 3em;
     height: 3em;

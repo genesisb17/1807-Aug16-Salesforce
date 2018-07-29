@@ -45,6 +45,9 @@ function pokeRandom() {
 
 function dexUpdate(response) {
   $('#pokeName').text(capital(response.name));
+  let dexInfo = document.createElement('small');
+  dexInfo.innerHTML = `Dex #${response.id}`;
+  $('#pokeName').append(dexInfo);
 
   //filling out the sprites section with img urls from the api response. gen 6 and after do not have back sprites, so checks are in place here so that only the right images/figures display
   $('#sprites').attr('hidden', false);
