@@ -1,20 +1,31 @@
 
-
+/*spinning pokeball animations*/
 .loading-image {
-    position: absolute;
-    /*top: 50%;
-    left: 50%;*/
-    width: 120px;
-    height: 120px;
-    margin:-60px 0 0 -60px;
-    -webkit-animation:spin 3s linear infinite;
-    -moz-animation:spin 3s linear infinite;
-    animation:spin 3s linear infinite;
+    width: 200px;
+    height: 200px;
+    -webkit-animation:spin 2.0s linear infinite;
+    -moz-animation:spin 2.0s linear infinite;
+    animation:spin 2.0s linear infinite;
 }
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
 @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
+#typeModal .loading-image, #abilityModal .loading-image {
+    width: 80px;
+    height: 80px;
+    -webkit-animation:spin 1.8s linear infinite;
+    -moz-animation:spin 1.8s linear infinite;
+    animation:spin 1.8s linear infinite;
+}
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+#loadingModal .modal-body {
+    text-align: center;
+}
 
 #right, #left {
     display: flex;
@@ -25,14 +36,14 @@
 }
 
 #center {
-    border-left: 1px solid #999;
-    border-right: 1px solid #999;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
 }
 
 nav {
     margin-top: 1.1em;
     background: rgb(255, 45, 45);
-    border-bottom: 3px solid #999;
+    border-bottom: 2px solid #999;
     border-radius: 5px;
     /*box-shadow: 5px 5px 3px #222;*/
 }
@@ -85,100 +96,142 @@ nav {
 }
 
 #abilities span {
-    
+    letter-spacing: -1px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#abilities:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#abilities span:not(:first-child) {
+    margin-right: 1em;
 }
 
 span + small {
+    margin-right: 1em;
+}
 
+#heightWeight span {
+    letter-spacing: -1px;
+    font-weight: bold;
+    margin-right: 1em;
+    font-size: 1.1em;
+}
+
+.modal-loading .loading-image {
+    margin-left: 1.5em;
 }
 /* type badges */
 
+#type button, #typeModal .modal-body button, #typeModal .modal-body span {
+    color: #fff;
+}
+
+#typeModal .modal-body button {
+    font-size: 1.2em;
+    display: block;
+    margin-top: 2em;
+}
+
+#typeModal .modal-body h5 {
+    margin-top: 1em;
+    border-top: 1px solid #bbb;
+}
+
+#type:hover, #type button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 #normal {
     background-color: #A8A878;
-    color: #fff;
+    
 }
 
 #fighting {
     background-color: #C03028;
-    color: #fff;
+    
 }
 
 #poison {
     background-color: #A040A0;
-    color: #fff;
+    
 }
 
 #fairy {
     background-color: #EE99AC;
-    color: #fff;
+    
 }
 
 #grass {
     background-color: #78C850;
-    color: #fff;
+    
 }
 
 #ground {
     background-color: #E0C068;
-    color: #fff;
+    
 }
 
 #rock {
     background-color: #B8A038;
-    color: #fff;
+    
 }
 
 #steel {
     background-color: #B8B8D0;
-    color: #fff;
+    
 }
 
 #dragon {
     background-color: #7038F8;
-    color: #fff;
+    
 }
 
 #fire {
     background-color: #F08030;
-    color: #fff;
+    
 }
 
 #ghost {
     background-color: #705898;
-    color: #fff;
+    
 }
 
 #psychic {
     background-color: #F85888;
-    color: #fff;
+    
 }
 
 #dark {
     background-color: #705848;
-    color: #fff;
+    
 }
 
 #water {
     background-color: #6890F0;
-    color: #fff;
+    
 }
 
 #ice {
     background-color: #98D8D8;
-    color: #fff;
+    
 }
 
 #flying {
     background-color: #A890F0;
-    color: #fff;
+    
 }
 
 #electric {
     background-color: #F8D030;
-    color: #fff;
+    
 }
 
 #bug {
     background-color: #A8B820;
-    color: #fff;
+    
 }
