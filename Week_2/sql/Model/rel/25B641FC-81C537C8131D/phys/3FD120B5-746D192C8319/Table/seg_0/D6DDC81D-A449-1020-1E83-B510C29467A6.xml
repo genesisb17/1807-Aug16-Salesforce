@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="GAME_PLAYER" directorySegmentName="seg_0" id="D6DDC81D-A449-1020-1E83-B510C29467A6">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:01 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<schemaObject>47E20BC3-6F94-9AD2-19C8-8E88EEC852C6</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4EB5FA0B-90FA-CD66-C1E3-53CE451EB6B5</segment>
+<tableSpace>7CA0C766-CAFF-D668-6EB7-BFB38D3246E8</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="P_ID" id="B22D2DFD-9688-819E-660B-11AB81396811">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:02 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="G_ID" id="D83C6F05-FD37-36CB-694B-20A4C1D4142E">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:02 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_GP_GAME" id="092718E1-D7FA-FAB1-F769-294E11D47BD2">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:03 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_GP_PLAYER" id="9E82B1EA-EAC6-AE08-1094-8C945D45B463">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:03 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+</TableProxyOraclev12c>

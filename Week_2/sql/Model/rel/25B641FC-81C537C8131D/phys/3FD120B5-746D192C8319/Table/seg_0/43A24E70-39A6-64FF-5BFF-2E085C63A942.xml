@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="GAME" directorySegmentName="seg_0" id="43A24E70-39A6-64FF-5BFF-2E085C63A942">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:01 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<schemaObject>47E20BC3-6F94-9AD2-19C8-8E88EEC852C6</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4EB5FA0B-90FA-CD66-C1E3-53CE451EB6B5</segment>
+<tableSpace>7CA0C766-CAFF-D668-6EB7-BFB38D3246E8</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="G_ID" id="7A896B5C-CED7-DD22-71C8-B2724C837A69">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:02 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ARENA" id="D0606AD0-91D7-FBE3-7FD0-2AC46D4DB9B5">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:02 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ATTENDANCE" id="D436F6CA-0EFD-8042-883E-8080932E93D4">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:02 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="GAME_PK" id="A2D97FC3-64D5-9BAE-B3E5-DBEA29BE2D34">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:03 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<schemaObject>47E20BC3-6F94-9AD2-19C8-8E88EEC852C6</schemaObject>
+<segment>4726BDF8-9DB8-1DA1-541F-0A2F693F3280</segment>
+<tableSpace>7CA0C766-CAFF-D668-6EB7-BFB38D3246E8</tableSpace>
+<indexSegment>4726BDF8-9DB8-1DA1-541F-0A2F693F3280</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

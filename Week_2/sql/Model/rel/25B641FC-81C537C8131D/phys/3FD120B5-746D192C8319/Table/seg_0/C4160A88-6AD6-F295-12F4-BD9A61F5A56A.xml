@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="TEAM" directorySegmentName="seg_0" id="C4160A88-6AD6-F295-12F4-BD9A61F5A56A">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:25:03 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<schemaObject>47E20BC3-6F94-9AD2-19C8-8E88EEC852C6</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4EB5FA0B-90FA-CD66-C1E3-53CE451EB6B5</segment>
+<tableSpace>7CA0C766-CAFF-D668-6EB7-BFB38D3246E8</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NAME" id="0875392F-120D-9F8E-8FE9-ED28169B8CE6">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:25:03 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="OWNER" id="40A095A3-2759-8FD9-731B-5C789A39F4A7">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:25:03 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CITY" id="B65F1E3F-9A76-AA92-A377-51931C53F518">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:25:03 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="TEAM_PK" id="05BBEC94-3142-2D47-424E-E708E36B4934">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:25:04 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<schemaObject>47E20BC3-6F94-9AD2-19C8-8E88EEC852C6</schemaObject>
+<segment>4726BDF8-9DB8-1DA1-541F-0A2F693F3280</segment>
+<tableSpace>7CA0C766-CAFF-D668-6EB7-BFB38D3246E8</tableSpace>
+<indexSegment>4726BDF8-9DB8-1DA1-541F-0A2F693F3280</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

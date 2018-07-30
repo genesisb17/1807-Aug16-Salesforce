@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="STEVENHE96_MASTER" directorySegmentName="seg_0" id="DE36FE53-9311-9971-E17F-8D40BD4EC4B9">
+<sourceConnName>training_connection</sourceConnName>
+<sourceObjName>STEVENHE96_MASTER</sourceObjName>
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:25:02 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<schemaObject>47E20BC3-6F94-9AD2-19C8-8E88EEC852C6</schemaObject>
+</UserOraclev10g>

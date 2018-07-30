@@ -1,0 +1,81 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="43A24E70-39A6-64FF-5BFF-2E085C63A942" schemaObject="47E20BC3-6F94-9AD2-19C8-8E88EEC852C6" name="GAME">
+<sourceConnName>training_connection</sourceConnName>
+<sourceObjSchema>STEVENHE96_MASTER</sourceObjSchema>
+<sourceObjName>GAME</sourceObjName>
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:05 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<importedID>69057BF9-57D1-782C-6627-531BF8A8F474</importedID>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="G_ID" id="7A896B5C-CED7-DD22-71C8-B2724C837A69">
+<sourceConnName>training_connection</sourceConnName>
+<sourceObjSchema>GAME</sourceObjSchema>
+<sourceObjName>G_ID</sourceObjName>
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:05 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<importedID>445C4E07-8A50-8A59-F641-D6F1A629CE5A</importedID>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ARENA" id="D0606AD0-91D7-FBE3-7FD0-2AC46D4DB9B5">
+<sourceConnName>training_connection</sourceConnName>
+<sourceObjSchema>GAME</sourceObjSchema>
+<sourceObjName>ARENA</sourceObjName>
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:05 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<importedID>B57CCA20-4F75-41F4-4E2F-0DFF24D6A7E5</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ATTENDANCE" id="D436F6CA-0EFD-8042-883E-8080932E93D4">
+<sourceConnName>training_connection</sourceConnName>
+<sourceObjSchema>GAME</sourceObjSchema>
+<sourceObjName>ATTENDANCE</sourceObjName>
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:05 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<importedID>4CAD9189-A243-819F-8055-99983D07D136</importedID>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,10,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A2D97FC3-64D5-9BAE-B3E5-DBEA29BE2D34" schemaObject="47E20BC3-6F94-9AD2-19C8-8E88EEC852C6" name="GAME_PK">
+<sourceConnName>training_connection</sourceConnName>
+<sourceObjSchema>STEVENHE96_MASTER</sourceObjSchema>
+<sourceObjName>SYS_C005155</sourceObjName>
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:05 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<importedID>D0D8D345-33B6-65B4-7724-171BDC369051</importedID>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7A896B5C-CED7-DD22-71C8-B2724C837A69"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

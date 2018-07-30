@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev12c class="oracle.dbtools.crest.model.design.storage.oracle.v12c.TableProxyOraclev12c" name="PLAYER" directorySegmentName="seg_0" id="7A05A6FC-30F9-7602-3957-5B658217CA78">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:34:56 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<schemaObject>47E20BC3-6F94-9AD2-19C8-8E88EEC852C6</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>4EB5FA0B-90FA-CD66-C1E3-53CE451EB6B5</segment>
+<tableSpace>7CA0C766-CAFF-D668-6EB7-BFB38D3246E8</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="NAME" id="30C40B61-E0C6-01C0-E6FA-63522A2618E5">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:34:56 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TEAM" id="89414781-0F1B-C0A1-931A-830047441F30">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:34:56 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="YARDS" id="BE242834-3E79-78F7-4182-A3244AF7839C">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:34:56 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="JERSEY" id="C17A0BBD-A131-59D1-BDF1-22A609E38D96">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:34:56 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="P_ID" id="EBEC7DE3-62DD-7161-3454-8A7741170871">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:34:56 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_PLAYER_TEAM" id="3F6F585D-2A47-F2E3-3525-9EE41794B2BD">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:34:57 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PLAYER_PK" id="52E784A4-778E-CD3E-E051-E7DEB934B5FF">
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:34:56 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<schemaObject>47E20BC3-6F94-9AD2-19C8-8E88EEC852C6</schemaObject>
+<segment>4726BDF8-9DB8-1DA1-541F-0A2F693F3280</segment>
+<tableSpace>7CA0C766-CAFF-D668-6EB7-BFB38D3246E8</tableSpace>
+<indexSegment>4726BDF8-9DB8-1DA1-541F-0A2F693F3280</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev12c>

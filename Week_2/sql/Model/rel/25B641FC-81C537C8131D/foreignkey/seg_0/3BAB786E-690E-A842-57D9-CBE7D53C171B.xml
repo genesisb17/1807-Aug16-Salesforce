@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3BAB786E-690E-A842-57D9-CBE7D53C171B" containerWithKeyObject="D6DDC81D-A449-1020-1E83-B510C29467A6" localFKIndex="092718E1-D7FA-FAB1-F769-294E11D47BD2" name="FK_GP_GAME">
+<sourceConnName>training_connection</sourceConnName>
+<sourceObjSchema>STEVENHE96_MASTER</sourceObjSchema>
+<sourceObjName>FK_GP_GAME</sourceObjName>
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:50:05 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<importedID>3D45E29E-85D8-D3A3-F571-7EA6F3BD7E8B</importedID>
+<referredTableLongName>STEVENHE96_MASTER.GAME</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>43A24E70-39A6-64FF-5BFF-2E085C63A942</referredTableID>
+<keyObject>A2D97FC3-64D5-9BAE-B3E5-DBEA29BE2D34</keyObject>
+<referredKeyID>A2D97FC3-64D5-9BAE-B3E5-DBEA29BE2D34</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>G_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

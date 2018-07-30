@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>XKCD API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="xkcd_api.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <h1 class="title">XKCD API</h1>
+    <br>
+    <br>
+    <div class="welcome">
+        Welcome to the xkcd API! Enter a comic number to pull up a comic and its details.
+        <br>Alternatively, jump to the most recent or the first comic.
+    </div>
+    <br>
+    <br>
+
+    <div class="comic">
+        <span id="title"></span>
+        <img id="comic">
+    </div>
+
+    <div class="button-wrapper">
+        <div class="navButton">
+            <button type="btn btn-primary" id="prev">Prev</button>
+        </div>
+        <div>
+            Enter a comic number below! The most recent number is:
+            <span id="current"></span>
+        </div>
+        <div class="navButton">
+            <button type="btn btn-primary" id="next">Next</button>
+        </div>
+        <div class="navButton">
+            <button type="btn btn-primary" id="first">First</button>
+        </div>
+        <div>
+            <input type="number" id="inputNum">
+            <button type="btn btn-primary" id="find">Find Comic</button>
+        </div>
+        <div class="navButton">
+            <button type="btn btn-primary" id="last">Last</button>
+        </div>
+    </div>
+
+    </div>
+
+    <script src="xkcd_api.js"></script>
+
+</body>
+
+</html>

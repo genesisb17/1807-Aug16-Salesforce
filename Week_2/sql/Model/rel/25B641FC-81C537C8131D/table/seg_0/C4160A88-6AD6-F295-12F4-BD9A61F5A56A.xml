@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="C4160A88-6AD6-F295-12F4-BD9A61F5A56A" schemaObject="47E20BC3-6F94-9AD2-19C8-8E88EEC852C6" name="TEAM">
+<sourceConnName>training_connection</sourceConnName>
+<sourceObjSchema>STEVENHE96_MASTER</sourceObjSchema>
+<sourceObjName>TEAM</sourceObjName>
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:25:03 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NAME" id="0875392F-120D-9F8E-8FE9-ED28169B8CE6">
+<sourceConnName>training_connection</sourceConnName>
+<sourceObjSchema>TEAM</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:25:03 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OWNER" id="40A095A3-2759-8FD9-731B-5C789A39F4A7">
+<sourceConnName>training_connection</sourceConnName>
+<sourceObjSchema>TEAM</sourceObjSchema>
+<sourceObjName>OWNER</sourceObjName>
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:25:03 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CITY" id="B65F1E3F-9A76-AA92-A377-51931C53F518">
+<sourceConnName>training_connection</sourceConnName>
+<sourceObjSchema>TEAM</sourceObjSchema>
+<sourceObjName>CITY</sourceObjName>
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:25:03 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>200 BYTE</dataTypeSize>
+<ownDataTypeParameters>200 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="05BBEC94-3142-2D47-424E-E708E36B4934" schemaObject="47E20BC3-6F94-9AD2-19C8-8E88EEC852C6" name="TEAM_PK">
+<sourceConnName>training_connection</sourceConnName>
+<sourceObjSchema>STEVENHE96_MASTER</sourceObjSchema>
+<sourceObjName>SYS_C005152</sourceObjName>
+<createdBy>Steven He Local</createdBy>
+<createdTime>2018-07-26 19:25:04 UTC</createdTime>
+<ownerDesignName>Model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0875392F-120D-9F8E-8FE9-ED28169B8CE6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
