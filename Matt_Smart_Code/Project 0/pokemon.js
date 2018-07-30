@@ -3,6 +3,7 @@ window.onload = function() {
     $(`.sprite`).attr("src", "../Project 0/img/ball.jpg");
     $(`#enter`).on('click', enter);
     $(`#mulligan`).on('click', mulligan);
+    $(`#findOpponent`).on('click', startBattle);
     progressBar = document.getElementById("progress"),
     loadBtn = document.getElementById("getPokemon"),
     progBar = document.getElementById("progress"),
@@ -10,6 +11,11 @@ window.onload = function() {
     enemyTeam = ['','','','','',''],
     numBattles = 0;
     mull=false;
+}
+var battleState = {
+playerTeam: [],
+enemyTeam: [],
+weatherEffects: "none",
 }
 function enter() {
     $(`#teamInfo`).removeAttr("hidden");
@@ -19,13 +25,13 @@ function enter() {
 //Picks randomly from possible configurations of each pokemon
 function getPokemonTeam() {
     this.setAttribute("hidden", true);
-    //create XHR objects
-    xhr1 = new XMLHttpRequest();
-    xhr2 = new XMLHttpRequest();
-    xhr3 = new XMLHttpRequest();
-    xhr4 = new XMLHttpRequest();
-    xhr5 = new XMLHttpRequest();
-    xhr6 = new XMLHttpRequest();
+    //create XHR objects for each pokemon
+    let xhr1 = new XMLHttpRequest();
+    let xhr2 = new XMLHttpRequest();
+    let xhr3 = new XMLHttpRequest();
+    let xhr4 = new XMLHttpRequest();
+    let xhr5 = new XMLHttpRequest();
+    let xhr6 = new XMLHttpRequest();
     progBar.max = 100;
 
     /*
@@ -113,6 +119,99 @@ function getPokemonTeam() {
     xhr6.send();
     progBar.value = 25;
 }
+/*
+Separate function for generating enemy teams
+since less work needs to be done than for the player team.
+*/
+function generateEnemyTeam() {
+    //create XHR objects for each pokemon
+    let xhr1 = new XMLHttpRequest();
+    let xhr2 = new XMLHttpRequest();
+    let xhr3 = new XMLHttpRequest();
+    let xhr4 = new XMLHttpRequest();
+    let xhr5 = new XMLHttpRequest();
+    let xhr6 = new XMLHttpRequest();
+    //Define callback functions, generates a moveset for each
+    var ids = [Math.floor(Math.random() * 712) + 1,
+        Math.floor(Math.random() * 712) + 1,
+        Math.floor(Math.random() * 712) + 1,
+        Math.floor(Math.random() * 712) + 1,
+        Math.floor(Math.random() * 712) + 1,
+        Math.floor(Math.random() * 712) + 1];
+
+
+    //callback functions
+    xhr1.onreadystatechange = function (){
+        if(xhr1.readyState == 4 && xhr1.status == 200) {
+            //process response
+            let resp = xhr1.responseText;
+            let pokemon = JSON.parse(resp);
+            enemyTeam[0] = pokemon;
+            determineMoveset(enemyTeam[0], 1);
+        }
+    };
+    xhr2.onreadystatechange = function (){
+        if(xhr2.readyState == 4 && xhr2.status == 200) {
+            //process response
+            let resp = xhr2.responseText;
+            let pokemon = JSON.parse(resp);
+            enemyTeam[1] = pokemon;
+            determineMoveset(enemyTeam[1], 2);
+        }
+    };
+    xhr3.onreadystatechange = function (){
+        if(xhr3.readyState == 4 && xhr3.status == 200) {
+            //process response
+            let resp = xhr3.responseText;
+            let pokemon = JSON.parse(resp);
+            enemyTeam[2] = pokemon;
+            determineMoveset(enemyTeam[2], 3);
+        }
+    };
+    xhr4.onreadystatechange = function (){
+        if(xhr4.readyState == 4 && xhr4.status == 200) {
+            //process response
+            let resp = xhr4.responseText;
+            let pokemon = JSON.parse(resp);
+            enemyTeam[3] = pokemon;
+            determineMoveset(enemyTeam[3], 4);
+        }
+    };
+    xhr5.onreadystatechange = function (){
+        if(xhr5.readyState == 4 && xhr5.status == 200) {
+            //process response
+            let resp = xhr5.responseText;
+            let pokemon = JSON.parse(resp);
+            enemyTeam[4] = pokemon;
+            determineMoveset(enemyTeam[4], 5);
+        }
+    };
+    xhr6.onreadystatechange = function (){
+        if(xhr6.readyState == 4 && xhr6.status == 200) {
+            //process response
+            let resp = xhr6.responseText;
+            let pokemon = JSON.parse(resp);
+            enemyTeam[5] = pokemon;
+            determineMoveset(enemyTeam[5], 6);
+        }
+    };
+
+    //open requests
+    var url = `https://pokeapi.co/api/v2/pokemon/${ids[0]}/`; xhr1.open("GET", url, true);
+    url = `https://pokeapi.co/api/v2/pokemon/${ids[1]}/`; xhr2.open("GET", url, true);
+    url = `https://pokeapi.co/api/v2/pokemon/${ids[2]}/`; xhr3.open("GET", url, true);
+    url = `https://pokeapi.co/api/v2/pokemon/${ids[3]}/`; xhr4.open("GET", url, true);
+    url = `https://pokeapi.co/api/v2/pokemon/${ids[4]}/`; xhr5.open("GET", url, true);
+    url = `https://pokeapi.co/api/v2/pokemon/${ids[5]}/`; xhr6.open("GET", url, false);
+
+    //send
+    xhr1.send();
+    xhr2.send();
+    xhr3.send();
+    xhr4.send();
+    xhr5.send();
+    xhr6.send();
+}
 function setPokemonValues(pokemon, i) {
 
     //Party Display
@@ -134,43 +233,43 @@ function setPokemonValues(pokemon, i) {
     var url = `https://pokeapi.co/api/v2/ability/${pokemon.abilities[abilityNum].ability.name}/`;
     xhrAbility.open("GET", url, true);
     xhrAbility.send();
-    progBar.value = 50;
-
-
-    //Determine Moveset
-    function determineMoveset(pokemon, slotNum) {
-        let xhrMoves = new XMLHttpRequest();
-
-        xhrMoves.onreadystatechange = function (){
-            if(xhrMoves.readyState == 4 && xhrMoves.status == 200){
-                let resp = xhrMoves.responseText;
-                let move = JSON.parse(resp);
-                pokemon.moves[slotNum] = move;
-            }
-        }
-
-
-        let numMoves = pokemon.moves.length;
-        let movesNum = Math.floor(Math.random() * numMoves) + 0;
-        var url = `https://pokeapi.co/api/v2/move/${pokemon.moves[movesNum].move.name}/`;
-        xhrMoves.open("GET", url, true);
-        //enable page functionality once Pokemon are loaded (close enough)
-        xhrMoves.onloadend = function(e) {
-            if(xhrMoves.readyState == 4 && xhrMoves.status == 200) {
-                progBar.value = 100;
-                $(`.sprite`).on('click', clearSelect);
-                $(`.sprite`).on('click', dispPokemon);    
-                $(`.move-btn`).on('click', dispMove);
-            }
-        };
-        //send XHTTP request
-        xhrMoves.send();
-    }
     progBar.value = 80;
     for(i=0; i < 4; i++) {
         determineMoveset(pokemon, i);
     }
 };
+//Determine Moveset
+function determineMoveset(pokemon, slotNum) {
+    let xhrMoves = new XMLHttpRequest();
+
+    xhrMoves.onreadystatechange = function (){
+        if(xhrMoves.readyState == 4 && xhrMoves.status == 200){
+            let resp = xhrMoves.responseText;
+            let move = JSON.parse(resp);
+            pokemon.moves[slotNum] = move;
+        }
+    }
+
+
+    let numMoves = pokemon.moves.length;
+    let movesNum = Math.floor(Math.random() * numMoves) + 0;
+    var url = `https://pokeapi.co/api/v2/move/${pokemon.moves[movesNum].move.name}/`;
+    xhrMoves.open("GET", url, true);
+    //enable page functionality once Pokemon are loaded (close enough)
+    xhrMoves.onloadend = function(e) {
+        if(xhrMoves.readyState == 4 && xhrMoves.status == 200) {
+            progBar.value = 100;
+            $(`.sprite`).on('click', clearSelect);
+            $(`.sprite`).on('click', dispPokemon);    
+            $(`.move-btn`).on('click', dispMove);
+        }
+    };
+    //send XHTTP request
+    xhrMoves.send();
+}
+
+
+
 function dispPokemon() {
     //Add selection display
     addSelect(this);
@@ -180,6 +279,9 @@ function dispPokemon() {
     var sprite = this.getAttribute("id");
     let pokeNum = sprite.substring(6,7);
     pokeNum = parseInt(pokeNum) - 1;
+
+    //Show the Find Battle Button
+    $(`#findOpponent`).removeAttr("hidden");
 
     //Set Focus
     let image= $(`#focus`);
@@ -281,11 +383,13 @@ function mulligan() {
             //process response
             let resp = xhr.responseText;
             let pokemon = JSON.parse(resp);
-            let number = parseInt($(`#focus`).attr("class").substring(8,9));
+            let number = parseInt($(`#focus`).attr("class").substring(23,24));
             pokemonTeam[number] = pokemon;
             setPokemonValues(pokemonTeam[number], number+1);
         }
     };
+    let pnumber = parseInt($(`#focus`).attr("class").substring(23,24));
+    $(`#sprite${pnumber+1}`).attr("src", "../Project 0/img/ball.jpg");
     var url = `https://pokeapi.co/api/v2/pokemon/${Math.floor(Math.random() * 712) + 1}/`; 
     xhr.open("GET", url, true);
     xhr.send();
@@ -299,26 +403,121 @@ function clearSelect() {
 }
 function addSelect(tag) {
     tag.setAttribute("style", "border:2px solid rgb(233, 171, 88)");
-}
-
-function buildFormData() {
-    var fd = new FormData();
-  
-    for (var i = 0; i < 3000; i += 1) {
-      fd.append('data[]', Math.floor(Math.random() * 999999));
-    }
-  
-    return fd;
+    $(`#movePanel`).attr("hidden");
 }
 
 //Script for starting a battle
 function startBattle() {
     //Set up 'loading screen'
+    $(`#teamInfo`).attr("hidden", true);
+    $(`#loadScreen`).removeAttr("hidden");
     //Create enemy trainer and their team
-    //Set up battle screen
+    generateEnemyTeam();
+    //display Enemy Team on the Load Screen
+
+    //Set up pre-Battle/Battle Screens
+
     //Enable functionality of battle elements
 
 }
+//Ending a battle
 function endBattle(numBattles) {
-    //Return to the
+    /*
+    Go back to the Team Info Screen if still in a battle set
+    Take player to the Store Screen if between Battle Sets
+    */
+}
+
+//These functions are used during a battle//
+
+//Player functions
+function useMove() {
+    var move =  curr_pokemon.moves[parseInt(this.id.substring(4,5)) - 1];
+    var effects_list = [/confuse/i, /burn/i, /sleep/i, /poison/i,
+                        /infatuate/i, /paralyze/i, /freeze/i, /flinch/i];
+    var stat_list = [/evasion/i, /special attack/i, /special defense/i,
+                    /attack/i, /defense/i, /speed/i, /accuracy/i];
+    var display = "";                
+    let effects = move.effect_entries[0].short_effect;
+    
+    //determine damage_class
+    if(move.damage_class.name == "status") {
+        //status moves are either beneficial or detrimental based on target
+        if(/user/i.test(move.target)) {
+            //examine the move's effects for keywords
+            effects_list.forEach(element => {
+                if(element.test(effects)) {
+                    curr_pokemon.active_effect = element.exec(effects);
+                    break;
+                }
+            });
+            z = 0;
+            /*
+            speed 0
+            specD 1
+            specA 2
+            defense 3
+            attack 4
+            */
+            stat_list.forEach(element => {
+               let stat = element.exec(move.effect_entries[0].short_effect);
+               if(stat) {
+                    if(/speed/i.test(stat)) { 
+                        curr_pokemon.stats[0].base_stat += Math.round(curr_pokemon.stats[0]*.25, 1);
+                        display = `${curr_pokemon.name} raises its speed!`;
+                    }
+                    if(/special defense/i.test(stat)) { 
+                        curr_pokemon.stats[1].base_stat += Math.round(curr_pokemon.stats[1]*.25, 1);
+                        display = `${curr_pokemon.name} raises its special defense!`;
+                    }
+                    if(/special attack/i.test(stat)) { 
+                        curr_pokemon.stats[2].base_stat += Math.round(curr_pokemon.stats[2]*.25, 1);
+                        display = `${curr_pokemon.name} raises its special attack!`;
+                    }
+                    if(/defense/i.test(stat)) { 
+                        curr_pokemon.stats[3].base_stat += Math.round(curr_pokemon.stats[3]*.25, 1);
+                        display = `${curr_pokemon.name} raises its defense!`;
+                    }
+                    if(/attack/i.test(stat)) { 
+                        curr_pokemon.stats[4].base_stat += Math.round(curr_pokemon.stats[4]*.25, 1);
+                        display = `${curr_pokemon.name} raises its attack!`;
+                    }
+               }
+            });
+        }
+
+    } 
+    else {
+        /*
+        damage moves are either physical or special
+            - may also inflict a status ailment
+            - can critically hit
+        */
+
+        //determine if there is a status ailment
+        if(move.effect)
+    }
+}
+function changePokemon() {
+
+}
+//AI functions
+function AIAbility() {
+
+}
+function AIChoosePokemon() {
+
+}
+//Battle State functions
+function getWeather() {
+    return battleState.weatherEffects;
+}
+function changeWeather(weatherEffect) {
+    battleState.weatherEffects = weatherEffect;
+}
+function pokemonFainted() {
+
+}
+function abilityEffects() {
+
 }
