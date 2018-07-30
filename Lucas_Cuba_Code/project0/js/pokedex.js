@@ -2,11 +2,17 @@
 window.onload = () => {
   $('#pokeRun').on("click", pokeRun);
   $('#pokeRandom').on("click", pokeRandom);
+  $('#dexIn').keyup( (e) => {
+    if (e.key !== "Enter") {return;}
+    $('#pokeRun').click();
+    e.preventDefault();
+  })
 }
 //ajax call based on user input
 function pokeRun() {
   if ($('#dexIn').val() == '' || $('#dexIn').val() <= 0 || $('#dexIn').val() >= 803) {
-    throw new Error("Please enter a pokedex value between the numbers of 1 and 802 inclusively");
+    alert("Please enter a pokedex value between the numbers of 1 and 802 inclusively");
+    throw new Error();
   }
   let pokeXhr = new XMLHttpRequest();
   let id = $('#dexIn').val();
@@ -92,6 +98,7 @@ function dexUpdate(response) {
       let item2 = document.createElement('small');
       item1.innerHTML = capital(response.abilities[a].ability.name);
       abilityUrlArray.push(response.abilities[a].ability.url);
+      //abilityUrlArray.push(response.abilities[a].is_hidden);
       item2.innerHTML = "(Hidden Ability)";
       $('#abilities').append(item1);
       $('#abilities').append(item2);
@@ -126,12 +133,12 @@ function dexUpdate(response) {
       type: "column",
       showInLegend: false,
       dataPoints: [
-        { y: response.stats[0].base_stat, label: response.stats[0].stat.name },
-        { y: response.stats[1].base_stat, label: response.stats[1].stat.name },
-        { y: response.stats[2].base_stat, label: response.stats[2].stat.name },
-        { y: response.stats[3].base_stat, label: response.stats[3].stat.name },
-        { y: response.stats[4].base_stat, label: response.stats[4].stat.name },
-        { y: response.stats[5].base_stat, label: response.stats[5].stat.name },
+        { y: response.stats[0].base_stat, label: capital(response.stats[0].stat.name) },
+        { y: response.stats[1].base_stat, label: capital(response.stats[1].stat.name) },
+        { y: response.stats[2].base_stat, label: capital(response.stats[2].stat.name) },
+        { y: response.stats[3].base_stat, label: capital(response.stats[3].stat.name) },
+        { y: response.stats[4].base_stat, label: capital(response.stats[4].stat.name) },
+        { y: response.stats[5].base_stat, label: capital(response.stats[5].stat.name) },
       ]
     }]
   });
@@ -294,7 +301,7 @@ function getAbility() {
       if (pokeXhr.status == 200 && pokeXhr.readyState == 4) {
         let pokeResponse = JSON.parse(pokeXhr.responseText);
         //calling DOM update function and passing in response
-        abilityUpdate(pokeResponse);
+        abilityUpdate(pokeResponse, i);
         $('.modal-loading').attr('hidden', true);
       }
     }
@@ -303,12 +310,18 @@ function getAbility() {
   }
 }
 
-function abilityUpdate(response) {
+function abilityUpdate(response, i) {
 
   //updating ability modal to display ability title
   let title = document.createElement('h5');
   title.innerHTML = capital(response.name);
   $('#abilityModal .modal-body').append(title);
+  //checking if abilty is hidden. This is pokemon specific information
+  /*if (i == 0 && abilityUrlArray[i + 1] == true) {
+    let hidden = document.createElement('small');
+    hidden.innerHTML = "(Hidden Ability)";
+    $('#abilityModal .modal-body > h5').append(hidden);
+  }*/
 
   //updating ability modal to display ability description
   let desc = document.createElement('p');
