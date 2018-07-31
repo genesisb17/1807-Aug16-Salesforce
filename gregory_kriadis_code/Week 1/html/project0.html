@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA Compatible" content="IE-edge">
     <title>Guess a Card</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/project0.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
@@ -18,9 +19,9 @@
         <div class="jumbotron">
             <h1 align="center">Guess a Card</h1>
             <hr>
-            <select>
-                <option value="ace">Ace</option>
-                <option value="1">1</option>
+            <!-- The value names are strategically named to match the card API's format so don't change them -->
+            <select id="cardNums"> 
+                <option value="A">Ace</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
                 <option value="4">4</option>
@@ -29,21 +30,23 @@
                 <option value="7">7</option>
                 <option value="8">8</option>
                 <option value="9">9</option>
-                <option value="10">10</option>
-                <option value="jack">Jack</option>
-                <option value="queen">Queen</option>
-                <option value="king">King</option>
+                <option value="0">10</option>
+                <option value="J">Jack</option>
+                <option value="Q">Queen</option>
+                <option value="K">King</option>
               </select>
               of
-              <select>
-                  <option value="clubs">Clubs</option>
-                  <option value="diamonds">Diamonds</option>
-                  <option value="hearts">Hearts</option>
-                  <option value="spades">Spades</option>
+              <select id="cardSuits">
+                  <option value="C">Clubs</option>
+                  <option value="D">Diamonds</option>
+                  <option value="H">Hearts</option>
+                  <option value="S">Spades</option>
               </select>
               <button class="btn btn-primary" id="drawCard">Draw Card</button>
               <button class="btn btn-primary" id="shuffleCards">Shuffle Cards</button>
 
+              <h3 id="scoreAwarded"></h3>
+              <h3 id="scoreTotal"></h3>
               <h3 id="pickedCard"></h3>
               <img id="pickedCardImg" alt="" src="">
               <h3 id="drawnCard"></h3>
