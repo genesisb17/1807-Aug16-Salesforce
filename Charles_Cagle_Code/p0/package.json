@@ -1,0 +1,11 @@
+{
+  "name": "ych",
+  "version": "1.0.0",
+  "description": "card game api",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "shuffle-array": "^1.0.1",
+    "uuid": "^3.3.2"
+  }
+}
