@@ -3,6 +3,7 @@ html {
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 body { 
     min-height:100%;
@@ -39,6 +40,7 @@ section .container {
 .sprite {
     background-color: silver;
 }
+
 #info {
     margin: 2em;
     background-color: silver;
@@ -50,12 +52,14 @@ section .container {
     margin: 1em;
     padding: 1em;
     background-color: silver;
+    border: 1em;
 }
 .panel-secondary {
     min-height: 17em;
     max-height: 17em;
     overflow-y: auto;
     background-color: silver;
+    border: 1em;
 }
 
 .normal {
@@ -129,4 +133,28 @@ section .container {
 .fairy {
     background-color: #e9adf7;
     color:black;
+}
+.type {
+    width: 100%;
+    height: 100%;
+}
+.checked {
+    color: orange;
+}
+.fa {
+    background-color: black;
+}
+#battle-btn {
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    border-radius: 50%;
+}
+#presentBox {
+    background-color: #b050b7;
+    border-radius: 25%;
+    height: 100%;
+    text-align: center;
+    color: #c8cbd1;
+    padding: 2em;
 }

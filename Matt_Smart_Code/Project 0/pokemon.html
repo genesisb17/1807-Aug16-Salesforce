@@ -22,6 +22,7 @@
     integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
     crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../Project 0/pokemon.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <section id="briefing" class="jumbotron">
@@ -32,19 +33,29 @@
                 the information about each pokemon, and you may mulligan one of the pokemon on your team for another random pokemon. 
                 After each battle, the winning trainer may choose to exchange one of their pokemon for one of the loser's pokemon.
                 In addition Judges award points during battles based on style, style points are awarded for the following actions:
-                <ul>
-                    <li>Same type attack bonus</li>
-                    <li>Super effective attacks</li>
-                    <li>Creating weather effects</li>
-                    <li>One-hit KOs</li>
-                    <li>Impressing the Judges introduces a style point multiplier</li>
-                </ul>
-                Every 5 rounds, Players may spend points earned from the Judges on:
-                <ul>
-                    <li>Held Items</li>
-                    <li>Training their Pokemon new moves</li>
-                    <li>Replacing their Pokemon</li>
-                </ul>                
+                <div class="row">
+                    <div class="col">
+                        <ul>
+                            <li>Same type attack bonus</li>
+                            <li>Super effective attacks</li>
+                            <li>Creating weather effects</li>
+                            <li>One-hit KOs</li>
+                            <li>Impressing the Judges introduces a style point multiplier</li>
+                        </ul>
+                        Every 5 rounds, Players may spend points earned from the Judges on:
+                        <ul>
+                            <li>Held Items</li>
+                            <li>Training their Pokemon new moves</li>
+                            <li>Replacing their Pokemon</li>
+                        </ul>
+                    </div>    
+                    <div class="col">
+                        <div class="panel panel-default">
+                                <div id= "presentBox" class="panel-body">
+                                    For the purposes of this presentation and project 0, the battle functionality is not implemented.</div>
+                        </div>
+                    </div>
+                </div>                
             </p>
             <button id="enter" class="btn btn-info" type="button">Let's Go!</button>
         </div>
@@ -82,10 +93,15 @@
                         <div class='col'>
                             <h1 id="Name">Pokemon Team Generator!</h1>
                             <progress id="progress" value="0"></progress>
-                            <div class="justify-content-center col-4" style="float: none; display: table-cell; vertical-align: bottom;">
+                            <div class="justify-content-center col-4 type" style="float: none; display: table-cell; vertical-align: bottom;">
                                 <h4 class="type rounded" id="Type1"></h4>
                                 <h4 class="type rounded" id="Type2"></h4>
                             </div>
+                            <span id="star1"class="fa fa-star" hidden></span>
+                            <span id="star2"class="fa fa-star" hidden></span>
+                            <span id="star3"class="fa fa-star" hidden></span>
+                            <span id="star4"class="fa fa-star" hidden></span>
+                            <span id="star5"class="fa fa-star" hidden></span>
                         </div>
                         <div class="col justify-content-end">
                                 <img id="focus" class="rounded-circle" height="200" width="200" src="" alt="">
@@ -109,13 +125,32 @@
                             </div>
                         </div>
                     </div>
+            </div>
+            <div id="spacer" class="col-4 align-self-center" hidden>
+                <button id="battle-btn" class="btn btn-danger align-self-center btn-lg center-block"> VS </button>
+            </div>
+            <div id="enemies" class="col-4 align-self-end" style="padding: 5px 5px 5px 5px" hidden>
+                    <div class="row">
+                        <img class="sprite" id="esprite1" src="" width="33%" height="50%"></img>
+                        <img class="sprite" id="esprite2" src="" width="33%" height="50%"></img>
+                        <img class="sprite" id="esprite3" src="" width="33%" height="50%"></img>
+                    </div>
+                    <div class="row">
+                        <img class="sprite" id="esprite4" src="" width="33%" height="50%"></img>
+                        <img class="sprite" id="esprite5" src="" width="33%" height="50%"></img>
+                        <img class="sprite" id="esprite6" src="" width="33%" height="50%"></img>
+                    </div>
                 </div>
             </div>
             <hr>
+            <div id="quickDisp">
+            </div>
     </section>
-    <section id="loadScreen" class="jumbotron" hidden>
+    <section id="battleScreen" class="jumbotron" hidden>
+
+    </section>
+    <section id="storeScreen" class="jumbotron" hidden>
         <div class="img"></div>
-        <h3 class="justify-content-center">Finding your Next opponent...</h3>
     </section>
     <script type="text/javascript" src="../Project 0/pokemon.js"></script>
 </body>
