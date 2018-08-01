@@ -10,12 +10,12 @@ window.onload = () => {
 }
 //ajax call based on user input
 function pokeRun() {
-  if ($('#dexIn').val() == '' || $('#dexIn').val() <= 0 || $('#dexIn').val() >= 803) {
+  let id = $('#dexIn').val();
+  if (id == '' || id <= 0 || id >= 803) {
     alert("Please enter a pokedex value between the numbers of 1 and 802 inclusively");
     throw new Error();
   }
   let pokeXhr = new XMLHttpRequest();
-  let id = $('#dexIn').val();
   $('#dexIn').val('');
   $('#loadingModal').modal('toggle');
   $('#type').off();
@@ -53,6 +53,7 @@ function pokeRandom() {
 }
 
 function dexUpdate(response) {
+  //displaying title and dex number
   $('#pokeName').text(capital(response.name));
   let dexInfo = document.createElement('small');
   dexInfo.innerHTML = `Dex #${response.id}`;
@@ -144,8 +145,6 @@ function dexUpdate(response) {
   });
   chart.render();
 
-  //collapse loading modal once everything has loaded
-  $('#loadingModal').modal('toggle');
   //bind event listeners to type and ability tds as well as modal toggles
   $('#type').on("click", getType);
   $('#type').attr("data-toggle", "modal");
@@ -154,6 +153,9 @@ function dexUpdate(response) {
   $('#abilities').on("click", getAbility);
   $('#abilities').attr("data-toggle", "modal");
   $('#abilities').attr("data-target", "#abilityModal");
+
+  //collapse loading modal once everything has loaded
+  $('#loadingModal').modal('toggle');
 }
 
 //get type information through ajax calls based on current pokemon type information reference url stored in urlarray
