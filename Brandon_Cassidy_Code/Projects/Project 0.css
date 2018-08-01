@@ -108,7 +108,7 @@ justify-content: left;
   
   /* Set the scrolling animation and position it */
   .content {
-	animation: scroll 10s linear ;
+	animation: scroll 20s linear ;
 	position: absolute;
 	top: 100%;
   }
