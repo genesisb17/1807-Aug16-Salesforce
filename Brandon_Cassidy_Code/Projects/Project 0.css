@@ -12,7 +12,7 @@ body{
 	display: flex;
 	flex-wrap: wrap;
 	background-color: black;
-	flex: 2;
+	flex: 0 1;
 	width: 40%;
 	justify-content: flex-start;
 	text-align:left;
@@ -91,7 +91,7 @@ justify-content: left;
 	font-weight: bold;
 	overflow: hidden;
 	font-size: 350%;
-	height: 50em;
+	height: 48em;
 	width: 25em;
 	bottom: 0;
 	left: 40%;
@@ -110,7 +110,7 @@ justify-content: left;
   .content {
 	animation: scroll 80s linear 0s;
 	position: absolute;
-	top: 100%;
+	top: 90%;
   }
   
   #title, #subtitle {
