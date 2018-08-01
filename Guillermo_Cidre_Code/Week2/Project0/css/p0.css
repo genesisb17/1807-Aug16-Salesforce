@@ -1,0 +1,85 @@
+#game {
+    display: grid;
+    grid-row-gap: 100px;
+    grid-template-columns: 100px 100px 100px 100px 100px 100px 100px;
+    text-align: center;
+}
+
+#hRoom {
+    background-color: rgb(83, 199, 54);
+}
+
+img {
+    width: 70px;
+    height: 120px;
+}
+
+#dePile {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#pPile {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#CPile {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+#SPile{
+    grid-column: 5;
+    grid-row: 1;
+}
+
+#HPile {
+    grid-column: 6;
+    grid-row: 1;
+}
+
+#DPile {
+    grid-column: 7;
+    grid-row: 1;
+}
+
+#pile1 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#pile2 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#pile3 {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#pile4 {
+    grid-column: 4;
+    grid-row: 2;
+}
+
+#pile5 {
+    grid-column: 5;
+    grid-row: 2;
+}
+
+#pile6 {
+    grid-column: 6;
+    grid-row: 2;
+}
+
+#pile7 {
+    grid-column: 7;
+    grid-row: 2;
+}
+
+
+.bright {
+    border: 2px ridge yellow;
+}

@@ -1,0 +1,113 @@
+Salesforce 
+
+History
+1999- 4 employees one bedroom apartment
+2009- billion revenue
+2011 - 100,00 Customers, Forbes World's most innovative company
+2013 - Acquired ExactTarget
+2015 - Lightning and Trailhead
+2018 - 8.39 Billion Revenue, 150,000 Customers
+Dreamforce 4 days, 171,000 attendees, 3200 sessions
+
+Advantages: Security, power outages, no initial cost, cheaper and easier to set up than building your own hardware.
+
+Software as a Service - rent Software
+
+Platform as a Service - rent platform... no prebuild software
+
+Instead of building your own hardware, you can subscribe to provide functionality as hardware.
+
+multiTenant architecture-
+multiple client are using the same services and make sure each tenant have their own space and limits
+
+    ui
+    \|/                         ORG
+_____|____________________________________________
+|                                                |
+|    Services                                    |
+
+rent services
+
+ORG
+
+sales cloud- subscribe and contact and track opportunities like customer is interested with product X and maybe product Y in the future
+
+service cloud - same database as sales clouds. Different view to service the customer like issue with product x, how am i doing as a customer
+
+Marketing cloud - Give suggested ads to products, also  tells what ads customers are looking at.
+
+Platform cloud - Setting up apps, managing ads.
+
+Career Paths:
+
+Administrator - 
+
+Developer - not good at administrator but good at coding. Very knowledgeable of programming languages
+
+Architect - Not expected to be on call but must know 
+
+Goal: Consultant- part administrator and part developer. Good communication skills, Presentation Skills. talk alot... oh no
+
+languages-
+    SOQL
+    APEX
+
+Certifications
+
+resources- 
+Training site google
+documentation- developer.salesforce.com -resouces-documentation
+Trailhead - trailhead.salesforce.com
+
+
+        Objects(sql table),Fields(sql columns), Records(sql row)-M - Data/database
+
+                       V-ui
+
+        C-Business Logic
+
+M: Object Manager->create custom Object
+                          custom Fields
+
+V: Create tabs
+   create flow.... flow designer app
+   Create apps
+   create reports
+   List View- Filter
+
+C: Validation rules- if cond is true when entering data, error and prevent adding value
+   Workflow rules- similar to validation rules but will not prevent adding value. Instead, it will do action like giving email alert, creating task, updating field
+   Approval Process- if cond is true, ask a person for approval. If the person does not approve, do an action
+   process builder- 
+
+VisualForce- salesforce classic UI language
+
+APEX -
+    Triggers-
+    Batch-
+    Controllers-
+
+API-
+    SOAP API-
+    REST API(Newer)- 
+
+users -
+
+Account - company
+
+Contact - employee actively working with you from account company
+
+->: consist of
+apps->tabs->home page->list views->criteria/filter
+                                 ->Display
+                                 ->who can see
+
+Developer Console - SOQL debugging
+SCHEMA BUILDER - visual representation for objects. can create new tables(objects)
+owner id: all records have an identifying three digits in the id that specifies type(account, contact, etc)
+
+To do: new app trainingmanagement
+    contacts, accounts, trainings
+
+LookUP - can be empty... loose reference
+Master-Detal- cannot be empty

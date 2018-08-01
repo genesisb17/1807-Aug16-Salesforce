@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Solitaire</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/p0.css" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+</head>
+<body style="background-color: rgb(138, 163, 95);">
+    <!--Headings Here-->
+    <div class="jumbotron" id="hRoom"><h1>Welcome to the <span style="color: red">Game</span> of <span style="color:darkgoldenrod">Solitaire</span>!!!!</h1></div>
+
+    <!--Create/Join Room-->
+    <button class="btn btn-success" id="start">Start Game</button>
+    <!--Create Game Space... It is a grid-->
+    <div class="jumbotron" id="game" hidden=true style="background-color: rgb(138, 163, 95)">
+        <!--Need a deck pile, play pile-->
+        <div id="dePile"><img src="backCard.png"></div>
+        <div id="pPile"><img src="empty.png" alt=""></div>
+
+        <!--Suit Piles-->
+        <div id="CPile"><img src="empty.png" alt=""></div>
+        <div id="SPile"><img src="empty.png" alt=""></div>
+        <div id="HPile"><img src="empty.png" alt=""></div>
+        <div id="DPile"><img src="empty.png" alt=""></div>
+
+        <!--7 piles-->
+
+        <div id="pile1"><img src="empty.png" alt=""></div>
+        <div id="pile2"><img src="empty.png"></div>
+        <div id="pile3"><img src="empty.png"></div>
+        <div id="pile4"><img src="empty.png"></div>
+        <div id="pile5"><img src="empty.png"></div>
+        <div id="pile6"><img src="empty.png"></div>
+        <div id="pile7"><img src="empty.png"></div>
+
+    </div>
+
+
+    <!--Script below-->
+    <script src="../js/p0.js"></script>
+</body>
+</html>

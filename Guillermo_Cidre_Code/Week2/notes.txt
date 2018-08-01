@@ -1,0 +1,415 @@
+                java vs javascript
+Strictly typed                      loosely typed
+Manually Compile                    Just-In-Time compiler
+Compile using software              Compile in browser
+Class concept
+
+
+
+-----------------------------------------------------------------------------
+
+
+  ------------------------------------------------------------
+  |         JDK - includes jre, compiler, and more           |
+  | -------------------------------------------------------- |
+  | |       JRE- JVM + library needed to run java          | |
+  | |   -------------------------------------------------  | |      
+  | |   |    JVM- interpret java code to machine code   |  | |
+
+-----------------------------------------------------------------------------
+  Java:
+    widely used
+    write once, run everywhere
+    string is an object
+    primitive - actual values
+    objects - references to primitives.
+    primitives: int short long float double char byte
+
+object - bundle of related states and behaviour.
+class - blueprint describing a type of object.
+
+
+static variable- There is only one copy can be accessed from instance and className
+
+instance variable- belongs to each individual instance must be called in that instance
+
+static method- only one copy and it belongs to the class so it can be called by className.methodName
+
+instance method- like instance variable, can only be called in the instance variable; 
+
+static block- blocks of code in class that will run whenever class is loaded
+
+nested classes- Only proper way to declare private classes. More will be detailed later.
+
+
+OOP Pillars:
+
+Abstraction- Hiding the actual implementing details and exposing higher level functionality.
+
+    Abstract Class- Contains Generic set of things
+
+    Interfaces- Contract... state state behavior and have another class implement it. Block containing Functions with no implementation.
+    If inherited, use implements
+        keyword default -> add method functionality in an interface.
+
+
+Polymorphism- The ability of an object to change inherited behaviour or act in different ways
+    overloading(static)- add functionality to a function when given different parameters
+    overriding(dynamic)- change functionality to a inherited function.
+    A poly = new B();
+    use class A instances but with overriden/overloaded methods from B.
+
+Inheritance- share state and behaviour between classes. use extends for noninterface.
+    Terminology - parent-child classes, super-sub classes
+    extends, implements
+
+Encapsulation- Concealing internal state of the object and requiring interaction to occur through methods
+    Scoping:
+        public - global.... anyone can access it
+        private - class only
+        protected - class and subclass only
+        default(leave out the access modifier) - pakage private. only code written in the same package can access
+
+
+variable declaration:
+string color;
+
+
+main function example:
+package n;
+
+class fileName {
+    string color;
+
+    public static void main(String[] args) {
+
+    }
+}
+
+Scopes -
+instance, static
+access: public, protected, [default], private
+nonaccess: final, [default], static, transient, synchronized, abstract
+method,  block
+
+transient- cannot transmit from one jvm to another.
+
+pojo- plain old java object. instances/setget properties, no methods/behaviour.
+
+final -
+    class - cannot be extended(inherited)
+    method - cannot be overriden but can be overloaded
+    var - once initialized, cannot change
+
+Contructors - 
+    default constructor:
+        1st line: super(); // calls super class constructor(if class with no parent, super is Object class)  
+        cannot super.super  
+Inheritance:
+    interface- abstract methods. In java 8 or newer, can define method. No constructor
+    abstract class- Cannot not be initialized. Does not need to define abstract function.
+                    Don't need to have an abstract method. No constructor.
+    (concreet)class- Must define the abstract functions
+
+    I extends I
+    C extends C
+    C implements I
+
+
+class function/terminology
+    this(args) calls class constructor with args argument. Useful for overloading constructor
+    super(args) calls parent constructor with args argument.
+    this.p access variable p in class
+    p access variable p in method block. if no p in block, then access this.p.
+
+String:
+
+        ->StringBuffer is thread safe stringBuilder is not.
+        ->They append to strings instead of creating a new one.
+        ->String pool - data pool that will ensure 1 copy of a string is stored
+    String hi = "hi";
+    
+    String hello = "hi"; //hello will point the same location as hi
+        hi == hello; //True, == checks if it is the same location
+        hi.equals(hello); //True, equals check if it is the same string
+    
+    String x = new String("hi"); //does not create in the string pool but outside of it
+        x == hi; //F, x is not in the string pool
+        String a = x; //a points to same location as x
+        x = "test"; //puts it back in the string pool the left over leaves as garbage
+        String sd = a.subString(1); //Create new string "i" in the String pool.
+    
+    (random detail)look into promises(javascript)
+
+Control -
+
+Switch- originally for int. Now for int, short, int, byte, char, wrapper classes, String, enum
+
+Operator- operate upon.
+    (1,2,3 respectively)
+    Unary,                             Binary,                                      Ternary
+    a++, -a, ~a,                       a+b, a*b, a-b, a/b, a<<b, a>>b, etc         cond? trueResult : falseResult
+
+    order of operation:
+
+
+OOP hints : APIE
+
+Exception is a specific type of problem that can occur at runtime.
+    They are not errors.
+    Hierarchy:
+             Throwable(Class)
+            /               \
+        Error              Exception
+                checked-> ///       \
+                                RuntimeException <- unchecked
+
+    Anything that is throwable is catchable but you should not catch errors
+
+    Errors:
+        - Thing that go wrong typically regaruding our development environment
+        such as StackOverflowError or an OutOfMemoryError. Catching these would do nothing
+    Exceptions:
+        - An exceptional event that happens at runtime; meaning something that
+        goes wrong during the execution of your code. We can prepare for all of these
+        however we MUST "handle" some
+        - Anything that extends directly from Exception is considered a "compile-time"
+        or "checked" exception. Meaning it must be handled in order for our code
+        to compile, however, it still occurs or is thrown at runtime
+        Ex: IOException, SQLException, FileNotFoundException
+        - Runtime exceptions(AKA "Unchecked" exceptions) do not have to be handled,
+        but should in risky code in order to avoid execution shutting down mid app
+        ie. ArrayIndexOutOfBoundsException, NullPointerException, ArithmeticException
+
+        use try, catch, finally, throw, throws
+
+    Collections:
+        group of individual objects treated as one unit
+
+                            Collection(interface)
+                           /    |     \
+                        List   Set     Queue
+
+        Maps are also considered collections but do not extend collection interface
+
+        lists - indexed collections with not many restrictions
+        Set - onlu hold unique elements
+        Queue - FIFO/LIFO
+
+
+        hw look this up and implement???
+        java 8 - lambda notation is popular
+
+
+        tricky stuff
+        byte + byte = int
+
+    Data Structures(in collection):
+        java collection framework is collection and map.
+        Hash- not sorted
+        tree- sorted
+        set- only unique values
+        map- key value pairs. not part of collection. map does not have an iterable interface
+            hashtable, hashmap, treemap, linkedhashmap(remember order it inserted)
+        List- Array that is indexed and allows duplicates
+
+
+Database- collection of objects that store information
+    RD(Relational Database) - relational database design
+    Table- row(record) column(attribute)
+    ex:
+        attribute - name, age, SSN
+        record - one instance of data
+
+    name    age     SSN
+    A       10      000-00-0000
+
+    multiplicity - connection of tables
+    normalization - Process of reducing redundancy and increasing efficiency
+
+    RDBMS- Relational DataBase Management System
+        -software that manages Database
+        -Oracle mySQL, POSTgres, SaLite, microsoft sql server, maria, aurora
+
+    RDS - Relational Database Service
+        Regions
+        ________________________________
+           availability zone
+
+                            actual database
+        __________________________________
+
+    Schema - rules and structure of a database
+
+SQL- Structure Query Language
+    -not caps sensitive
+    sublanguages of SQL
+        DDL - Data Definition Language
+            Make tables and rules for tables
+                Create, Alter, Drop, Truncate
+            constraints - part of ddl that define rule for columns.
+                primary key- uniquely identifies each row in a table(not null and unique)
+                foreign key- refers to a unique column in another table
+                not null- no null values
+                unique- each value must be unique
+                check- specify a user condition ie all values less than 10
+                default- If no value is specified, use the predefined value
+
+        DmL- Data Manipulation Language(change data in a table)
+                Delete- remove a record from a table
+                Insert- add a record to a table
+                Update- change existing record in a table
+
+        DQL- Data Query Language
+                Select- returns a cursor(virtual pointer) to a virtual table.
+                where- specify conditions
+                between- specify a range of values
+                from- specify a table
+                order by- arranges a table output
+                on- specify join predicate
+                Group by- bundles records based on a column
+                having- instead of where in group by.
+                like - wildcards meets a regular expression
+
+        TCL- Transaction Control Language
+            Control what data is in the database
+                Commit, Rollback, SavePoint
+
+        DCL- Data Control Language
+            Controls what users who have access
+            to a database can do
+                Grant, Revoke
+                        
+
+DDL-
+    Create table  player(
+        name varchar2(200),
+        Jersey number(2));
+
+DML-
+    insert into player
+    values ('Tim', 15);
+
+    update player
+    set jersey 51
+    where jersey=15;
+
+DQL-
+    Select *
+    From player
+    where name = 'Tim';
+
+    select name
+    from player
+    where Jersey=15
+
+
+aggregate function- many inputs to one output
+    count sum avg min max
+Scalar- one input to one output
+    length, ucase, lcase, round, abs
+
+    string pattern like
+        % - wildcard(anything or nothing);
+    order by -
+    desc - descending
+    asc - ascending
+
+normalized forms
+    1NF- All data in a table is atomic(each cell is broken down to smallest piece of information or field should not contain array).
+    2NF - it is 1NF and all columns are dependant on the primary key. No column are funcitonally dependent
+        primary key- a column that uniquely identitfies one record
+        composite primary key uses multiple columns to uniquely identify a record.
+    3NF - 2NF and there are no transitive dependencies(same attributes in multiple tables. Can match attribute value with another attribute value)
+
+multiplicity - the relationship between tables
+    one to many- x >----- y    y can have many x but each x has one y
+    one to one- x -------- y   each x has one y and vice versa
+    many to many- x ----<junction table>------y
+               x.id ->   1 | 7/28  <- y.id
+                         5 | 7/28
+                         1 | 7/29
+
+                    junction table include unique pairs
+
+Foreign keys- do not have to be placed on unique columns. But they must refer to unique columns
+referencial integrity- ensure parents don't get deleted
+
+joins - join tables(denormalize) based on a predicate
+    inner - output those with matching predicate
+    left - output those with matching predicate and from left table
+    right- output those with matching predicate and from right table
+    outer- don't have a matching predicate.
+    natural join - inner join but with no predicate. instead it matches same named columns
+        format: a natural join b
+    theta join - predicate is not a = b. like < > <=
+
+Unions- Stacks table together instead of joining
+    select name,yards from (
+        select name,yards from player
+        Union
+        select name,yards from retired_player
+    );
+
+
+Software Development LifeCycle(SDlC):
+    1. Analysis of existing Software/ System
+        -What area are defficient and what needs improvement
+    2. System requirements are defined
+        -new feature
+        -a certain bug is going to be fixed
+        -segment of code to be more efficient
+    3. Design our new system/software
+        -general layout of how to implement new feature/fixes 
+    4. New system is developed
+        -Actually code
+        -make our implementations
+    5. Testing/Integration
+        -Do my new changes work?
+        -Compatability Testing
+    6. review and maintenance
+        -what got accomplished, what didn'table
+        -monitor
+        -report bugs
+        -Areas that need improvement
+    loop back
+
+Design Patterns
+
+    Waterfall- old school way. no looking back
+        requirements->design->implement->test/verify->maintain
+
+    Big Bang- Just go for it. no plain
+
+    Agile- Every Project is unique and people must be agile and change accordingly. (planning is good but be flexible)
+        -Respond quickly to changes
+        -Focus on Demos and Working over Documentation
+        -Constant Communication between engineers and product owners
+        -Continuous Integration
+
+    Scrum - Framework of Agile
+        Interactive units of work called sprints (2-4 weeks)
+        Product Owner- Ultimately the person responsible for the sprint/product
+            - represent stake holder and make the priorities and requirements
+        Scrum Master-
+            -Person who leads scrum team
+            -part coder, part coach, part cheerleader
+            -To improve work efficiency
+        Scrum team
+            -These people develop the application
+    
+        Start
+            -Product Owner is going to make backlog
+            -Scrum Master will delegates duties/priorities for people to work on
+            -Design how we are going to solve problems or implement new features
+            -Every day there is a team standup
+            -Sprint will end with review/Analysis. Hopefully a functional program.
+
+
+MVC-
+            //Data
+            Model__________
+      Display              \
+      view                  \Request
+    View ->Send user input-> Controller
+    //ui                      //logic
