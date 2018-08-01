@@ -164,7 +164,7 @@ function imgClicker(event) {
         if (fitCodeSuit(code1, code2)) {
             //A type of movement will happen if we move from * to pile
             //check if img is part of pile1....pile7
-            if ($('div[id^="pile"]').find(img).length == 1) {
+            if ($('div[id^="pile"]').find(img).length == 1 && img.parentElement.children.length == 1) {
                 //destination received, must check where source comes from
                 if ($('div[id^="pile"]').find(activeCard).length == 1) {
                     //activeCard is in pile1...pile7
@@ -536,4 +536,3 @@ function fitCodeSuit(code1, code2) {
 
     return fitNum(code1, code2);
 }
-
