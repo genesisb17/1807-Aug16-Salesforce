@@ -25,10 +25,13 @@ function deal() {
 const suit = card => card.codePointAt(0) & 0xf0;
 const rank = card => card.codePointAt(0) & 0xf;
 const tRank = card => (rank(card) + 13) % 15;
+
+const isHeart = c => suit(c) == 0xb0;
+const matchSuit = s => c => suit(s) == suit(c);
+
 const wins = (f, n) => suit(f) == suit(n) && tRank(f) < tRank(n) ? n : f;
-const add = (a, b) => a + b;
-const cardPoints = c => "🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾".includes(c) ? 1 : c == "🂭" ? 13 : 0;
-const trickPoints = t => [...t].map(cardPoints).reduce(add);
+const cardPoints = c => isHeart(c) ? 1 : c == "🂭" ? 13 : 0;
+const trickPoints = t => [...t].map(cardPoints).reduce((a, b) => a + b);
 
 function scoreRound(tricks, lead) {
   scores = [0, 0, 0, 0];
@@ -45,6 +48,7 @@ class Game {
   constructor() {
     this.round = -1;
     this.players = [];
+    this.cheater = [false, false, false, false];
     this.nextState = getPromise3();
     this.scores = [0, 0, 0, 0];
     this.nextRound();
@@ -84,7 +88,7 @@ class Game {
   }
 
   get generation() {
-    return this.round * 52 + this.tricks.length * 4 + this.playedThisTrick;
+    return this.round * 75 + this.tricks.length * 5 + this.playedThisTrick;
   }
 
   hasPlayer(p) {
@@ -104,6 +108,7 @@ class Game {
     ++this.round;
     this.hands = deal();
     this.tricks = [""];
+    this.cheaterHand = [false, false, false, false];
     this.lead = [this.hands.findIndex(goesFirst)];
     this.pendingPlays = {};
   }
@@ -119,13 +124,55 @@ class Game {
       this.lead.push(winner(this.currentTrick, this.currentLead));
       this.tricks.push("");
     }
+
     if (this.tricks.length == 14) {
       this.tricks.pop();
       this.lead.shift();
-      scoreRound(this.tricks, this.lead).forEach((s, i) => { this.scores[i] += s; });
+      scoreRound(this.tricks, this.lead).forEach((s, i) => {
+        this.scores[i] += s;
+      });
       this.nextRound();
     }
+
     this.wakeUp();
+  }
+
+  get finished() {
+    return this.scores.some(s => s >= 100); 
+  }
+
+  get cardLed() {
+    return [...this.currentTrick][0];
+  }
+
+  get heartsBroken() {
+    return this.tricks.some((t) => [...t].some(isHeart));
+  }
+
+  isLegalPlay(player, card) {
+    const hand = this.handForPlayer(player);
+    if (! hand.includes(card))
+      return false;
+
+    // Two of Clubs must lead first trick.
+    if (this.tricks.length == 1 && this.playedThisTrick == 0)
+      return card == "🃒";
+
+    // Must follow suit.
+    if (this.playedThisTrick != 0 && ! matchSuit(this.cardLed)(card))
+      if ([...hand].some(matchSuit(this.cardLed)))
+        return false;
+
+    // Hearts may not be played on the first trick.
+    if (this.tricks.length == 1 && isHeart(card) && ! [...hand].every(isHeart))
+      return false;
+
+    // Hearts may not be led until broken.
+    if (this.playedThisTrick == 0 && isHeart(card) && ! this.heartsBroken)
+      if (! [...hand].every(isHeart))
+        return false;
+
+    return true;
   }
 
   play(player, card) {
@@ -134,6 +181,10 @@ class Game {
     this.pendingPlays[player] = card;
     while (this.pendingPlays[this.nextPlayerId]) {
       const player = this.nextPlayerId;
+
+      if (! this.isLegalPlay(player, card))
+        this.cheaterHand[this.nextPlayer] = this.cheater[this.nextPlayer] = true;
+
       this.hands[this.nextPlayer] = this.hands[this.nextPlayer]
                                         .replace(this.pendingPlays[player], '');
       this.playCard(this.pendingPlays[player]);
@@ -147,12 +198,17 @@ class Game {
   }
 
   getStateForPlayer(player) {
+    const playerIndex = this.players.indexOf(player);
     return {
       gen: this.generation,
-      hand: this.handForPlayer(player),
+      hand: this.hands[playerIndex],
+      round: this.round,
+      scores: this.scores,
+      cheater: [this.cheater[playerIndex], this.cheaterHand[playerIndex]],
       tricks: this.tricks,
       lead: this.lead,
-      seat: this.players.indexOf(player)
+      finished: this.finished,
+      seat: playerIndex
     };
   }
 }
@@ -218,4 +274,3 @@ app.get('/find_game', (req, res) => {
 });
 
 app.listen(1605);
-console.log("http://localhost:1605/");

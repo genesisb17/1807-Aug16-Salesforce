@@ -5,12 +5,25 @@
     <script src="jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
-    <title>ych</title>
+    <title>Your Cheating Hearts</title>
     <link rel="stylesheet" href="ych.css">
   </head>
   <body>
-    <div class="logo">♥</div>
-    <div class="scores"></div>
+    <div id="logo" class="logo"></div>
+    <table id="scores" class="scores">
+      <tr>
+        <td>Alice</td>
+        <td>Bob</td>
+        <td>Eve</td>
+        <td>Grace</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </table>
     <figure class="tricksWrapper">
       <figcaption>Previous Plays</figcaption>
       <ul id="tricks" class="tricks">
@@ -18,9 +31,11 @@
     </figure>
     <div class="playOrder">You play <span id="playOrder"></span></div>
     <div id="trick"></div>
+    <h1 id="winner" class="gameOver">YOU WIN</h1>
+    <h1 id="loser" class="gameOver">GAME OVER</h1>
     <div class="playArea">
       <div id="hand"></div>
-      <button id="play" class="play">Play</button>
+      <button id="play" class="play" disabled="disabled">Play</button>
     <div>
     <script src="ych.js"></script>
   </body>

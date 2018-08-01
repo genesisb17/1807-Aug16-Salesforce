@@ -1,23 +1,16 @@
-const hand = $("#hand");
-const play = $("#play");
-const trick = $("#trick");
-const tricks = $("#tricks");
-const playOrder = $("#playOrder");
 const STATE = { gen: -1 };
-
-const ordinals = ["first", "second", "third", "fourth"];
 
 function makeCard(c) {
   const card = $(`<span class="card">${c}</span>`);
   if ("🂱🂲🂳🂴🂵🂶🂷🂸🂹🂺🂻🂽🂾🃁🃂🃃🃄🃅🃆🃇🃈🃉🃊🃋🃍🃎".includes(c))
-    card.addClass('red');
+    card.addClass("red");
   return card;
 }
 
 function makeCardSel(c) {
   const sel = $(`
     <label>
-      <input type="radio" class="cardsel" name="card" id="${c}"></input>
+      <input type="radio" class="cardsel" name="card" value="${c}"></input>
     </label>
   `);
   sel.append(makeCard(c));
@@ -33,16 +26,38 @@ function makeTrick(tStr) {
 function updateGameState(state) {
   if (state) {
     STATE.gen = state.gen;
-    hand.html("");
-    [...state.hand].forEach((c) => hand.append(makeCardSel(c)));
-    trick.html("");
+
+    $("#hand").html("");
+    [...state.hand].forEach((c) => $("#hand").append(makeCardSel(c)));
+
+    $("#trick").html("");
     const currentTrick = state.tricks.pop();
-    [...currentTrick].forEach((c) => trick.append(makeCard(c)));
-    tricks.html("");
-    state.tricks.forEach((t) => tricks.append(makeTrick(t)));
+    [...currentTrick].forEach((c) => $("#trick").append(makeCard(c)));
+
+    $("#tricks").html("");
+    state.tricks.forEach((t) => $("#tricks").append(makeTrick(t)));
+
     const order = (state.seat - state.lead.pop() + 4) % 4;
-    play.prop("disabled", order != [...currentTrick].length);
-    playOrder.text(ordinals[order]);
+    $("#play").prop("disabled", order != [...currentTrick].length);
+    $("#playOrder").text(["first", "second", "third", "fourth"][order]);
+
+    const logo = $("#logo");
+    if (state.cheater[0] == state.cheater[1])
+      logo.removeClass("logoPale")
+    else
+      logo.addClass("logoPale");
+    logo.text(state.cheater.some(i => i) ? "💔" : "️♥️");
+
+    const scoreElems = $("#scores td");
+    scoreElems[state.seat].innerText = "You";
+    state.scores.forEach((s, i) => {scoreElems[i + 4].innerText = s; });
+
+    if (state.finished) {
+      $("#hand").html("");
+      const winner = state.scores[state.seat] == Math.min(...state.scores);
+      $(winner ? "#winner" : "#loser").show();
+      $("#play").prop("disabled", true);
+    }
   }
   if (! (state && state.finished))
     $.getJSON("poll", STATE).done(updateGameState);
@@ -58,12 +73,13 @@ function initializeGame() {
   });
 }
 
-play.click(() => {
+$("#play").click(() => {
   const checked = $(".cardsel:checked");
-  const card = checked.attr('id');
+  const card = checked.val();
   if (card) {
     $.get("play", Object.assign({card: card}, STATE));
     checked.parent().remove();
+    $("#play").prop("disabled", true);
   }
 });
 
