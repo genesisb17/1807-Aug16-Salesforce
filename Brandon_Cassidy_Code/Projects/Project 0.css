@@ -90,8 +90,8 @@ justify-content: left;
 	margin-left: -9em;
 	font-weight: bold;
 	overflow: hidden;
-	font-size: 350%;
-	height: 48em;
+	font-size: 250%;
+	height: 70%;
 	width: 25em;
 	bottom: 0;
 	left: 40%;
@@ -108,9 +108,9 @@ justify-content: left;
   
   /* Set the scrolling animation and position it */
   .content {
-	animation: scroll 80s linear 0s;
+	animation: scroll 10s linear ;
 	position: absolute;
-	top: 90%;
+	top: 100%;
   }
   
   #title, #subtitle {
