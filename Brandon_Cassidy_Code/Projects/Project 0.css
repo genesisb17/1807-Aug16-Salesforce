@@ -5,11 +5,36 @@ body{
     align-items: center;
     flex-direction: column;
 	background-color:black;
-
+	flex: 1;
+}
+.jumbotron{
+	flex-direction: row;
+	display: flex;
+	flex-wrap: wrap;
+	background-color: black;
+	flex: 2;
+	width: 40%;
+	justify-content: flex-start;
+	text-align:left;
+	align-items: center;
+}
+label{
+	flex: 0 0 25%;
+	text-align: left;
+}
+select{
+	overflow: hidden;
+	flex: 0 0;
+	text-align:center;
+}
+button{
+	margin-left:1em;
 }
 h1{
     text-emphasis: bold;
-    color:yellow;
+	color:yellow;
+	flex: 1 0 100%;
+	text-justify :center;
 }
 /* Center it, set the color, size and hide the text */
 .intro {
@@ -48,6 +73,7 @@ label{
 	color: #EBD71C;
 }
 p {
+font-size: 150%;
 justify-content: left;
 }
   
@@ -57,6 +83,7 @@ justify-content: left;
 	font-family: "Droid Sans", arial, verdana, sans-serif;
 	font-weight: 700;
 	color: #EBD71C;
+	
 	transform: perspective(300px) rotateX(20deg);
 	transform-origin: 50% 100%;
 	position: absolute;
@@ -65,9 +92,9 @@ justify-content: left;
 	overflow: hidden;
 	font-size: 350%;
 	height: 50em;
-	width: 18em;
+	width: 25em;
 	bottom: 0;
-	left: 50%;
+	left: 40%;
   }
   
   #board:after {

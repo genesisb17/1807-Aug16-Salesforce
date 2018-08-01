@@ -94,7 +94,7 @@ function getShip(){
             // let shipLength = document.createElement('output');
             // let shipCrew = document.createElement('output');
             $('#showCrew').html('Crew size:  ' +ship.crew);
-            $('#showSize').html('Length(in kuats):  ' +ship.length);
+            $('#showSize').html('Length(in meters):  ' +ship.length);
             $('#showCost').html('Cost(in credits):  ' +ship.cost_in_credits);
             $('#showName').html(ship.name);
             // console.log(shipCrew);
