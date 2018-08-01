@@ -1,26 +1,9 @@
-this is just a brief reference for project 0 for now:\
-
-use http://toolserver.org/~erwin85/randomarticle.php?categories=Featured_articles&family=wikipedia&lang=en 
-to generate a random page to start the game at
-
 Rules:
 No searching.
-    -hid search bar
+    -suppressed with sandbox mode
 No Wiki links outside of page contents (navigating to wiki help, donations, etc).
-    -hide links
+    -suppressed with sandbox mode mostly, other links aren't that useful
 No leaving Wikipedia.
     -read each link, check for (wikipedia.org)
 No home page.
     -check for Wiki home page
-
-OPTIONAL:
-No going back.**
-    -save last link
-    -if returned to, fail
-No modern years.**
-    -check link
-    -if link ends with year number, fail
-No countries**
-    -access api, get arrays
-    -split on (" ") join on ("_")
-    -paste to end of generic Wikipedia link

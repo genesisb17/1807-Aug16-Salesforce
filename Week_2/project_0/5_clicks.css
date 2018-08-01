@@ -40,3 +40,21 @@
     border-style: solid;
     padding: 10px;
 }
+
+.window-wrapper{
+    position: relative;
+    display: inline-block;
+}
+
+.overlay {
+    position: fixed;
+    top: 15%;
+    left: 25%;
+    width: 50%;
+    height: 25%;
+    color:black;
+    font-size: 32pt;
+    display: none;
+    background-color: darkgrey;
+    z-index: 10000;
+}

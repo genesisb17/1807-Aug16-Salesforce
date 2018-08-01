@@ -9,8 +9,7 @@
     <link rel="stylesheet" type="text/css" href="5_clicks.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
@@ -19,30 +18,47 @@
 
 <body>
 
+    <div class="overlay" id="loseOverlay">
+        <br>
+        <span id="loseText"></span>
+        <br>
+        <button type="btn btn-primary" class="start" id="restart">Try Again?</button>
+    </div>
+
+    <div class="overlay" id="winOverlay">
+            <br>
+            <span id="winText">You win!</span>
+            <br>
+            <button type="btn btn-primary" class="start" id="restart2">Play Again?</button>
+        </div>
+
     <div class="title">
         5 Clicks to WW2
     </div>
 
     <div class="welcome">
-        Welcome to 5 clicks to WW2! This is a derivative of the Wiki Game in which your goal is to reach
-        the "World War 2" article on Wikipedia starting on a randomized Wikipedia article. Your goal is to do
-        this in only 5 clicks or less. Good luck!
+        Welcome to 5 clicks to WW2! This is a derivative of the Wiki Game in which your goal is to reach the "World War 2" article
+        on Wikipedia starting on a randomized Wikipedia article. Your goal is to do this in only 5 clicks or less and as
+        fast as possible. Good luck!
     </div>
 
     <div class="game-wrapper">
         <div class="game-button">
-            <button type="btn btn-primary" id="start">Ready...Set...GO!</button>
-        </div>
-        <div class="game-button">
-            <button type="btn btn-primary" id="reset">Reset</button>
+            <button type="btn btn-primary" class="start" id="start">Start/Reset</button>
         </div>
         <div class="game-button">
             <button type="btn btn-primary" id="rules">Rules List</button>
         </div>
+        <div class="game-button">
+            Number of Clicks:
+            <span id="clicks"></span>
+        </div>
     </div>
 
+    <div class- "window-wrapper"></div>
     <div class="game">
-        <iframe id="game-window" src="" width="800" height="700"></iframe>
+        <iframe id="game-window" name="game-window" src="" style="border:none" width="100%" height="800" sandbox></iframe>
+    </div>
     </div>
 
     <script src="5_clicks.js"></script>
