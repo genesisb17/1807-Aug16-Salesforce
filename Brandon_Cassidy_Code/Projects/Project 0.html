@@ -10,8 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="C:\Users\blc97\my_git_repos\1807-Jul16-Salesforce\Brandon_Cassidy_Code\Projects\Project 0.css">
-    <!-- <link rel="stylesheet" href="C:\Users\Brandon\Desktop\Revature Stuff\Salesforce\Brandon_Cassidy_Code\Projects\Project 0.css"> -->
+    <link rel="stylesheet" href="Project 0.css">
     <!--
         black piece reference:
 http://www.giantchessusa.com/resize/Shared/Images/Product/Mega-Checker-Plastic-Set-3-Diameter/3-Checkers-Photo-6.jpg?bw=1000&w=1000&bh=1000&h=1000
@@ -22,24 +21,29 @@ http://www.giantchessusa.com/resize/Shared/Images/Product/Mega-Checker-Plastic-S
         
     </style>
 </head>
-<body>
+<body id="body">
+    <section class="intro">
+        Select the Starship you'd like information about.<br>
+      </section>
+    <div id="board">
+        <div id="content">
 
-    <div id="titles"><div id="titlecontent">
-
-        <p>content</p>
-        <p>more content</p>
-        <p>content</p>
-        <p>more content</p>
-        <p>content</p>
-        <p>more content</p>
-        <p>content</p>
-        <p>more content</p>
-        <p>content</p>
-        <p>more content</p>
-        <p>content</p>
-        <p>more content</p>
-
-    </div></div>
+        <p id="showName"></p>
+        <p id="showCrew"></p>
+        <p id="showCost"></p>
+        <p id="showSize"></p>
+        </div>
+    </div>
+    <div>
+        <h1>
+        Starships of Star Wars
+        </h1>
+        <label for="searchName">Select ship name</label>
+        </select>
+        <select id='searchName' >
+            </select>
+        <button class= "button btn-primary" id="getShip">Go!</button>
+    </div>
 
     <!-- <div class="jumbotron">
         <div>
@@ -56,7 +60,6 @@ http://www.giantchessusa.com/resize/Shared/Images/Product/Mega-Checker-Plastic-S
         </div>
     </div>
      -->
-     <!-- <script src="C:\Users\Brandon\Desktop\Revature Stuff\Salesforce\Brandon_Cassidy_Code\Projects\Project 0.js"></script> -->
-     <script src="C:\Users\blc97\my_git_repos\1807-Jul16-Salesforce\Brandon_Cassidy_Code\Projects\Project 0.js"></script>
+     <script type="text/javascript" src="Project 0.js"></script>
 </body>
 </html>

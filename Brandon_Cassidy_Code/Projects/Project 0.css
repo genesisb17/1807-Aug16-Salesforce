@@ -1,61 +1,103 @@
-.jumbotron{
-    display: flex;
-    flex-wrap: wrap;
+body{
+	display:flex;
+	flex-wrap: wrap;
     margin: 2%;
     align-items: center;
     flex-direction: column;
-    background-color:black;
-}
-body{
-    background-color: black;
+	background-color:black;
+
 }
 h1{
     text-emphasis: bold;
     color:yellow;
 }
-p{
-    color:yellow;
-    position: relative;
-    margin:5%;
+/* Center it, set the color, size and hide the text */
+.intro {
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	order: 5;	
+    /* position: absolute;
+    top: 45%;
+    left: 35%; */
+    z-index: 1;
+    animation: intro 6s ease-out 1s;
+    color: rgb(75, 213, 238);
+    font-weight: 400;
+    font-size: 300%;
+    opacity: 0;
 }
-#titles
-{
-    background:black;
+
+@keyframes intro {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+label{
+	font-family: "Droid Sans", arial, verdana, sans-serif;
+	font-weight: 700;
+	color: #EBD71C;
+}
+p {
+justify-content: left;
+}
+  
+  /* Set the font, lean the board, position it */
+  #board {
+	display: flex;
+	font-family: "Droid Sans", arial, verdana, sans-serif;
+	font-weight: 700;
+	color: #EBD71C;
+	transform: perspective(300px) rotateX(20deg);
+	transform-origin: 50% 100%;
 	position: absolute;
-	width: 18em;
+	margin-left: -9em;
+	font-weight: bold;
+	overflow: hidden;
+	font-size: 350%;
 	height: 50em;
+	width: 18em;
 	bottom: 0;
 	left: 50%;
-	margin-left: -9em;
-	font-size: 350%;
-	font-weight: bold;
-	text-align: justify;
-	overflow: hidden;
-	transform-origin: 50% 100%;
-	transform: perspective(300px) rotateX(25deg);
-}
-#titles:after
-{
+  }
+  
+  #board:after {
 	position: absolute;
 	content: ' ';
+	bottom: 60%;
 	left: 0;
 	right: 0;
 	top: 0;
-	bottom: 60%;
-	background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
-	pointer-events: none;
-}
-#titlecontent
-{
+  }
+  
+  /* Set the scrolling animation and position it */
+  .content {
+	animation: scroll 80s linear 0s;
 	position: absolute;
 	top: 100%;
-	animation: scroll 100s linear 4s infinite;
-}
-
-@keyframes scroll {
-	0% { top: 100%; }
-	100% { top: -170%; }
-}
+  }
+  
+  #title, #subtitle {
+	justify-content: center;
+  }
+  
+  @keyframes scroll {
+	  0% {
+		  top: 100%;
+	  }
+	  100% {
+		  top: -170%;
+	  }
+  }
 body {
 	margin: 0;
 	background-color: black;
