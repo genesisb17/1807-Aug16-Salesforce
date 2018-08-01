@@ -1,0 +1,22 @@
+.jumbotron {
+    background-color: coral;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-around;
+}
+.container1 div {
+    border: 1px #ccc solid;
+    padding: 10px;
+}
+
+.box1 {
+    width: 450px;
+}
+.box2 {
+   width: 300px;
+}
+.box3 {
+    width: 300px;
+}

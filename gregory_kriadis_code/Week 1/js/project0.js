@@ -5,10 +5,7 @@ window.onload = function() {
 };
 
 /*  Self-invoking anonymous function to automatically create a new deck
-    that will be persistent throughout runtime. That way, we're not creating
-    new decks every time we want to draw cards. That would be a waste of
-    valuable resources. I may also look into keep a persistent deck between
-    sessions as well, but for now I will stick with this.
+    that will be persistent throughout runtime.
 */
 (function () {
     score = 0;
@@ -70,15 +67,15 @@ function drawCard() {
             score += 1; // If only suits match, assign 2 points
             $('#scoreAwarded').html("Only suits match! +1");
         } else {
-            $('#scoreAwarded').html("Completely wrong! No points!");
+            $('#scoreAwarded').html("Wrong! No points!");
         }
         cardsRemaining--;
-        $('#scoreTotal').html("Total score: " + score + ", Cards remaining: " + cardsRemaining);
+        $('#scoreTotal').html("Total score: " + score);
+        $('#cardsRemaining').html("Cards remaining: " + cardsRemaining);
     }
 
     // TODO write some code to show the card, compare it to picked option    
     function showCards(deck) {
-        $('#drawnCard').html("You drew:"); // Card name text
         pic = $('#drawnCardImg');
         pic.attr("src", deck.cards[0].image);
         pic.attr("alt", deck.cards[0].code);
@@ -104,7 +101,8 @@ function shuffleCards() {
     function resetGame() {
         score = 0;
         cardsRemaining = 52;
-        $('#scoreAwarded').html("Take a guess, if you dare.");
-        $('#scoreTotal').html("Total score: " + score + ", Cards remaining: " + cardsRemaining);
+        $('#scoreAwarded').html("");
+        $('#scoreTotal').html("Total score: " + score);
+        $('#cardsRemaining').html("Cards remaining: " + cardsRemaining);
     }
 }
