@@ -36,12 +36,12 @@ function getRandomPosition() {
 }
 function populateOptions(){
     //1 create xhr object
-    console.log("popopts");
+    // console.log("popopts");
     var xhr = new XMLHttpRequest();
 
     //2 callback function
     xhr.onreadystatechange = function(){
-        console.log(Date() + " " + xhr.readyState);
+        // console.log(Date() + " " + xhr.readyState);
         if(xhr.readyState==4 && xhr.status==200){
             //response processing code
               var resp = xhr.responseText;
