@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+
+    <title>Game</title>
+
+    <link rel="stylesheet" href="Project.css">
+</head>
+
+<body>
+    <div id="board" hidden=true></div>
+    <button id="newGame" hidden=true class="button">New Game!</button>
+
+    <div id="start" class="menu">
+        <span><h1>MEMORY GAME</h1></span>
+        <button id="startGame" class="button">Start</button>
+        <button id="getScore" class="button">Scores</button>
+    </div>
+
+    <div id="start" class="menu">
+        <div id="scoreTable" hidden=true></div>
+        <button id="return" hidden=true class="button">Back</button>
+    </div>
+
+    <div id="selection" class="menu" hidden=true>
+        <p>
+            <input type="radio" name="level" value="" id="1">
+            <span id="1span"></span>
+        </p>
+        <p>
+            <input type="radio" name="level" value="" id="2">
+            <span id="2span"></span>
+        </p>
+        <p>
+            <input type="radio" name="level" value="" id="3">
+            <span id="3span"></span>
+        </p>
+        <p>
+            <button class="button" id="proceed" class="button">Let's Go!</button>
+        </p>
+    </div>
+
+    <div id="records">
+
+    </div>
+
+    <script type="text/javascript" src="Project.js"></script>
+    <section hidden=true class="portlet grid_6 leading" id="clock">
+        <p>~~ Time ~~</p>
+        <p>
+            <span id="runTime"></span>
+        </p>
+        <p>~~ ------- ~~
+            <span id="time"></span>
+        </p>
+    </section>
+</body>
+
+</html>

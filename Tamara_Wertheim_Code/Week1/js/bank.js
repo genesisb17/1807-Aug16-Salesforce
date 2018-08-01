@@ -64,6 +64,4 @@ function register(){
     req.open("POST", "http://localhost:3000/users", true);
     req.setRequestHeader("Content-type", "application/json");
     req.send(JSON.stringify(user));
-
-
 }
