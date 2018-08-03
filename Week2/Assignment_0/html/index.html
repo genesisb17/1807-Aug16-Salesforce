@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Search Marvel Character - www.Shohag.us</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <script src="../awesomplete-gh-pages/awesomplete.js"></script>
+    <link rel="stylesheet" href="../awesomplete-gh-pages/awesomplete.css" />
+    <script type="text/javascript" src="../js/charNames.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <div id="top">
+        <nav>
+            <ul>
+                <li onclick="location.href='index.html';" class="clicked">Marvel API</li>
+            </ul>
+            <span class="meta">
+                <a href="http://shohag.us" target="_b" class="author"></a>
+                <br> By
+                <a href="http://shohag.us" target="_b">Abu Shohag</a>
+            </span>
+        </nav>
+    </div>
+    <!-- ================================ -->
+
+    
+
+    <div id="content">
+            
+        <div id="outer">
+            <input type="text" id="searchTerm" placeholder="What character are you looking for?">
+            <button type="submit" class="searchButton" id="submit">
+                Search!
+            </button>
+        </div>
+        <br>
+        <div id="part2">
+            <img src="" hidden="true" crossorigin="Anonymous" alt="Character Picture" id="charPhoto">
+            <span id="texts">
+                <h3 id="name"></h3>
+                <p id="desc"></p>
+                <ul id="numbers"></ul>
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>

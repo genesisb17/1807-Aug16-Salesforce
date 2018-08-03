@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="awesomplete-gh-pages/awesomplete.js"></script>
+    <link rel="stylesheet" href="awesomplete-gh-pages/awesomplete.css" />
+
+</head>
+<body>
+    <input type="text" id="inputBox" placeholder="Which Marvel Character are you looking for?">
+            <button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>
+    <script>
+    var input = document.getElementById("inputBox");
+new Awesomplete(input, {
+	list: ["Ada", "Java", "JavaScript", "Brainfuck", "LOLCODE", "Node.js", "Ruby on Rails"]
+});
+    </script>
+</body>
+</html>
