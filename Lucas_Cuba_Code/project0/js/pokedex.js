@@ -6,15 +6,17 @@ window.onload = () => {
     if (e.key !== "Enter") {return;}
     $('#pokeRun').click();
     e.preventDefault();
-  })
+  });
+  $(window).bind("resize", checkSize);
 }
 //ajax call based on user input
 function pokeRun() {
   let id = $('#dexIn').val();
   if (id == '' || id <= 0 || id >= 803) {
-    alert("Please enter a pokedex value between the numbers of 1 and 802 inclusively");
+    alert("Please enter a pokedex value between the numbers of 1 and 802 inclusively or the species name of a pokemon");
     throw new Error();
   }
+
   let pokeXhr = new XMLHttpRequest();
   $('#dexIn').val('');
   $('#loadingModal').modal('toggle');
@@ -22,6 +24,11 @@ function pokeRun() {
   $('#abilities').off();
 
   pokeXhr.onreadystatechange = () => {
+    if (pokeXhr.status == 404 && pokeXhr.readyState == 2) {
+      $('#loadingModal').modal('toggle');
+      alert(`"${id}" was not found as a valid species name in PokeAPI. Please try again`);
+      throw new Error();
+    }
     if (pokeXhr.status == 200 && pokeXhr.readyState == 4) {
       let pokeResponse = JSON.parse(pokeXhr.responseText);
       dexUpdate(pokeResponse);
@@ -344,4 +351,15 @@ function formatWeight(kg) {
 function formatHeight(m) {
   m = m.toString();
   return m.substring(0, m.length - 1) + "." + m.slice(m.length - 1) + "m";
+}
+
+function checkSize() {
+  if (window.matchMedia('(max-width: 1150px)').matches) {
+    $('#left, #right').css("display", "none");
+    $('#center').attr("class", "col-sm-12");
+  }
+  else { 
+    $('#left, #right').css("display", "flex");
+    $('#center').attr("class", "col-sm-8");
+   }
 }
