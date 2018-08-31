@@ -1,0 +1,20 @@
+<apex:page controller="SearchAccountListController">
+	<apex:form >
+		<apex:pageBlock title="List Accounts from Types">
+			<apex:pageBlockSection title="Enter Type">
+				<apex:inputField value="{!accountType.type}" />
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockTable value="{!accountList}" var="account">
+				<apex:column value="{!account.name}" />
+				<apex:column value="{!account.phone}" />
+				<apex:column value="{!account.billingState}" />
+			</apex:pageBlockTable>
+			
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!getAccounts}" value="List" />
+			</apex:pageBlockButtons>
+		</apex:pageBlock>
+	</apex:form>
+			
+</apex:page>

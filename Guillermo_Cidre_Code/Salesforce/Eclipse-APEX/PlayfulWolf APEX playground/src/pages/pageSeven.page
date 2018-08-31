@@ -1,0 +1,14 @@
+<apex:page controller="classSeven">
+	<apex:form >
+		<apex:outputLabel value="Enter String 1" for="one" />
+		<apex:InputText value="{!a}" id="one" />
+		<br />
+		<apex:outputLabel value="Enter String 2" for="two"/>
+		<apex:InputText value="{!b}" id="two"/>
+		<br />
+		<apex:outputLabel value="Output String: " for="three"/>
+		<apex:OutputText value="{!c}" id="three"/>
+		<br />
+		<apex:commandButton action="{!concat}" value="Concat" />
+	</apex:form>
+</apex:page>

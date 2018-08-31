@@ -1,0 +1,21 @@
+<apex:page controller="SearchContactController">
+	<apex:form >
+		<apex:pageBlock title="Find">
+			<apex:pageBlockSection >
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Search by Last Name" for="lastNameSearch" />
+					<apex:inputText value="{!searchString}" id="lastNameSearch" />
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection title="Result">
+				<apex:outputField value="{!foundContact.name}" />
+				<apex:outputField value="{!foundContact.email}" />
+				<apex:outputField value="{!foundContact.phone}" />
+			</apex:pageBlockSection>
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!findContact}" value="Search" />
+			</apex:pageBlockButtons>
+		</apex:pageBlock>
+	</apex:form>
+			
+</apex:page>

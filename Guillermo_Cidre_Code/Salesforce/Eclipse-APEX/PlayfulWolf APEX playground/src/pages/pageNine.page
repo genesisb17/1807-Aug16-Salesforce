@@ -1,0 +1,26 @@
+<apex:page controller="classNine" showHeader="true">
+	<apex:form >
+		<apex:messages />
+		<apex:pageBlock title="Create Contact">
+			<apex:pageBlockSection columns="2" title="Contact Information">
+				<apex:inputField value="{!obj.firstname}" />
+				<apex:outputField value="{!obj.ownerID}" />
+				<apex:inputField value="{!obj.lastname}" />
+				<apex:inputField value="{!obj.phone}" />
+				<apex:inputField value="{!obj.email}" />
+			</apex:pageBlockSection>
+			<apex:pageBlockSection columns="1" title="Address Information">
+				<apex:inputField value="{!obj.MailingStreet}" />
+				<apex:inputField value="{!obj.MailingCity}" />
+				<apex:inputField value="{!obj.MailingState}" />
+				<apex:inputField value="{!obj.MailingPostalCode}" />
+				<apex:inputField value="{!obj.MailingCountry}" />
+			</apex:pageBlockSection>
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!save}" value="Save" />
+				<apex:commandButton action="{!saveAndNew}" value="Save & New" />
+				<apex:commandButton action="{!cancel}" value="Cancel" />
+			</apex:pageBlockButtons>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

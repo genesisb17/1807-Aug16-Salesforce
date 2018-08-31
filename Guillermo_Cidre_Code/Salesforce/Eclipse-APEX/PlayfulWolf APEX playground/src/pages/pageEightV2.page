@@ -1,0 +1,26 @@
+<apex:page controller="classEight" showHeader="false">
+	<apex:form >
+		<apex:pageBlock title="Sample addition and subtraction">
+			<apex:pageBlockSection columns="1" title="Information">
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Enter first Number" for="one" />
+					<apex:InputText value="{!a}" id="one" />
+				</apex:pageBlockSectionItem>
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Enter second Number" for="two"/>
+					<apex:InputText value="{!b}" id="two"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:pageBlockSection columns="1" title="Output">
+				<apex:pageBlockSectionItem >
+					<apex:outputLabel value="Output Number will be displayed here: " for="three"/>
+					<apex:OutputText value="{!c}" id="three"/>
+				</apex:pageBlockSectionItem>
+			</apex:pageBlockSection>
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!add}" value="add" />
+				<apex:commandButton action="{!subtract}" value="subtract" />
+			</apex:pageBlockButtons>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

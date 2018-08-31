@@ -1,0 +1,783 @@
+Salesforce 
+
+History
+1999- 4 employees one bedroom apartment
+2009- billion revenue
+2011 - 100,00 Customers, Forbes World's most innovative company
+2013 - Acquired ExactTarget
+2015 - Lightning and Trailhead
+2018 - 8.39 Billion Revenue, 150,000 Customers
+Dreamforce 4 days, 171,000 attendees, 3200 sessions
+
+Advantages: Security, power outages, no initial cost, cheaper and easier to set up than building your own hardware.
+
+Software as a Service - rent Software
+
+Platform as a Service - rent platform... no prebuild software
+
+Instead of building your own hardware, you can subscribe to provide functionality as hardware.
+
+multiTenant architecture-
+multiple client are using the same services and make sure each tenant have their own space and limits
+
+    ui
+    \|/                         ORG
+_____|____________________________________________
+|                                                |
+|    Services                                    |
+
+rent services
+
+ORG
+
+sales cloud- subscribe and contact and track opportunities like customer is interested with product X and maybe product Y in the future
+
+service cloud - same database as sales clouds. Different view to service the customer like issue with product x, how am i doing as a customer
+
+Marketing cloud - Give suggested ads to products, also  tells what ads customers are looking at.
+
+Platform cloud - Setting up apps, managing ads.
+
+Career Paths:
+
+Administrator - 
+
+Developer - not good at administrator but good at coding. Very knowledgeable of programming languages
+
+Architect - Not expected to be on call but must know 
+
+Goal: Consultant- part administrator and part developer. Good communication skills, Presentation Skills. talk alot... oh no
+
+languages-
+    SOQL
+    APEX
+
+Certifications
+
+resources- 
+Training site google
+documentation- developer.salesforce.com -resouces-documentation
+Trailhead - trailhead.salesforce.com
+
+
+        Objects(sql table),Fields(sql columns), Records(sql row)-M - Data/database
+
+                       V-ui
+
+        C-Business Logic
+
+M: Object Manager->create custom Object
+                          custom Fields
+
+V: Create tabs
+   create flow.... flow designer app
+   Create apps
+   create reports
+   List View- Filter
+
+C: Validation rules- if cond is true when entering data, error and prevent adding value
+   Workflow rules- similar to validation rules but will not prevent adding value. Instead, it will do action like giving email alert, creating task, updating field
+   Approval Process- if cond is true, ask a person for approval. If the person does not approve, do an action
+   process builder- 
+
+VisualForce- salesforce classic UI language
+
+APEX -
+    Triggers-
+    Batch-
+    Controllers-
+
+API-
+    SOAP API-
+    REST API(Newer)- 
+
+users -
+
+Account - company
+
+Contact - employee actively working with you from account company
+
+->: consist of
+apps->tabs->home page->list views->criteria/filter
+                                 ->Display
+                                 ->who can see
+
+Developer Console - SOQL debugging
+SCHEMA BUILDER - visual representation for objects. can create new tables(objects)
+owner id: all records have an identifying three digits in the id that specifies type(account, contact, etc)
+
+To do: new app trainingmanagement
+    contacts, accounts, trainings
+
+LookUP - can be empty... loose reference
+Master-Detal- cannot be empty
+
+15 digit to 18 digit
+18 last 3 digits contain information of Case of the 15 digits(checksums).
+
+lookup - one to many(foreign key?) relationship.... 25 per object.
+       - the one doesn't need to exist
+Master Detail - one to many. killing the one kills the many.
+              - max 3 level child relationships
+              - max 2 masters.
+              - need the one(primary master). the many will inherit all security details from the one
+
+Parent, child
+master, detail
+
+if more than one master, first master is primary master
+
+Hierachy-lookup itself.
+Development console reads id for lookup field
+
+many to many- junction object
+
+security level access
+ORG
+OBJ
+Record
+Field
+
+Roll up summary
+
+external ID: id referencing to external database
+ex scenario: Suppose external system database in RevPro Candidate with field id,name,projects completed
+    To use it as external ID, add a text field and specify external ID. 
+    duplication check(unique), index it(create a separate table that is sorted by external ID, external id vs id)
+
+converting field type: use field as another type
+
+field level- tied to the database
+layout -  UI component that you develop and show to users
+->page layout edit assignment.
+
+research conversion of salesforce types.
+
+field dependence- controlling field affects dependent field. usually picklist and check boxes
+
+lookup filter- apply additional filter to a lookup. like if they are of the same department
+
+History- just say what it was changed
+
+Assignment - Think of a business. Model it with objects. build an app for it.
+
+lookup filter- lookup -> filter
+
+field tracking list-> history of sensitive field changes
+    on object check field tracking view.
+    the add object history to related list in the layout.
+
+Record type: multiple page layout to the same profile
+    field(usually a picklist value)
+
+account lead source
+
+Classic(VisualForce) and Lightning
+
+if made in classic, lightning shortcuts to the layout
+have to manually do it when going from lightning to classic
+
+lightning app builder - can add component to record page.
+                        three column - add components
+
+            record page- shows the objects
+            tab - add a view that contains tabs, can add any number to it.
+                  tab won't materialize if tab body is empty.
+            related list(single) - show a related list
+            related lists- show all related list
+            highlight- include create, new, and save buttons.
+            compact layouts- shorter version of layout. show the important fields.
+                classic- popup that appear when hovering over a lookup/master detail value.
+                lightning- classic + can be added as a component
+
+Activation -
+    org default - apply for whole org
+    apps default- apply this for just the app
+    app record type profile- a combination of any of them.
+
+classic - org
+
+app-
+    standard navigation
+    console navigation - workspace tabs or subtabs
+    utility bar - can be hidden its what appears on the left
+
+-------------------------------
+Company information(ORG Settings)
+    Trusted IP Range- no extra authentication
+
+
+user-
+    Role: CEO,CFO, etc. tell which one is above. Usually for restricting data
+    license- what determines what user can does
+        one license type for each user. no multiple licenses.
+        salesforce - sales cloud or service cloud
+        salesforce platform- account, contacts, 10 different objects
+    Profiles-user group
+        object security
+        field security
+        Login iP range - can only log in here
+        log in hours
+        sharing settings->Control level access (OWD)
+                            private- owner can only see it
+                            public read only- nonowner can see it but not edit it
+                            public read and write
+                            allow access using hierachy <-***this is how role can be part of record level access
+                    record sharing rules- used to open more access to records
+                            share records to owner based on criteria
+                            automated sharing
+                                owner based- if public group/role/role and subordinate is blah, then share with some other public group/role/role(read only or read and write)
+                                criteria based- if user field =/not = A, share user with public group/role/role(read access, read/write access).
+                            Manual sharing- nonstandard. hit the sharing button if you are the owner. if ownership is transfered, all previous manual sharings are ignored
+
+
+    
+access levels
+    Org Level Access- user: active users, ORG: Trusted Ip range, Profile: log in ip range, log in Hour
+    Object Level Access- Object security on profile
+    (Will skip if object is view all modify all)Record Level Access- OWD(most restrictive, ), Sharing Rules, Manual Sharing, APEX sharing.
+    Field level Access - Record Types, Layout Assignment, Field Security on Profile
+
+    (Object/field level access)Permission sets- like subprofile, give additional permission untop what profile give. user specific
+
+    exercise whats on profile but not on permission set
+
+
+
+
+
+        tabs- tabs hidden,
+              default on,
+              default off-won't appear at top, but it will appear at all tabs
+
+
+field/UI security
+
+    get layout and record type
+    check which fields are permited
+    remove the fields that don'tab
+
+    get compact layout
+    check and remove fileds
+    
+
+
+
+WORKFLOW RULES(activated and deactivated)
+    (Evaluation Criteria)ENTRY CRITERIA- CREATED | CREATED OR EDITED(No Time Trigger) | CREATED OR EDITED AND MEET CRITERIA(Do not use priorValue or isChanged)
+    RULE CRITERIA - NAME = "Arun"
+    ACTIONS CRITERIA - CREATE EMAIL | CREATE TASK| UPDATE FIELD | OUTBOUND MESSAGE | EXISTING ACTION
+    (Send Actions)
+
+ignore field security.
+
+Time trigger- trigger at a later date/time. if no time, assume 12AM.
+    Time-based workflow queue - where all pending future actions are stored.
+    Due date to run action can be determined by fields(Like End date)
+        Smart enough to change due date in queue if affecting field changes.
+            If field changes due date to the past, 15min or it will run task?
+        If record corresponding to the rule no longer meets the criteria, salesforce will delete queue.
+
+contact - those working with us(evaluated).
+leads - those who might potentially work with us in the future(not evaluated).
+    tasks...
+    related to field
+
+activities - tasks(one time) and events(start time and end time)
+
+FIELD UPDATE - update relationship on its field or any field on master detail parent.
+
+outbound message-send outbound message(consisting of fields) to an external system.
+    POST XML
+    url instance to talk back to salesforce
+    uses SOAP to send object with fields that are not blank.
+    Gives all fields of object and:
+        ID(Instance of workflow execution)
+        ORG ID
+        ACTION ID
+        SESSION ID(authenticated id to say who is the person, where he is login from, trusted to login)
+        Endpoints to talk back to salesforce
+            Partner URL(access with things that came out of the box(standard))
+            Enterprise url(Standard + Custom)
+            Why? interoperativity(work with all salesforce orgs)
+    The server must say it received it or will send again
+    Stay in queue until 24 hours if not send successfully
+    Interval increases exponentially up to 2 hours per retries.
+
+
+Row -> active workflow? -> Choose Active WF -> Check Evaluation Criteria -> Check Rule Criteria -> execute actions
+                                    A                   |                        |                      |
+                                    |                   V                        V                      V
+                                    |<----------<---------------------------<--------------------<-------
+Formula Editor/Builder
+Criteria Builder
+
+Tasks - one time thing that just happens at a point in time. Closed or open (past,present,future).
+Event - Happens through a stretch of time.
+
+Assign to: user, owner, creator, roles(If one person, it assigns to him. If not, change to owner)
+Related To(Related to objects in salesforce): Any object with track activities enabled
+Name(related to person): Contacts or leads
+Status - Can Specify ISCLOSED with check box. If closed, Activity history, else, OPEN Activities
+
+Home page - components
+
+Queues - Treat a collection of users as one user.Ex: set record owner to queue(all user in queue are owners).
+
+Approval Processes- Look at a state of a record and approve it or reject it.
+    Steps:
+        Active Approval Process
+        Who can submit(can use queue)
+        Entry Criteria
+        (optional)Initial Submittion actions(like workflow actions)
+        *Who approves(given a link to approval layout)
+            choose what fields to display and/or approval
+        *extra criteria
+        *(If approved)Approval Actions
+            (optional)pick any Next Approval step...
+                Criteria
+                    (Yes) do approval step
+        *(If rejected)Reject Actions
+            (optional) pick any previous approval steps or do final rejection action.
+        end of everything
+            Final approval action- if pass all approval steps
+            Final rejection action- if reject at some point in the approval steps
+
+*- an approval step
+ignore field security
+
+If nothing happened when approval process was made:
+    active?
+    submit for approval button not available
+    user is not in list of acceptable submitters
+    entry criteria is not met.
+
+Extra in who approve:
+    can use login user selflookup fields(like manager) or owners' selflookup Fields
+        can be custom
+    Queue- need only to be approved by one. Queue can have a queue email to respond as well.
+
+
+Vs Workflow rules:
+    Each approval proccess is checked in order of process order number
+    Org will only use the first available approval process that fit. Org will use all workflow rules that fit.
+    After activation, admin can no longer add approval steps(even if deactivated). anything can be modified in workflow rule when deactivated. 
+similar to Workflow rules:
+    ignore field security for field update.
+
+Process builder - enhanced version of workflow rule
+    setting to every record is created and edited or set the stop to next criteria causes the schedule action not to appear
+    in advanced, set to consequently meet criteria. it enables schedule actions
+    can create a processes within an action
+    set field reference: object and parents.
+    create field: configure all required fields to not get errors
+    update record: will activate other workflow rules and active process builder
+    issues: no outbound message(can be done with apex though)
+            nonbulkified
+            validation(might already be corrected)
+
+builder vs Workflow
+    workflow rules are older and have less bugs. WFR are like singleton if statements.
+    process builder is newer and prone to bugs. Process Builders are if statements with else if and else. There are more actions.
+    update record: WF-> object and master-detail parent fields.
+                   PB-> object, parent(lookup or master detail), and children(child relationship name).
+
+Chatter - social media component
+  home and Chatter
+  follow
+  create chatter groups- share whole timeline with each other
+    settings- public- anyone can see, private- only members can see
+  post to record: appears on the record
+  merge fields- can cover with [] in template if using tags or @.
+  @ - mainly refering to
+  # - tags
+
+
+
+
+Flows
+    autolaunched flows can be run in process.
+    sObject - private - only in this flow
+              input only - can be used as input(assignment)
+              output only - display only
+              input and output - fully public
+              fastCreate: add multiple SObjects to it.
+              Create: add a record. can retrieve that records' ID.
+    building block: element, connector, and resources
+
+
+Flows vs WF and PB
+  -flows can delete records
+
+Reports
+    -> Help Answer Business Question.
+    -> Computed on demand.
+    -> up to 50 rows will be shown in the preview. Must run report to get all.
+    -> (what to show) date field + range. All time will show blank dates.
+
+Report Type: Tells the following:
+    -> Primary Objects
+    -> Related Objects
+    -> Fields
+
+Filters
+
+Columns/Fields -> Functions
+               -> Bucket Field
+
+Type -> Tabular
+     -> Summary -> Group by Rows(same values for a field and integrating together like sql).
+     -> Matrix -> Group by rows and columns(count/aggregate record with field value A(row) and field value B(column))
+     -> Join -> can add multiple reports to a report if share a field. Row(Field), column(Reports).
+
+export report- CSV file(competition fear)
+
+Report Folder
+    share   Viewer(Read)
+            Editor(Read Write)
+            Manager(Read/Write/Share)
+
+No all contacts... all accounts count nonOrphaned contacts.
+
+Group & details(Summary):
+    details-record
+    Group- what is grouped by.
+    Grouped field 1|
+        Grouped field 2|
+            Grouped field 3|....
+    ungroup by dragging field back to column header.
+
+Export detail - csv or xls
+Schedule run- run at a future time and email to people.
+    monthly- if set to 31th day of a month and it doesn't exist, don't do it.
+             if set to last day, do it on the last day.
+Subscribed - notify me when a  condition is met or first occurence.
+    Condition
+    schedule
+    actions
+    active
+
+Enable Chatter -> Feed Tracking -> post all changes done by user.
+
+Matrix - up to two row grouping and column grouping.
+        add multiple record types
+        can use the same record type
+
+Bucket field - turn result to group of buckets
+Formula - Compute on report only. goes with aggregated values.
+
+Conditional Highlighting - choose aggregated field
+        low -> mid -> high
+        set color profile for low mid high.
+
+DashBoard - Collection of visual representation of data reports.
+    Description -> column title -> Chart title/footer
+    There is a column title for each chart. If no
+    limit: 3 or less column
+    narrow medium wide.
+    Must hit refresh to rerun(can have stale data)
+    can't save dashboard with incomplete components
+    need profile permission(enable report, object,level)
+
+    Filter- like a list view... select a filter in the list and it will remake all charts with that filter.
+    
+Dynamic Dashboard- Different for different users.
+
+Donut Chart vs Pie Chart
+    donut can have total in the center.
+
+BPA- business process automation
+
+ORG SETUP -          2%
+User -               7%
+Security-           14%
+DataModel-          15%
+Sales Cloud-        15%
+Service Cloud-      12%
+Activity Management- 3%
+Data Management-     8%
+Analytics-          10%
+BPA-                12%
+Desktop/Mobile Apps- 1%
+AppExchange-         1%
+
+Person Accounts(fusion of Account and Contacts)- can only be enabled if you specifically contact salesforce to enable it.
+
+Validation rule trumps all.
+
+Data Management-
+    Import Wizard- used by end users. only import, few objects supported, Duplicate Check, work with 50,000 max
+        standard - accounts and contacts,leads,solutions,campaign members, Person Accounts
+        Custom - any
+        (Import only)Allow option for Trigger Workflow rules and processes for new and updated record
+        assign contacts to campaign
+        map fields to csv headers
+        upsert- create whenever needed and update if match.
+        can use external id for matching.
+    Data Loader- for admins.
+        batch size x- send x records to salesforce at a time.
+        serial mode- 200, process them, and then 200 more....
+        (use bulk api)bulk mode- 2,000 at a time asynchronise
+        insert null values- determine if it should clear out the value when updating if the import has an empty field.
+        Contains support for alot of objects.
+        export all- include all records and the recycling bin. From salesforce database to external csv.
+        export- ignore records in the recycling bin
+            select file, specify soql that will be exported
+        import - csv to salesforce. create csv file containing row number, field data, and status(indicate updated inserted or error)
+        upsert - update if identifier is defined, create if not.
+        no rollback functionality.
+        can be scheduled.
+        5 million records max
+    External Tools- third party 
+    Mass Transfer/Delete- Transfer -> transfer record from owner(optional) to other owner(required)
+        Delete-> soft or hard delete.
+    Duplicate Checks- do something if duplicates criteria happens on an object
+        if duplicated, can alert,warn, and/or block user from doing the action
+        matching Criteria- Specify criteria when checking for duplicated
+            criteria builder
+            fuzzy - similar to the other name. Not available in validation rule.
+            must activate
+    Considerations-
+    Export- data loader(records from an object) data export(export all records of objects)
+        data export- in salesforce setup.
+
+Sales Cloud
+    Overview
+        Lead come from Website, Email Campaign. Seminars, Conferences, Trade Fares.
+        Once verified, convert to account,Contact,Opportunity
+            hide lead from salesforce
+            transfer activities to contacts
+        Campaign can be linked to lead and contact.
+    Web To lead(500 a day)- html form element that will create a lead if fill out. support recaptcha.
+        lead to a thank you page afterwards.
+    Lead Scoring- probability of becoming a contacts. People work on lead with highest scores and work down.
+    Auto Response- automatically reponding to leads(thank for joining). only when created.
+        Rule Entry- if A, sent email alert.
+        OW email addresses
+        like approval proccesses, in order and choose the first one.
+    Lead Conversion- convert lead to account, contact, and opportunity(verified and ok to work with)
+        How to: click Convert button
+        Pick account, Opportunity, Contact(If none, create one). Assign task to a user to follow up.
+        Can Configure custom field map in leads->fields->map lead fields button.
+    Assignment rules- If lead made and criteria met, assign to user and send email alert to mike.
+        in order and choose the first one.
+        must check assign to active assignment rule when creating or editing lead.
+            checking may be painful. to fix this go to page layout and go to layout properties and set it as default.
+    ---------------------------------------------------------------------------------------
+    Opportunities- tied to accounts and contacts. Allows you to track and manage potential deals.
+        Similar Opportunities- find closed/won opportunities that match the attributes of an opportunity they are working on.
+        Update Reminders- Let managers send automated emails with a report on the team's open opportinities to their direct reports.
+        Big Deal Alerts- automatically send an email notification for opportunities with large amounts.
+            if enabled, specify user with view all data permission.
+        Competitors- allow you to track competitors on an opportunity.
+            option of predefined picklist of competitors
+        Opportunity Splits(up to 4)- Share credit from an opportunity with their team members.
+            Revenue Splits - total to 100% of the opportunity amount. (A get 50%, B get 50%).
+            Overlay Splits - Can total any percentage of the opportunity amount.(A did 50%, B did 75%).
+
+    Products- items and services that you sell to customers
+        Contains info of product.
+        Standard Price to be added to enable product in the standard pricebook. If enabled, can be added to other price books
+        List Price- custom price associated with a product in a custom price book.
+        Sales Prices(opportunity or quotes)- actual prices specified for products added to opportunities and quotes.
+        Product Schedules- allow you to determine payment and delivery cycles for products that are paid or delivered over time
+            Quantity Schedule - When a product is delivered
+            Revenue Schedule - when a product is paid for
+            Default Schedule- associated with a specific product in a specific price book.(ex rent)
+    Pricebook- list of all products and their prices
+        Standard Price Book - master list of all products and their default standard prices.
+            Cannot be viewed in the price book tab.
+        Custom Price Book- Separate list of products with custom prices(list price)
+        price book entry- a product with its price as listed in a price book.
+            standard price book Entries
+            Custom Price book entries- need active standard price book entry.
+        
+
+     
+    Sales Productivity features-
+    ---------------------------------------------------------------------------------------
+    Campaign Management- campaign(things that motivate to buy the product like webinar) and how much revenue it produced.
+        campaigns- market directly to your leads to turn prospects into deals.
+        Campaign Members- Contacts, Leads, and person accounts that are targets for your campaign.
+            track each target's status
+        Lifecycle of a campaign
+            Create Campaign
+            Create your target list
+            Execute the campaign.(Occurs outside of Salesforce)
+            Track Responses
+            Analyze campaign effectiveness
+        Must have Marketing User permission to create, edit, and delete campaign.
+    Campaign Hierarchy
+        Associate campaigns with one another using a lookup relationship to group them within a specific marketing program or initiative
+        hierarchies contain up to five levels
+        campaign have one parent campaign, but an unlimited number of sibling campaigns.
+    Customizable(newer) Campaign Influence(has API Access)
+        Lets you decide how credit is assigned to each campaign that contributes to bringing in an opportunity.
+        Campaign Attribution Models- determine how revenue is attributed to campaigns.
+            Primary Campaign source- model attrubes 100% of revenue to the primary campaing source.
+            flexible- can be edited with user input.
+        Campaign influence records- show which campaigns have influenced an opportunity
+    Cloud Scheduler(obsolete)- sending meeting invites like I'm free 1 o'clock to 3.
+    
+    Teams - Like a Public Group but has a hierarchy of team roles. Account, Opportunity, Case
+
+    help.salesforce.com
+
+    Paths-
+        One path for each available record path.
+        Steps for each path are based on values in the picklist that you select when you set up the path.
+        enable in path -> settings
+    Kanban is a view to display a visual summary for a selection of records.
+        Isn't available for Tasks and some other objects.
+
+    Recycle bin is only in classic and not lightning.
+    html email template in classic and not lightning.
+
+    Service Cloud
+    Case Management
+        Case- is a customer's question, feedback, or issue
+        Case Teams- group of people that work together to solve cases
+        Contacts can be added to case teams if they are enabled as customer portal users assigned to case page layouts
+        Ways to create cases:
+            web-to-case(5k cases a day) and or email-to-case
+            Customers can log their own cases from a community, customer portal, or chatter answers
+            Manually from the Cases tab, Cases related list, or in the feed on record detail pages
+        You can create or update cases only for contacts that are eligible to receive customer support
+        Entitlement - a unit of customer support in Salesforce. Typically used to represent terms in warranties
+            Can be associated with accounts, assets, contacts, and service contracts.
+        Assets - represents the specific products your customers have purchases(barcode).
+            serial number, purchase data, other info.
+        To see if a contact is eligible for customer service, check their entitlements.
+        Case Queues, Assignment Rules,  and Auto-Response Rules are set the same way as leads
+        Escalation(scream for attention) Rules- Escalate cases when case meets criteria defined in the rule enty.
+            Rule entries define criteria for escalating a case.
+            Escalation actions- what to do
+                max of 5 actions per rule entry.
+        Case Comments- let you and your support agents add,edit,delete public or private comments on a case
+            Case comments related list
+        You can set up your portal or community to let customers comment on thier cases.
+        commetns can be made publicly availabel to a case's contact.
+        portal community to let customers comment on their cases
+
+    Question:
+    leads created via Web to lead to be handled by the contact center team?
+    what is true about autoresponse rules
+
+
+    Miscellaneous Topics
+    Chatter
+        Share info, collaborate, stay up to date with feeds, profiles, and groups.
+        Adheres to your org's security and permission settings.
+        Enabled by default.
+        Not supported:
+            Internet explorer 6
+            For external users in portals.
+            in the console tab
+    Chatter feeds(Customers don't have access to chatter)
+        Show updates about people and records(allow following and click button) that you follow.
+        Feed Selection Categories:
+            WHat I follow
+            To Me
+            Bookmarked
+            Muted(Classic Only)
+            All Company (Classic Only)
+            Company Highlights(LE only version of above)
+        You can create a task from a post(not system generated).
+        Chatter Streams & prospects
+            Streams- custom feeds created by combining multiple related feeds.
+            100 streams combine up to 25 different feeds and feed types.
+            Every Post- Default setting that enables notifications for the stream.
+        post
+            if you are group owner or manager, you can edit other people's posts on the group feed.
+            You cannot delete other people's posts or posts about feed tracked changes.
+            You can't prevent people from seeing your posts except customers
+            Link records to a post, comment, or wuestion detail.
+                up to 25 records linked.
+                Link by typing a forward slash / and then the record name
+            when you share a post, comments and likes are not shared.
+                In classic, files and attachments are shared with the orginial post.
+                In Lightning, not shared. just the original post.
+        Messages
+            You can send private messages to another user, or a few users,
+                when the discussion isn't relevant to everyone you work with
+            Messages don't appear in any part of Chatter that is publicly visible.
+        Questions
+            ask questions in thier feed group and in record
+            can select a best answer.
+            Organize questions with a question title and details about their question.
+            Questions can be asked to their followers, to a group, or to a specific person.
+            Enable Question action to a Global publisher layout.(the square plus button in lightning)
+
+    External Email Services
+        Salesforce for Outlook.
+            Old external email tool. Starting in Winter '19
+            An Intergration application for Microsoft Outlook to sync contacts, events, and tasks between Outlook and Salesforce
+            Customized sync and the sync directions.
+        Lightning sync
+            Cloud-based integration product for Microsoft and Google applications.
+            keep contacts and events
+            Compatible with several versions of ME, GC,GCalendar.
+            sync set up to users who are assigned to Sales Cloud, Service Cloud, and most Lightning Platform licenses.
+        Lightning for Outlook
+            view edit and add Salesforce records
+        Lightning for Gmail
+            View
+            Create records from action publisher.
+            Search for custom object
+            edit with inline editing feature
+            see chatter feds, activity timeline, and related lists.
+
+    Sales Processes
+        Different picklist values based on user profiles
+        Processes(defined in record types) are assigned to record types which are then assigned to profiles.
+        types: Sales(opportunity stage field), Lead(Lead Status field), Support(case status field), Solution(Solution status field)
+    Mobile applications
+        SalesforceA
+            A for admin
+            manage users andd view info for Salesforce orgs from you phone
+            Restricted to users with the Manage Users Permission
+            Deactivate or freeze users, reset passwords, unlock users, edit user details, and assign permission sets
+            not supported offline
+            Android + I
+        Salesforce App
+            view edit create records, activities, dashboard and reports, and Chatter.
+            Offline Support? Yes for viewing data.
+            Android + I + Windows.
+            No apps
+
+    Solution management- classic
+        solution- detailed description of a customer issue and the resolution of that issue.
+        users with appropriate permission can create, review, and categorize solutions.
+        Solutions can be published and made public.
+    Knowledge- tool that lets you create and manage knowledge base with your company info(using past result to improve current result).
+        unlimited Edition with Service Cloud
+        Knowledge base: built from knowledge articles
+        Experienced Service agents and internal writers write the articles.
+        lightning knowledge
+        Knowledge user license
+        Article Types(classic)
+        Data Categories- classify and find aritcle. also to control access to articles.
+    answers - no longer available. Use chatter question...
+    ideas(Classic only)- community who post, vote for, and comment on ideas
+        ideas community provides an online, transparent way to attract, manage, and showcase innovation.
+        Zone - organize ideas and questions into logical groups
+        point(promote or demote once)- added by user, max is number of users. Can be used to rank posts
+        half-life- the time it takes for the post to go down the rankings depending how long it has been.
+        Vs knowledge:
+            Knowledge- can be any article made of any info and written by knowledge users.
+                       No point system(no upvote nor downvote).
+            ideas- written by customers
+    community must be enabled.
+        share information and collaborate with people outside of the org.
+    
+    AppExchange
+
+    actions
+        Global - cannot populate field with value from current opened page
+            publisher layout
+        Object-Specific - Tied to object and pull information from record. affect that object
+            objects->buttons,link, and actions
+
+dashboard- default -> specific user(the dashboard creator)
+            admin can't see data but aggregated data.
+

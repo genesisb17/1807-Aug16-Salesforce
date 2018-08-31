@@ -1,0 +1,57 @@
+<apex:page controller="ContactTableController" showHeader="true">
+	<apex:form >
+		<apex:messages />
+		<apex:pageBlock title="Create Contact">
+			<apex:pageBlockSection columns="2" title="Contact Information">
+				<apex:outputField value="{!newContact.ownerID}" />
+				<apex:inputField value="{!newContact.phone}" />
+				<apex:inputField value="{!newContact.salutation}" />
+				<apex:inputField value="{!newContact.homePhone}" />
+				<apex:inputField value="{!newContact.firstname}" />
+				<apex:inputField value="{!newContact.mobilePhone}" />
+				<apex:inputField value="{!newContact.lastname}" />
+				<apex:inputField value="{!newContact.otherPhone}" />
+				<apex:inputField value="{!newContact.accountID}" />
+				<apex:inputField value="{!newContact.fax}" />
+				<apex:inputField value="{!newContact.title}" />
+				<apex:inputField value="{!newContact.email}" />
+				<apex:inputField value="{!newContact.department}" />
+				<apex:inputField value="{!newContact.AssistantName}" />
+				<apex:inputField value="{!newContact.birthDate}" />
+				<apex:inputField value="{!newContact.AssistantPhone}" />
+				<apex:inputField value="{!newContact.ReportsToId}" />
+				<apex:pageBlockSectionItem />
+				<apex:inputField value="{!newContact.leadSource}" />
+				
+			</apex:pageBlockSection>
+			<apex:pageBlockSection columns="2" title="Address Information">
+				<apex:inputField value="{!newContact.MailingStreet}" />
+				<apex:inputField value="{!newContact.OtherStreet}" />
+				<apex:inputField value="{!newContact.MailingCity}" />
+				<apex:inputField value="{!newContact.otherCity}" />
+				<apex:inputField value="{!newContact.MailingState}" />
+				<apex:inputField value="{!newContact.otherState}" />
+				<apex:inputField value="{!newContact.MailingPostalCode}" />
+				<apex:inputField value="{!newContact.otherPostalCode}" />
+				<apex:inputField value="{!newContact.MailingCountry}" />
+				<apex:inputField value="{!newContact.otherCountry}" />
+			</apex:pageBlockSection>
+			<apex:pageBlockSection columns="1" title="Description Information">
+				<apex:inputField value="{!newContact.description}" />
+			</apex:pageBlockSection>
+			
+			<apex:pageBlockButtons >
+				<apex:commandButton action="{!saveNew}" value="Save & New" />
+			</apex:pageBlockButtons>
+		</apex:pageBlock>
+		<apex:pageBlock >
+			<apex:pageBlockTable value="{!contactList}" var="cont">
+				<apex:column value="{!cont.firstname}" />
+				<apex:column value="{!cont.lastname}" />
+				<apex:column value="{!cont.phone}" />
+				<apex:column value="{!cont.fax}" />
+				<apex:column value="{!cont.title}" />
+			</apex:pageBlockTable>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

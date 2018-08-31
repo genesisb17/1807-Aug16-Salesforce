@@ -1,0 +1,43 @@
+APEX- OBJECT ORIENTED CLOUD LIKE JAVA
+    run/compiled on salesforce server.
+    DML - Create, Update, UPSERT, DELETE
+    can use getter and setter: variable {get;set;};
+
+VISUALFORCE
+    <apex:page> tag - can use html, commands, or more apex tags
+        sidebar
+        showHeader
+        controller - run constructor of class name in the string.
+    <apex:outputText value=""></apex:outputText>
+        output text in value. can use template literal {! } to get/set object.
+    <~TAB>
+        <NAME= 1>
+        <NAME= 2>
+    </ TAB>
+
+    Salesforce will take this code and generate html element with css.
+
+TRIGGERS
+    Whenever CONTACT IS EDITED -> EXECUTE BELOW APEX.
+    EMAIL SERVICES
+    API INTEGRATIONS
+    UI BUTTONS
+    syntax: trigger name on objectname (trigger_events) {
+
+    }
+
+    ex trigger_event:
+    before insert
+    before update
+    before delete
+    after ...
+    after undelete
+
+    Trigger.NEW
+    Trigger.OLD
+    up to 200
+
+    database.query
+
+
+custom controllers work in users

@@ -1,0 +1,6 @@
+<apex:page standardController="Account">
+	<apex:outputField value="{!Account.name}" /> <br/>
+	<apex:outputField value="{!Account.phone}" /> <br/>
+	<apex:outputField value="{!Account.billingState}" /> <br/>
+	<apex:outputField value="{!Account.name}" /> <br/>
+</apex:page>

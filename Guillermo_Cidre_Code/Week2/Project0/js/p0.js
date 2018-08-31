@@ -287,24 +287,28 @@ function imgClicker(event) {
                                 activeCard.setAttribute('alt', "");
                                 break;
                             case "K":
-                                activeCard.setAttribute('src', `${cardImgUrl}Q${suit}`);
+                                activeCard.setAttribute('src', `${cardImgUrl}Q${suit}.png`);
                                 activeCard.setAttribute('alt', 'Q' + suit);
                                 break;
                             case "Q":
-                                activeCard.setAttribute('src', `${cardImgUrl}J${suit}`);
+                                activeCard.setAttribute('src', `${cardImgUrl}J${suit}.png`);
                                 activeCard.setAttribute('alt', 'J' + suit);
                                 break;
                             case "J":
-                                activeCard.setAttribute('src', `${cardImgUrl}0${suit}`);
+                                activeCard.setAttribute('src', `${cardImgUrl}0${suit}.png`);
                                 activeCard.setAttribute('alt', '0' + suit);
                                 break;
                             case "0":
-                                activeCard.setAttribute('src', `${cardImgUrl}9${suit}`);
+                                activeCard.setAttribute('src', `${cardImgUrl}9${suit}.png`);
                                 activeCard.setAttribute('alt', '9' + suit);
+                                break;
+                            case "1":
+                                activeCard.setAttribute('src', `${cardImgUrl}A${suit}.png`);
+                                activeCard.setAttribute('alt', 'A' + suit);
                                 break;
                             default:
                                 let num = parseInt(code1[0]) - 1;
-                                activeCard.setAttribute('src', `${cardImgUrl}${num}${suit}`);
+                                activeCard.setAttribute('src', `${cardImgUrl}${num}${suit}.png`);
                                 activeCard.setAttribute('alt', num + suit);
                                 break;
 
@@ -383,24 +387,28 @@ function imgClicker(event) {
                                 activeCard.setAttribute('alt', "");
                                 break;
                             case "K":
-                                activeCard.setAttribute('src', `${cardImgUrl}Q${suit}`);
+                                activeCard.setAttribute('src', `${cardImgUrl}Q${suit}.png`);
                                 activeCard.setAttribute('alt', 'Q' + suit);
                                 break;
                             case "Q":
-                                activeCard.setAttribute('src', `${cardImgUrl}J${suit}`);
+                                activeCard.setAttribute('src', `${cardImgUrl}J${suit}.png`);
                                 activeCard.setAttribute('alt', 'J' + suit);
                                 break;
                             case "J":
-                                activeCard.setAttribute('src', `${cardImgUrl}0${suit}`);
+                                activeCard.setAttribute('src', `${cardImgUrl}0${suit}.png`);
                                 activeCard.setAttribute('alt', '0' + suit);
                                 break;
                             case "0":
-                                activeCard.setAttribute('src', `${cardImgUrl}9${suit}`);
+                                activeCard.setAttribute('src', `${cardImgUrl}9${suit}.png`);
                                 activeCard.setAttribute('alt', '9' + suit);
+                                break;
+                            case "1":
+                                activeCard.setAttribute('src', `${cardImgUrl}A${suit}.png`);
+                                activeCard.setAttribute('alt', 'A' + suit);
                                 break;
                             default:
                                 let num = parseInt(code1[0]) - 1;
-                                activeCard.setAttribute('src', `${cardImgUrl}${num}${suit}`);
+                                activeCard.setAttribute('src', `${cardImgUrl}${num}${suit}.png`);
                                 activeCard.setAttribute('alt', num + suit);
                                 break;
 
